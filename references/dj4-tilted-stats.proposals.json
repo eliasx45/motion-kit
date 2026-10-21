@@ -1,0 +1,173 @@
+{
+  "proposals": [
+    {
+      "id": "tiltedStatsReveal",
+      "kind": "template",
+      "title": "Tilted 3D reel cards push in, hard cut to a glowing ring stat counting up",
+      "status": "proposed",
+      "why": "DJ4 whole (2.8 s): two reel cards with view counts tilted in 3D drift toward a 50 mm camera and spread apart; at 1 s a hard cut to a blue progress ring (61.9% to 89.6%) with a 12 fps count to 169K and a '100% Non-followers' legend, the cards echoed as a pixelated mosaic, blue haze and faint scanlines over everything.",
+      "call": "tiltedStatsReveal(comp, {at, cards: [\"5.6M\", \"3.2M\"], cutAt: 1, progress: [0.6194, 0.896], countMax: 190, suffix: \"K\", pct: \"100%\", label: \"Non-followers\", color: \"#0a8aeb\", ring: [\"#2dbcff\", \"#4fd0ff\"], titles: [\"Normal Reel\", \"Trial Reel\"], tilt: [-21.97, 16.91, 8.69]})",
+      "overlaps": "uses ringStat, countUp, accentGlow, lightSweep, reelCard, tiltedCardPush, mosaicEcho, settleSlide, driftApart, statLegend, hazeGlow, scanlineTexture",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "tiltedCardPush",
+      "kind": "part",
+      "title": "Precomp tilted in 3D, pushed slowly toward a 50 mm camera",
+      "status": "proposed",
+      "why": "Tilted Cards is a 3D precomp layer at X -21.97, Y 16.91, Z 8.69 degrees, z 296.5 to 232 in 1 s linear (~65 px/s) with Deep Glow 116 / 0.0174: flat UI that feels like a physical object floating at an angle.",
+      "call": "tiltedCardPush(layer, {tilt: [-21.97, 16.91, 8.69], push: 64.5, at, duration: 1})",
+      "overlaps": "cameraDrift (proposals.json) moves a camera/null rig; this tilts and pushes the layer itself",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "reelCard",
+      "kind": "part",
+      "title": "Reel placeholder card: outline, play button, eye + view count",
+      "status": "proposed",
+      "why": "553.7x984.4 r26 card, fill #1a1a21, 4 px #dbdee6 outline, play button (ring at 35%, triangle at 45% white), eye icon + '5.6M' (SF Pro Medium 62, #ebebed, tracking 20) at the bottom left.",
+      "call": "reelCard(comp, {views: \"5.6M\", x, y, width: 553.7, play: true, footage?})",
+      "overlaps": "same id as reelCard in dj5-card-variants.proposals.json (this adds the eye + view count); postCard (DJ1) is the same family with Post/Trash buttons",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "driftApart",
+      "kind": "part",
+      "title": "One card eases away from its neighbour, still drifting at the cut",
+      "status": "proposed",
+      "why": "Card L moves -66.8 px in 1 s (out 100 px/s at 10%, in 30 px/s at 70%) while Card R holds: the pair opens up without ever landing.",
+      "call": "driftApart(layer, {dx: -66.8, at, duration: 1})",
+      "overlaps": "slideUp enters and lands; this never lands. Sibling of settleSlide",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "ringStat",
+      "kind": "part",
+      "title": "Progress ring (base + fill) with a counter in the middle",
+      "status": "proposed",
+      "why": "Ring Base (201 px, #1a1f25, 33 px) + Ring Fill (#2dbcff to #4fd0ff gradient stroke, trim end = CTRL Progress x 100, scale -100% so it fills counter-clockwise, Deep Glow 150, light-sweep pass at the end); count above, legend beside.",
+      "call": "ringStat(comp, {from: 0.6194, to: 0.896, at, duration: 1.8, size: 201, width: 33, colors: [\"#2dbcff\", \"#4fd0ff\"], mirror: true})",
+      "overlaps": "same id as proposals.json ringStat; uses countUp",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "countUp",
+      "kind": "part",
+      "title": "Number that counts up from a CTRL slider",
+      "status": "proposed",
+      "why": "Count = floor(Progress x 190) + \"K\", sampled in 1/12 s steps 0.1 s ahead, so it ticks 118K to 169K at 12 fps like a real counter.",
+      "call": "countUp(textLayer, {from: 0.6194, to: 0.896, multiply: 190, at, duration: 1.8, suffix: \"K\", steps: 12})",
+      "overlaps": "same id as proposals.json countUp (adds multiply + steps options)",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "statLegend",
+      "kind": "part",
+      "title": "Big percentage over a coloured dot + grey label",
+      "status": "proposed",
+      "why": "'100%' (SF Pro Medium 58, #ebebed, tracking 50) above a 12 px #0a8aeb dot and 'Non-followers' (Medium 36, #787d85, tracking 25): the chart-legend read-out beside the ring.",
+      "call": "statLegend(comp, {value: \"100%\", label: \"Non-followers\", color: \"#0a8aeb\", x, y})",
+      "overlaps": "none; pairs with ringStat",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "mosaicEcho",
+      "kind": "part",
+      "title": "Previous scene's cards echoed flat and pixelated behind the new stat",
+      "status": "proposed",
+      "why": "After the hard cut, flat copies of the reel cards and their titles sit under a Mosaic adjustment (56 x 31 blocks): continuity across the cut without competing with the ring.",
+      "call": "mosaicEcho(comp, {layers, blocks: [56, 31]})",
+      "overlaps": "none",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "settleSlide",
+      "kind": "part",
+      "title": "Block slides sideways and never quite stops",
+      "status": "proposed",
+      "why": "The Stats layer moves -90 px over 1.8 s (out 65 px/s at 50%, in 15 px/s at 5%): a held stat that keeps living until the cut.",
+      "call": "settleSlide(layer, {dx: -90, at, duration: 1.8})",
+      "overlaps": "slideUp (vertical, lands); driftApart is the same idea on a single card",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "lightSweep",
+      "kind": "part",
+      "title": "Light sweep across an accent",
+      "status": "proposed",
+      "why": "CC Light Sweep on the ring fill (direction 30, sweep 60, edge 40) passing once: center (960, 540) to (990, 560), width 44 to 70 over 2.43 to 2.8 s, starting from rest (60% influence).",
+      "call": "lightSweep(layer, {mode: \"pass\", at: 2.4333, duration: 0.3667, angle: 30, width: [44, 70], sweep: 60, edge: 40})",
+      "overlaps": "same id as proposals.json lightSweep (DJ3 is the wiggling shimmer variant)",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "accentGlow",
+      "kind": "part",
+      "title": "Deep Glow on accent shapes and numbers",
+      "status": "proposed",
+      "why": "Deep Glow radius 150 / exposure 0.02 on the ring fill, and 116 / 0.0174 on the tilted cards precomp.",
+      "call": "glow(layer, {radius: 150, exposure: 0.02})",
+      "overlaps": "same id as proposals.json accentGlow",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "hazeGlow",
+      "kind": "part",
+      "title": "Tinted radial haze that travels with the content",
+      "status": "proposed",
+      "why": "An Add-mode solid with a radial ramp #0f1b23 to black (radius 850, 125% wide), parented to the Stats block, so a cool light sits behind the stat and moves with it.",
+      "call": "hazeGlow(layer, {color: \"#0f1b23\", radius: 850, stretch: 1.25})",
+      "overlaps": "background / darkStage are the backdrop; this is a light added on top of it",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    },
+    {
+      "id": "scanlineTexture",
+      "kind": "part",
+      "title": "Faint horizontal scanlines over the whole frame",
+      "status": "proposed",
+      "why": "An adjustment layer with Venetian Blinds (completion 42.63%, direction 90, width 32.97, feather 91.4) at 14.85% opacity adds a subtle screen texture.",
+      "call": "scanlineTexture(comp, {opacity: 14.85, width: 32.97, feather: 91.4})",
+      "overlaps": "none",
+      "from": [
+        "references/dj4-tilted-stats.recipe.json"
+      ],
+      "gif": "references/dj4-tilted-stats.gif"
+    }
+  ]
+}
