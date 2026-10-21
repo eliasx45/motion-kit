@@ -32,6 +32,10 @@ Empty. During an edit, say “inbox this”.
 
 Notes from the edits: [inbox/NOTES.md](inbox/NOTES.md).
 
-## References (0 converted comps)
+## References (1 converted comps)
 
-None yet. Converted comps land here with their recipe and a GIF.
+| Preview | Comp |
+|---|---|
+| <img src="references/dj1-trial-rings.gif" width="320"> | [dj1-trial-rings](references/dj1-trial-rings.recipe.json) |
+
+Details and rebuild checks: [references/README.md](references/README.md).

@@ -1,0 +1,7106 @@
+{
+  "comp": {
+    "background": [
+      0.02,
+      0.02,
+      0.02
+    ],
+    "duration": 6.3,
+    "frameRate": 30,
+    "height": 1080,
+    "name": "DJ1 Trial Rings",
+    "width": 1920
+  },
+  "format": "effectcraft-recipe",
+  "layers": [
+    {
+      "comp": "Cursor",
+      "masks": [
+        {}
+      ],
+      "name": "Cursor (Library)",
+      "parent": "Cursor",
+      "props": {
+        "masks/mask/path": {
+          "closed": false,
+          "vertices": [
+            [
+              -30.3556,
+              -115.309
+            ],
+            [
+              -30.3556,
+              -115.309
+            ]
+          ]
+        },
+        "transform/position": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.4
+                ],
+                [
+                  0,
+                  0.4
+                ],
+                [
+                  0,
+                  0.4
+                ]
+              ],
+              "spatial_auto": false,
+              "spatial_out": [
+                0,
+                -158.6233,
+                0
+              ],
+              "time": 4.2333,
+              "value": [
+                144.6247,
+                288.4059
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.8
+                ],
+                [
+                  0,
+                  0.8
+                ],
+                [
+                  0,
+                  0.8
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "spatial_auto": false,
+              "spatial_in": [
+                79.5436,
+                0,
+                0
+              ],
+              "time": 5.8333,
+              "value": [
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        "transform/scale": [
+          75,
+          75
+        ]
+      },
+      "switches": {
+        "collapse": true
+      },
+      "type": "precomp"
+    },
+    {
+      "contents": [
+        {
+          "kind": "ellipse"
+        },
+        {
+          "kind": "stroke"
+        },
+        {
+          "kind": "fill"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        }
+      ],
+      "name": "Cursor",
+      "parent": "WORLD",
+      "props": {
+        "contents/ellipse/size": [
+          66,
+          66
+        ],
+        "contents/fill/color": [
+          0.2471,
+          0.651,
+          0.9333
+        ],
+        "contents/fill/opacity": 55,
+        "contents/stroke/color": [
+          0.651,
+          0.9255,
+          1
+        ],
+        "contents/stroke/width": 4,
+        "transform/opacity": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 5.0667,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.7
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 5.4,
+              "value": 100
+            }
+          ]
+        },
+        "transform/position": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 5.1,
+              "value": [
+                962,
+                3074
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.85
+                ],
+                [
+                  0,
+                  0.85
+                ],
+                [
+                  0,
+                  0.85
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 5.6333,
+              "value": [
+                946,
+                3069
+              ]
+            }
+          ]
+        }
+      },
+      "switches": {
+        "motion_blur": true,
+        "video": false
+      },
+      "type": "shape"
+    },
+    {
+      "name": "Post",
+      "parent": "WORLD",
+      "props": {
+        "transform/position": [
+          872,
+          3073
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "text": {
+        "fill": [
+          0.8627,
+          0.9137,
+          0.9686,
+          1
+        ],
+        "font": "SFProDisplay-Medium",
+        "justify": "Center",
+        "size": 42,
+        "text": "Post"
+      },
+      "type": "text"
+    },
+    {
+      "name": "693K",
+      "parent": "WORLD",
+      "props": {
+        "transform/position": [
+          909.068,
+          2706
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "text": {
+        "font": "SFProDisplay-Bold",
+        "size": 77,
+        "text": "693K"
+      },
+      "type": "text"
+    },
+    {
+      "comp": "Eye",
+      "name": "Eye (Library)",
+      "parent": "WORLD",
+      "props": {
+        "transform/position": [
+          852.068,
+          2680
+        ],
+        "transform/scale": [
+          115,
+          115
+        ]
+      },
+      "switches": {
+        "collapse": true
+      },
+      "type": "precomp"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Trash Glyph"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Trash Button"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Post Button"
+        },
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "path"
+                },
+                {
+                  "kind": "path"
+                },
+                {
+                  "kind": "stroke"
+                }
+              ],
+              "kind": "group",
+              "name": "Arc"
+            },
+            {
+              "contents": [
+                {
+                  "kind": "ellipse"
+                },
+                {
+                  "kind": "fill"
+                }
+              ],
+              "kind": "group",
+              "name": "Pupil"
+            }
+          ],
+          "enabled": false,
+          "kind": "group",
+          "name": "Eye"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "stroke"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Card"
+        }
+      ],
+      "name": "Card",
+      "parent": "WORLD",
+      "props": {
+        "contents/group#2/contents/fill/color": [
+          0.7451,
+          0.0902,
+          0.1059
+        ],
+        "contents/group#2/contents/rect/position": [
+          1092.5,
+          3062.5
+        ],
+        "contents/group#2/contents/rect/roundness": 12,
+        "contents/group#2/contents/rect/size": [
+          113,
+          67
+        ],
+        "contents/group#3/contents/fill/color": [
+          0.0275,
+          0.4784,
+          0.902
+        ],
+        "contents/group#3/contents/rect/position": [
+          870.5,
+          3062.5
+        ],
+        "contents/group#3/contents/rect/roundness": 12,
+        "contents/group#3/contents/rect/size": [
+          205,
+          67
+        ],
+        "contents/group#4/contents/group#2/contents/ellipse/position": [
+          872,
+          2685
+        ],
+        "contents/group#4/contents/group#2/contents/ellipse/size": [
+          46,
+          46
+        ],
+        "contents/group#4/contents/group#2/contents/fill/color": [
+          1,
+          1,
+          1
+        ],
+        "contents/group#4/contents/group/contents/path#2/path": {
+          "closed": false,
+          "vertices": [
+            [
+              828,
+              2690
+            ],
+            [
+              910,
+              2690
+            ]
+          ]
+        },
+        "contents/group#4/contents/group/contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              22,
+              -58
+            ]
+          ],
+          "out_tangents": [
+            [
+              -22,
+              -58
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              828,
+              2690
+            ],
+            [
+              910,
+              2690
+            ]
+          ]
+        },
+        "contents/group#4/contents/group/contents/stroke/cap": "Round Cap",
+        "contents/group#4/contents/group/contents/stroke/width": 10,
+        "contents/group#5/contents/fill/color": [
+          0.1098,
+          0.1098,
+          0.1255
+        ],
+        "contents/group#5/contents/rect/position": [
+          958.5,
+          2673.5
+        ],
+        "contents/group#5/contents/rect/roundness": 14,
+        "contents/group#5/contents/rect/size": [
+          383,
+          675
+        ],
+        "contents/group#5/contents/stroke/color": [
+          0.4784,
+          0.4784,
+          0.4784
+        ],
+        "contents/group#5/contents/stroke/width": 2.5,
+        "contents/group/contents/fill/color": [
+          1,
+          1,
+          1
+        ],
+        "contents/group/contents/rect#2/position": [
+          1092.5,
+          3044
+        ],
+        "contents/group/contents/rect#2/roundness": 1,
+        "contents/group/contents/rect#2/size": [
+          10,
+          5
+        ],
+        "contents/group/contents/rect#3/position": [
+          1092.5,
+          3066
+        ],
+        "contents/group/contents/rect#3/roundness": 4,
+        "contents/group/contents/rect#3/size": [
+          22,
+          28
+        ],
+        "contents/group/contents/rect/position": [
+          1092.5,
+          3048
+        ],
+        "contents/group/contents/rect/roundness": 1,
+        "contents/group/contents/rect/size": [
+          30,
+          5
+        ],
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "kind": "path"
+        },
+        {
+          "kind": "stroke"
+        },
+        {
+          "kind": "trim"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        }
+      ],
+      "name": "Path C",
+      "parent": "WORLD",
+      "props": {
+        "contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -290
+            ]
+          ],
+          "out_tangents": [
+            [
+              0,
+              290
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              684,
+              1800
+            ],
+            [
+              958,
+              2336
+            ]
+          ]
+        },
+        "contents/stroke/dashes/dash": 42,
+        "contents/stroke/dashes/gap": 40.5,
+        "contents/stroke/dashes/offset": 41,
+        "contents/stroke/width": 20,
+        "contents/trim/end": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  4,
+                  0.542
+                ]
+              ],
+              "time": 3.8,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.873
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 5.5333,
+              "value": 100
+            }
+          ]
+        },
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "name": "Counter L",
+      "parent": "WORLD",
+      "props": {
+        "text/sourceText": {
+          "expr": "Math.round(thisComp.layer(\"CTRL\").effect(\"Progress\")(\"Slider\") * 100) + \"%\"",
+          "value": {
+            "font": "Chalkduster",
+            "justify": "Center",
+            "size": 94,
+            "text": "0%"
+          }
+        },
+        "transform/opacity": {
+          "expr": "15 + 85 * thisComp.layer(\"CTRL\").effect(\"Active\")(\"Slider\")",
+          "value": 100
+        },
+        "transform/position": [
+          651,
+          1557
+        ],
+        "transform/scale": [
+          68,
+          100,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "text"
+    },
+    {
+      "name": "Non-Followers",
+      "parent": "WORLD",
+      "props": {
+        "transform/opacity": {
+          "expr": "15 + 85 * thisComp.layer(\"CTRL\").effect(\"Active\")(\"Slider\")",
+          "value": 100
+        },
+        "transform/position": [
+          654,
+          1775
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "text": {
+        "font": "SFProDisplay-Medium",
+        "justify": "Center",
+        "size": 54,
+        "text": "Non-Followers"
+      },
+      "type": "text"
+    },
+    {
+      "contents": [
+        {
+          "kind": "ellipse"
+        },
+        {
+          "kind": "gstroke",
+          "raw": {
+            "children": [
+              {
+                "hold_only": true,
+                "match": "blend",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "composite",
+                "name": "Composite",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Below Previous in Same Group",
+                    "Above Previous in Same Group"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "type",
+                "name": "Type",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Linear",
+                    "Radial"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "start",
+                "name": "Start Point",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Point"
+                },
+                "value": {
+                  "t": "Vec2",
+                  "v": [
+                    0.0,
+                    -172.0
+                  ]
+                }
+              },
+              {
+                "match": "end",
+                "name": "End Point",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Point"
+                },
+                "value": {
+                  "t": "Vec2",
+                  "v": [
+                    0.0,
+                    172.0
+                  ]
+                }
+              },
+              {
+                "match": "highlightLength",
+                "name": "Highlight Length",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Percent"
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "highlightAngle",
+                "name": "Highlight Angle",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Angle"
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "colors",
+                "name": "Colors",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Gradient"
+                },
+                "value": {
+                  "t": "Gradient",
+                  "v": {
+                    "colors": [
+                      [
+                        0.0,
+                        [
+                          1.0,
+                          1.0,
+                          1.0,
+                          1.0
+                        ]
+                      ],
+                      [
+                        1.0,
+                        [
+                          0.8627451062202454,
+                          0.8627451062202454,
+                          0.8627451062202454,
+                          1.0
+                        ]
+                      ]
+                    ],
+                    "opacities": [
+                      [
+                        0.0,
+                        1.0
+                      ],
+                      [
+                        1.0,
+                        1.0
+                      ]
+                    ]
+                  }
+                }
+              },
+              {
+                "match": "opacity",
+                "name": "Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "width",
+                "name": "Stroke Width",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Pixels"
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 22.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "cap",
+                "name": "Line Cap",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Butt Cap",
+                    "Round Cap",
+                    "Projecting Cap"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "join",
+                "name": "Line Join",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Miter Join",
+                    "Round Join",
+                    "Bevel Join"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "miter",
+                "name": "Miter Limit",
+                "node": "Prop",
+                "value": {
+                  "t": "Scalar",
+                  "v": 4.0
+                }
+              },
+              {
+                "children": [
+                  {
+                    "match": "dash",
+                    "name": "Dash",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "gap",
+                    "name": "Gap",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "offset",
+                    "name": "Offset",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "dashes",
+                "name": "Dashes",
+                "node": "Group"
+              },
+              {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "units",
+                    "name": "Length Units",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Pixels",
+                        "Percent"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "startLength",
+                    "name": "Start Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "endLength",
+                    "name": "End Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "startWidth",
+                    "name": "Start Width",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "endWidth",
+                    "name": "End Width",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "startEase",
+                    "name": "Start Ease",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "endEase",
+                    "name": "End Ease",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "taper",
+                "name": "Taper",
+                "node": "Group"
+              },
+              {
+                "children": [
+                  {
+                    "match": "amount",
+                    "name": "Amount",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "units",
+                    "name": "Units",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Pixels",
+                        "Cycles"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "wavelength",
+                    "name": "Wavelength",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 20.0
+                    }
+                  },
+                  {
+                    "match": "cycles",
+                    "name": "Cycles",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 1000.0,
+                      "min": 0.0,
+                      "slider_max": 50.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 10.0
+                    }
+                  },
+                  {
+                    "match": "phase",
+                    "name": "Phase",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "wave",
+                "name": "Wave",
+                "node": "Group"
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "kind": "Indexed"
+            },
+            "match": "gstroke",
+            "name": "Gradient Stroke 1",
+            "node": "Group"
+          }
+        },
+        {
+          "kind": "trim"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        }
+      ],
+      "name": "Ring L Fill",
+      "parent": "WORLD",
+      "props": {
+        "contents/ellipse/size": [
+          344,
+          344
+        ],
+        "contents/trim/end": {
+          "expr": "thisComp.layer(\"CTRL\").effect(\"Progress\")(\"Slider\") * 100",
+          "value": 100
+        },
+        "transform/position": [
+          653,
+          1525
+        ],
+        "transform/scale": [
+          -100,
+          100,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "kind": "ellipse"
+        },
+        {
+          "kind": "stroke"
+        }
+      ],
+      "name": "Ring L Base",
+      "parent": "WORLD",
+      "props": {
+        "contents/ellipse/size": [
+          344,
+          344
+        ],
+        "contents/stroke/color": [
+          0.3922,
+          0.3922,
+          0.3922
+        ],
+        "contents/stroke/width": 22,
+        "transform/opacity": {
+          "expr": "11 + 89 * thisComp.layer(\"CTRL\").effect(\"Active\")(\"Slider\")",
+          "value": 100
+        },
+        "transform/position": [
+          653,
+          1525
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "kind": "path"
+        },
+        {
+          "kind": "stroke"
+        },
+        {
+          "kind": "trim"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        }
+      ],
+      "name": "Path A",
+      "parent": "WORLD",
+      "props": {
+        "contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -290
+            ]
+          ],
+          "out_tangents": [
+            [
+              0,
+              320
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              925,
+              866
+            ],
+            [
+              652,
+              1345
+            ]
+          ]
+        },
+        "contents/stroke/dashes/dash": 42,
+        "contents/stroke/dashes/gap": 40.5,
+        "contents/stroke/dashes/offset": 23,
+        "contents/stroke/width": 20,
+        "contents/trim/end": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  43.5,
+                  0.726
+                ]
+              ],
+              "time": 1.3333,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.755
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 2.6333,
+              "value": 100
+            }
+          ]
+        },
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "effects": [
+        {
+          "effect": "ec.control.slider",
+          "name": "Active"
+        },
+        {
+          "effect": "ec.control.slider",
+          "name": "Progress"
+        }
+      ],
+      "name": "CTRL",
+      "props": {
+        "effects/#1/slider": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.103
+                ]
+              ],
+              "time": 2.0333,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  14.6,
+                  0.224
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 2.3333,
+              "value": 1
+            }
+          ]
+        },
+        "effects/#2/slider": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.571
+                ]
+              ],
+              "time": 2.2333,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.808
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 3.9,
+              "value": 1
+            }
+          ]
+        }
+      },
+      "switches": {
+        "video": false
+      },
+      "type": "null"
+    },
+    {
+      "name": "Counter R",
+      "parent": "WORLD",
+      "props": {
+        "transform/position": [
+          1267,
+          1557
+        ],
+        "transform/scale": [
+          68,
+          100,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "text": {
+        "fill": [
+          0.0863,
+          0.0863,
+          0.0863,
+          1
+        ],
+        "font": "Chalkduster",
+        "justify": "Center",
+        "size": 94,
+        "text": "0%"
+      },
+      "type": "text"
+    },
+    {
+      "name": "Followers",
+      "parent": "WORLD",
+      "props": {
+        "transform/position": [
+          1267,
+          1775
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "text": {
+        "fill": [
+          0.1725,
+          0.1725,
+          0.1725,
+          1
+        ],
+        "font": "SFProDisplay-Medium",
+        "justify": "Center",
+        "size": 54,
+        "text": "Followers"
+      },
+      "type": "text"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Path A dim"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Path B dim"
+        },
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "path"
+                },
+                {
+                  "kind": "stroke"
+                }
+              ],
+              "kind": "group",
+              "name": "Path C dim"
+            },
+            {
+              "contents": [
+                {
+                  "kind": "path"
+                },
+                {
+                  "kind": "stroke"
+                }
+              ],
+              "kind": "group",
+              "name": "Path D dim"
+            }
+          ],
+          "kind": "group",
+          "name": "Lower paths"
+        },
+        {
+          "contents": [
+            {
+              "kind": "ellipse"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ring R track"
+        }
+      ],
+      "name": "Inactive (dim)",
+      "parent": "WORLD",
+      "props": {
+        "contents/group#2/contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -290
+            ]
+          ],
+          "out_tangents": [
+            [
+              0,
+              320
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              995,
+              866
+            ],
+            [
+              1268,
+              1345
+            ]
+          ]
+        },
+        "contents/group#2/contents/stroke/color": [
+          0.0902,
+          0.0902,
+          0.0902
+        ],
+        "contents/group#2/contents/stroke/dashes/dash": 42,
+        "contents/group#2/contents/stroke/dashes/gap": 40.5,
+        "contents/group#2/contents/stroke/dashes/offset": 23,
+        "contents/group#2/contents/stroke/width": 20,
+        "contents/group#3/contents/group#2/contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -290
+            ]
+          ],
+          "out_tangents": [
+            [
+              0,
+              290
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              1236,
+              1800
+            ],
+            [
+              962,
+              2336
+            ]
+          ]
+        },
+        "contents/group#3/contents/group#2/contents/stroke/color": [
+          0.0902,
+          0.0902,
+          0.0902
+        ],
+        "contents/group#3/contents/group#2/contents/stroke/dashes/dash": 42,
+        "contents/group#3/contents/group#2/contents/stroke/dashes/gap": 40.5,
+        "contents/group#3/contents/group#2/contents/stroke/dashes/offset": 41,
+        "contents/group#3/contents/group#2/contents/stroke/width": 20,
+        "contents/group#3/contents/group/contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -290
+            ]
+          ],
+          "out_tangents": [
+            [
+              0,
+              290
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              684,
+              1800
+            ],
+            [
+              958,
+              2336
+            ]
+          ]
+        },
+        "contents/group#3/contents/group/contents/stroke/color": [
+          0.0863,
+          0.0863,
+          0.0863
+        ],
+        "contents/group#3/contents/group/contents/stroke/dashes/dash": 42,
+        "contents/group#3/contents/group/contents/stroke/dashes/gap": 40.5,
+        "contents/group#3/contents/group/contents/stroke/dashes/offset": 41,
+        "contents/group#3/contents/group/contents/stroke/width": 20,
+        "contents/group#3/transform/opacity": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 3.4,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.2
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.2
+                ]
+              ],
+              "time": 3.5333,
+              "value": 75
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.8
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 4.0667,
+              "value": 100
+            }
+          ]
+        },
+        "contents/group#4/contents/ellipse/position": [
+          1267,
+          1525
+        ],
+        "contents/group#4/contents/ellipse/size": [
+          344,
+          344
+        ],
+        "contents/group#4/contents/stroke/color": [
+          0.0745,
+          0.0745,
+          0.0745
+        ],
+        "contents/group#4/contents/stroke/width": 22,
+        "contents/group/contents/path/path": {
+          "closed": false,
+          "in_tangents": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              -290
+            ]
+          ],
+          "out_tangents": [
+            [
+              0,
+              320
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "vertices": [
+            [
+              925,
+              866
+            ],
+            [
+              652,
+              1345
+            ]
+          ]
+        },
+        "contents/group/contents/stroke/color": [
+          0.0863,
+          0.0863,
+          0.0863
+        ],
+        "contents/group/contents/stroke/dashes/dash": 42,
+        "contents/group/contents/stroke/dashes/gap": 40.5,
+        "contents/group/contents/stroke/dashes/offset": 23,
+        "contents/group/contents/stroke/width": 20,
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "name": "Trial Reels",
+      "parent": "ICON",
+      "props": {
+        "transform/position": [
+          958,
+          460
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "text": {
+        "font": "SFProDisplay-Bold",
+        "justify": "Center",
+        "size": 107,
+        "text": "Trial Reels"
+      },
+      "type": "text"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Highlight"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        }
+      ],
+      "name": "Label BG",
+      "parent": "ICON",
+      "props": {
+        "contents/group/contents/fill/color": [
+          0.1647,
+          0.5569,
+          0.9922
+        ],
+        "contents/group/contents/rect/position": [
+          956.5,
+          419.5
+        ],
+        "contents/group/contents/rect/roundness": 4,
+        "contents/group/contents/rect/size": [
+          521,
+          101
+        ],
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "star"
+            },
+            {
+              "kind": "merge"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Icon"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        }
+      ],
+      "name": "Reels Icon",
+      "parent": "ICON",
+      "props": {
+        "contents/group/contents/fill/color": [
+          1,
+          1,
+          1
+        ],
+        "contents/group/contents/merge/mode": "Subtract",
+        "contents/group/contents/path#2/path": {
+          "closed": true,
+          "vertices": [
+            [
+              927.6,
+              498
+            ],
+            [
+              974.6,
+              498
+            ],
+            [
+              1060,
+              582
+            ],
+            [
+              1013,
+              582
+            ]
+          ]
+        },
+        "contents/group/contents/path/path": {
+          "closed": true,
+          "vertices": [
+            [
+              818.6,
+              498
+            ],
+            [
+              865.6,
+              498
+            ],
+            [
+              951,
+              582
+            ],
+            [
+              904,
+              582
+            ]
+          ]
+        },
+        "contents/group/contents/rect#2/position": [
+          959.5,
+          599
+        ],
+        "contents/group/contents/rect#2/size": [
+          400,
+          34
+        ],
+        "contents/group/contents/rect/position": [
+          959.5,
+          682
+        ],
+        "contents/group/contents/rect/roundness": 100,
+        "contents/group/contents/rect/size": [
+          369,
+          368
+        ],
+        "contents/group/contents/star/outerRadius": 80,
+        "contents/group/contents/star/outerRoundness": 18,
+        "contents/group/contents/star/points": 3,
+        "contents/group/contents/star/position": [
+          950,
+          716
+        ],
+        "contents/group/contents/star/rotation": 90,
+        "contents/group/contents/star/type": "Polygon",
+        "transform/opacity": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  27,
+                  0.225
+                ]
+              ],
+              "time": 0,
+              "value": 0
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.928
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 0.9333,
+              "value": 100
+            }
+          ]
+        },
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "name": "ICON",
+      "parent": "WORLD",
+      "props": {
+        "transform/anchor": [
+          959.5,
+          682
+        ],
+        "transform/position": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.776
+                ],
+                [
+                  0,
+                  0.776
+                ],
+                [
+                  0,
+                  0.776
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 0.8667,
+              "value": [
+                959.5,
+                682
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.306
+                ],
+                [
+                  0,
+                  0.306
+                ],
+                [
+                  0,
+                  0.306
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 1.7333,
+              "value": [
+                959.5,
+                662.3
+              ]
+            }
+          ]
+        },
+        "transform/scale": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.623
+                ],
+                [
+                  0,
+                  0.623
+                ],
+                [
+                  0,
+                  0.623
+                ]
+              ],
+              "time": 1,
+              "value": [
+                100,
+                100,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.532
+                ],
+                [
+                  0,
+                  0.532
+                ],
+                [
+                  0,
+                  0.532
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 2.2,
+              "value": [
+                92.54,
+                92.54,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "switches": {
+        "motion_blur": true,
+        "video": false
+      },
+      "type": "null"
+    },
+    {
+      "name": "WORLD",
+      "props": {
+        "transform/anchor": [
+          0,
+          0
+        ],
+        "transform/position": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  1126.9,
+                  0.116
+                ],
+                [
+                  1126.9,
+                  0.116
+                ],
+                [
+                  1126.9,
+                  0.116
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 0,
+              "value": [
+                0,
+                124.38
+              ]
+            },
+            {
+              "in": [
+                [
+                  178.9,
+                  0.371
+                ],
+                [
+                  178.9,
+                  0.371
+                ],
+                [
+                  178.9,
+                  0.371
+                ]
+              ],
+              "out": [
+                [
+                  178.9,
+                  0.515
+                ],
+                [
+                  178.9,
+                  0.515
+                ],
+                [
+                  178.9,
+                  0.515
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 1.1,
+              "value": [
+                0,
+                -30.87
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.747
+                ],
+                [
+                  0,
+                  0.747
+                ],
+                [
+                  0,
+                  0.747
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 2.6,
+              "value": [
+                0,
+                -972
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.78
+                ],
+                [
+                  0,
+                  0.78
+                ],
+                [
+                  0,
+                  0.78
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 3.4333,
+              "value": [
+                0,
+                -972
+              ]
+            },
+            {
+              "in": [
+                [
+                  1286.6,
+                  0.066
+                ],
+                [
+                  1286.6,
+                  0.066
+                ],
+                [
+                  1286.6,
+                  0.066
+                ]
+              ],
+              "out": [
+                [
+                  1286.6,
+                  0.256
+                ],
+                [
+                  1286.6,
+                  0.256
+                ],
+                [
+                  1286.6,
+                  0.256
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 4.4,
+              "value": [
+                0,
+                -1577.77
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.45
+                ],
+                [
+                  0,
+                  0.45
+                ],
+                [
+                  0,
+                  0.45
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 6.2333,
+              "value": [
+                0,
+                -2135
+              ]
+            }
+          ]
+        }
+      },
+      "switches": {
+        "video": false
+      },
+      "type": "null"
+    },
+    {
+      "blendMode": "Add",
+      "color": [
+        0,
+        0,
+        0
+      ],
+      "effects": [
+        {
+          "effect": "ec.generate.gradientramp"
+        }
+      ],
+      "name": "Haze",
+      "props": {
+        "effects/#1/end": [
+          1960,
+          540
+        ],
+        "effects/#1/endColor": [
+          0,
+          0,
+          0
+        ],
+        "effects/#1/scatter": 50,
+        "effects/#1/shape": "Radial Ramp",
+        "effects/#1/start": [
+          960,
+          540
+        ],
+        "effects/#1/startColor": [
+          0.0196,
+          0.0196,
+          0.0196
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ],
+      "type": "solid"
+    },
+    {
+      "color": [
+        0.0196,
+        0.0196,
+        0.0196
+      ],
+      "name": "BG",
+      "size": [
+        1920,
+        1080
+      ],
+      "type": "solid"
+    }
+  ],
+  "precomps": [
+    {
+      "comp": {
+        "duration": 7.3,
+        "enable_frame_blending": true,
+        "enable_motion_blur": true,
+        "frameRate": 30,
+        "height": 112,
+        "name": "Cursor",
+        "width": 112
+      },
+      "layers": [
+        {
+          "drop": [
+            "transform",
+            "materialOptions"
+          ],
+          "extra": [
+            {
+              "at": 2,
+              "raw": {
+                "children": [
+                  {
+                    "match": "anchor",
+                    "name": "Anchor Point",
+                    "node": "Prop",
+                    "shown_dims": 2,
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        56.0,
+                        56.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "position",
+                    "name": "Position",
+                    "node": "Prop",
+                    "shown_dims": 2,
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        56.0,
+                        56.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "scale",
+                    "name": "Scale",
+                    "node": "Prop",
+                    "shown_dims": 2,
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        100.0,
+                        100.0,
+                        100.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "orientation",
+                    "name": "Orientation",
+                    "node": "Prop",
+                    "three_d_only": true,
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "rotationX",
+                    "name": "X Rotation",
+                    "node": "Prop",
+                    "three_d_only": true,
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotationY",
+                    "name": "Y Rotation",
+                    "node": "Prop",
+                    "three_d_only": true,
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotation",
+                    "name": "Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Envir Appear in Reflect",
+                    "name": "Appears in Reflections",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "transform",
+                "name": "Transform",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 3,
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "castsShadows",
+                    "name": "Casts Shadows",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Off",
+                        "On",
+                        "Only"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "lightTransmission",
+                    "name": "Light Transmission",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "acceptsShadows",
+                    "name": "Accepts Shadows",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Off",
+                        "On",
+                        "Only"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 1
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "acceptsLights",
+                    "name": "Accepts Lights",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Checkbox"
+                    },
+                    "value": {
+                      "t": "Bool",
+                      "v": true
+                    }
+                  },
+                  {
+                    "match": "ambient",
+                    "name": "Ambient",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "diffuse",
+                    "name": "Diffuse",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 50.0
+                    }
+                  },
+                  {
+                    "match": "specularIntensity",
+                    "name": "Specular Intensity",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 50.0
+                    }
+                  },
+                  {
+                    "match": "specularShininess",
+                    "name": "Specular Shininess",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 5.0
+                    }
+                  },
+                  {
+                    "match": "metal",
+                    "name": "Metal",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Shadow Color",
+                    "name": "Shadow Color",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Color",
+                      "v": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "ADBE Appears in Reflections",
+                    "name": "Appears in Reflections",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Reflection Coefficient",
+                    "name": "Reflection Intensity",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Glossiness Coefficient",
+                    "name": "Reflection Sharpness",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Fresnel Coefficient",
+                    "name": "Reflection Rolloff",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Transparency Coefficient",
+                    "name": "Transparency",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Transp Rolloff",
+                    "name": "Transparency Rolloff",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Index of Refraction",
+                    "name": "Index of Refraction",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "materialOptions",
+                "name": "Material Options",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 4,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE MTrackers",
+                "name": "Motion Trackers",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 5,
+              "raw": {
+                "children": [
+                  {
+                    "match": "ADBE Plane Curvature",
+                    "name": "Curvature",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Plane Subdivision",
+                    "name": "Segments",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 4.0
+                    }
+                  },
+                  {
+                    "match": "bevelStyle",
+                    "name": "Bevel Style",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Bevel Direction",
+                    "name": "Bevel Direction",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "bevelDepth",
+                    "name": "Bevel Depth",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 2.0
+                    }
+                  },
+                  {
+                    "match": "holeBevelDepth",
+                    "name": "Hole Bevel Depth",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "extrusionDepth",
+                    "name": "Extrusion Depth",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "geometryOptions",
+                "name": "Geometry Options",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 6,
+              "raw": {
+                "children": [
+                  {
+                    "match": "levels",
+                    "name": "Audio Levels",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "audio",
+                "name": "Audio",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 7,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE Data Group",
+                "name": "Data",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 8,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE Layer Sets",
+                "name": "Sets",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 9,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE Source Options Group",
+                "name": "Replace Source",
+                "node": "Group"
+              }
+            }
+          ],
+          "file": "/Users/elias/Library/Caches/EffectCraft/Motion Library/blobs/6c5462a9ed474646ab401a705318dd6b5abc5477a1077a21df68458811f91fce/Cursor_Cyan.pdf",
+          "footage": {
+            "has_video": true,
+            "height": 112,
+            "width": 112
+          },
+          "name": "Cursor - Figma vector PDF",
+          "switches": {
+            "collapse": true
+          },
+          "type": "footage"
+        },
+        {
+          "comment": "AEP implicit default camera; AE comp 30, camera 31",
+          "drop": [
+            "transform",
+            "cameraOptions"
+          ],
+          "extra": [
+            {
+              "at": 0,
+              "raw": {
+                "children": [
+                  {
+                    "match": "poi",
+                    "name": "Point of Interest",
+                    "node": "Prop",
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point3"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        56.0,
+                        56.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "position",
+                    "name": "Position",
+                    "node": "Prop",
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point3"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        56.0,
+                        56.0,
+                        -155.55555556
+                      ]
+                    }
+                  },
+                  {
+                    "match": "orientation",
+                    "name": "Orientation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "rotationX",
+                    "name": "X Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotationY",
+                    "name": "Y Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotation",
+                    "name": "Z Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "scale",
+                    "name": "Scale",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        100.0,
+                        100.0,
+                        100.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Envir Appear in Reflect",
+                    "name": "Appears in Reflections",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "transform",
+                "name": "Transform",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 1,
+              "raw": {
+                "children": [
+                  {
+                    "match": "zoom",
+                    "name": "Zoom",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 155.55555556
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "dof",
+                    "name": "Depth of Field",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Checkbox"
+                    },
+                    "value": {
+                      "t": "Bool",
+                      "v": false
+                    }
+                  },
+                  {
+                    "match": "focusDistance",
+                    "name": "Focus Distance",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 155.55555556
+                    }
+                  },
+                  {
+                    "match": "aperture",
+                    "name": "Aperture",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 25.3093363329584
+                    }
+                  },
+                  {
+                    "match": "blurLevel",
+                    "name": "Blur Level",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "irisShape",
+                    "name": "Iris Shape",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Fast Rectangle",
+                        "Triangle",
+                        "Square",
+                        "Pentagon",
+                        "Hexagon",
+                        "Heptagon",
+                        "Octagon",
+                        "Nonagon",
+                        "Decagon"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "irisRotation",
+                    "name": "Iris Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "irisRoundness",
+                    "name": "Iris Roundness",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "irisAspectRatio",
+                    "name": "Iris Aspect Ratio",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 2,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.01,
+                      "slider_max": 4.0,
+                      "slider_min": 0.01
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "irisDiffractionFringe",
+                    "name": "Iris Diffraction Fringe",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 1000.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightGain",
+                    "name": "Highlight Gain",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightThreshold",
+                    "name": "Highlight Threshold",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 255.0,
+                      "min": 0.0,
+                      "slider_max": 255.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 255.0
+                    }
+                  },
+                  {
+                    "match": "highlightSaturation",
+                    "name": "Highlight Saturation",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Camera Focus Area Width",
+                    "name": "Focus Area Width",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Camera Split Blur Level",
+                    "name": "Near, Far Blur Level",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        100.0,
+                        100.0
+                      ]
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "cameraOptions",
+                "name": "Camera Options",
+                "node": "Group"
+              }
+            }
+          ],
+          "name": "AE Default Camera",
+          "switches": {
+            "three_d": true
+          },
+          "type": "camera"
+        }
+      ]
+    },
+    {
+      "comp": {
+        "duration": 7.3,
+        "enable_frame_blending": true,
+        "enable_motion_blur": true,
+        "frameRate": 30,
+        "height": 56,
+        "name": "Eye",
+        "width": 80
+      },
+      "layers": [
+        {
+          "drop": [
+            "transform",
+            "materialOptions"
+          ],
+          "extra": [
+            {
+              "at": 2,
+              "raw": {
+                "children": [
+                  {
+                    "match": "anchor",
+                    "name": "Anchor Point",
+                    "node": "Prop",
+                    "shown_dims": 2,
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        40.0,
+                        28.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "position",
+                    "name": "Position",
+                    "node": "Prop",
+                    "shown_dims": 2,
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        40.0,
+                        28.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "scale",
+                    "name": "Scale",
+                    "node": "Prop",
+                    "shown_dims": 2,
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        100.0,
+                        100.0,
+                        100.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "orientation",
+                    "name": "Orientation",
+                    "node": "Prop",
+                    "three_d_only": true,
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "rotationX",
+                    "name": "X Rotation",
+                    "node": "Prop",
+                    "three_d_only": true,
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotationY",
+                    "name": "Y Rotation",
+                    "node": "Prop",
+                    "three_d_only": true,
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotation",
+                    "name": "Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Envir Appear in Reflect",
+                    "name": "Appears in Reflections",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "transform",
+                "name": "Transform",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 3,
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "castsShadows",
+                    "name": "Casts Shadows",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Off",
+                        "On",
+                        "Only"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "lightTransmission",
+                    "name": "Light Transmission",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "acceptsShadows",
+                    "name": "Accepts Shadows",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Off",
+                        "On",
+                        "Only"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 1
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "acceptsLights",
+                    "name": "Accepts Lights",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Checkbox"
+                    },
+                    "value": {
+                      "t": "Bool",
+                      "v": true
+                    }
+                  },
+                  {
+                    "match": "ambient",
+                    "name": "Ambient",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "diffuse",
+                    "name": "Diffuse",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 50.0
+                    }
+                  },
+                  {
+                    "match": "specularIntensity",
+                    "name": "Specular Intensity",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 50.0
+                    }
+                  },
+                  {
+                    "match": "specularShininess",
+                    "name": "Specular Shininess",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 5.0
+                    }
+                  },
+                  {
+                    "match": "metal",
+                    "name": "Metal",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Shadow Color",
+                    "name": "Shadow Color",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Color",
+                      "v": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "ADBE Appears in Reflections",
+                    "name": "Appears in Reflections",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Reflection Coefficient",
+                    "name": "Reflection Intensity",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Glossiness Coefficient",
+                    "name": "Reflection Sharpness",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Fresnel Coefficient",
+                    "name": "Reflection Rolloff",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Transparency Coefficient",
+                    "name": "Transparency",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Transp Rolloff",
+                    "name": "Transparency Rolloff",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Index of Refraction",
+                    "name": "Index of Refraction",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "materialOptions",
+                "name": "Material Options",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 4,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE MTrackers",
+                "name": "Motion Trackers",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 5,
+              "raw": {
+                "children": [
+                  {
+                    "match": "ADBE Plane Curvature",
+                    "name": "Curvature",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Plane Subdivision",
+                    "name": "Segments",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 4.0
+                    }
+                  },
+                  {
+                    "match": "bevelStyle",
+                    "name": "Bevel Style",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Bevel Direction",
+                    "name": "Bevel Direction",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "bevelDepth",
+                    "name": "Bevel Depth",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 2.0
+                    }
+                  },
+                  {
+                    "match": "holeBevelDepth",
+                    "name": "Hole Bevel Depth",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "extrusionDepth",
+                    "name": "Extrusion Depth",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "geometryOptions",
+                "name": "Geometry Options",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 6,
+              "raw": {
+                "children": [
+                  {
+                    "match": "levels",
+                    "name": "Audio Levels",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "audio",
+                "name": "Audio",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 7,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE Data Group",
+                "name": "Data",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 8,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE Layer Sets",
+                "name": "Sets",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 9,
+              "raw": {
+                "children": [],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "ADBE Source Options Group",
+                "name": "Replace Source",
+                "node": "Group"
+              }
+            }
+          ],
+          "file": "/Users/elias/Library/Caches/EffectCraft/Motion Library/blobs/725b5e05b5aae042ca69a85d4e3e2594ddcbaa714118baa397789c1314043858/Eye_White.pdf",
+          "footage": {
+            "has_video": true,
+            "height": 56,
+            "width": 80
+          },
+          "name": "Eye - Figma vector PDF",
+          "switches": {
+            "collapse": true
+          },
+          "type": "footage"
+        },
+        {
+          "comment": "AEP implicit default camera; AE comp 2, camera 3",
+          "drop": [
+            "transform",
+            "cameraOptions"
+          ],
+          "extra": [
+            {
+              "at": 0,
+              "raw": {
+                "children": [
+                  {
+                    "match": "poi",
+                    "name": "Point of Interest",
+                    "node": "Prop",
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point3"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        40.0,
+                        28.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "position",
+                    "name": "Position",
+                    "node": "Prop",
+                    "spatial": true,
+                    "ui": {
+                      "kind": "Point3"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        40.0,
+                        28.0,
+                        -111.11111111
+                      ]
+                    }
+                  },
+                  {
+                    "match": "orientation",
+                    "name": "Orientation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "rotationX",
+                    "name": "X Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotationY",
+                    "name": "Y Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "rotation",
+                    "name": "Z Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "scale",
+                    "name": "Scale",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Vec3",
+                      "v": [
+                        100.0,
+                        100.0,
+                        100.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Envir Appear in Reflect",
+                    "name": "Appears in Reflections",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "transform",
+                "name": "Transform",
+                "node": "Group"
+              }
+            },
+            {
+              "at": 1,
+              "raw": {
+                "children": [
+                  {
+                    "match": "zoom",
+                    "name": "Zoom",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 111.11111111
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "dof",
+                    "name": "Depth of Field",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Checkbox"
+                    },
+                    "value": {
+                      "t": "Bool",
+                      "v": false
+                    }
+                  },
+                  {
+                    "match": "focusDistance",
+                    "name": "Focus Distance",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 111.11111111
+                    }
+                  },
+                  {
+                    "match": "aperture",
+                    "name": "Aperture",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Pixels"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 25.3093363329584
+                    }
+                  },
+                  {
+                    "match": "blurLevel",
+                    "name": "Blur Level",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "irisShape",
+                    "name": "Iris Shape",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Fast Rectangle",
+                        "Triangle",
+                        "Square",
+                        "Pentagon",
+                        "Hexagon",
+                        "Heptagon",
+                        "Octagon",
+                        "Nonagon",
+                        "Decagon"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "irisRotation",
+                    "name": "Iris Rotation",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "irisRoundness",
+                    "name": "Iris Roundness",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "irisAspectRatio",
+                    "name": "Iris Aspect Ratio",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 2,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.01,
+                      "slider_max": 4.0,
+                      "slider_min": 0.01
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 1.0
+                    }
+                  },
+                  {
+                    "match": "irisDiffractionFringe",
+                    "name": "Iris Diffraction Fringe",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 1000.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightGain",
+                    "name": "Highlight Gain",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightThreshold",
+                    "name": "Highlight Threshold",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 255.0,
+                      "min": 0.0,
+                      "slider_max": 255.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 255.0
+                    }
+                  },
+                  {
+                    "match": "highlightSaturation",
+                    "name": "Highlight Saturation",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 1,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Camera Focus Area Width",
+                    "name": "Focus Area Width",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "ADBE Camera Split Blur Level",
+                    "name": "Near, Far Blur Level",
+                    "node": "Prop",
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        100.0,
+                        100.0
+                      ]
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Plain"
+                },
+                "match": "cameraOptions",
+                "name": "Camera Options",
+                "node": "Group"
+              }
+            }
+          ],
+          "name": "AE Default Camera",
+          "switches": {
+            "three_d": true
+          },
+          "type": "camera"
+        }
+      ]
+    }
+  ],
+  "version": 1
+}
