@@ -69,8 +69,22 @@ AI. **Build from this kit; don't design from scratch.**
   the shape group's Position, and `property("Scale").setValue([x, y])` set z to 0. Use
   `app.run("prop.set", …)` with full `[x, y, 100]` values to avoid both.
 
-## Reusing finished comps
-Don't screenshot a library comp and guess. Read how it's made: `effectcraft-cli props <comp>
-<layer> --project F` (and `comp.motion` for timing). When EffectCraft has `comp.recipe` (being
-added), use it to get a compact recipe of everything authored. Then rebuild from the kit, or
-extract what's new into a primitive.
+## Reusing finished comps (recipes)
+Never screenshot a library comp and guess. Read how it's made with a **recipe**: compact JSON of
+only what was authored (structure, changed property values by path, keyframes with easing,
+styles, effects, masks, text, precomps).
+
+```sh
+effectcraft-cli exec comp.recipe --params '{"comp":"Main","path":"/abs/x.recipe.json"}' F.ecproj --json
+effectcraft-cli run file.newProject '{}' comp.fromRecipe '{"path":"/abs/x.recipe.json"}' file.save '{"path":"/abs/rebuilt.ecproj"}'
+```
+
+- `comp.recipe {comp?, layers?, path?}` reads a comp (`layers` picks some); its `unsupported` list
+  names anything it couldn't capture. Check it.
+- `comp.fromRecipe {recipe | path, name?}` builds a comp from a recipe in one undo step. Recipes
+  can be edited or written by hand (hex colours are fine).
+- For a Motion Library card: `library.apply` it (or open its project), then `comp.recipe` the comp.
+- To turn a recipe into kit material: copy its values into `style.jsx` knobs and its structure into
+  a primitive, then prove the primitive by rebuilding the original (`./build.sh`, compare).
+- Needs EffectCraft with `comp.recipe` (fork branch `claude/rl-env-use-video-editing-a259xn`,
+  commit fbae31f, until it is merged).
