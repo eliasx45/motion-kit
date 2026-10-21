@@ -1,0 +1,1782 @@
+{
+  "comp": {
+    "background": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "duration": 5.1,
+    "frameRate": 30,
+    "height": 1080,
+    "name": "DJ2 Trial Toggle",
+    "width": 1920
+  },
+  "format": "effectcraft-recipe",
+  "layers": [
+    {
+      "name": "CAM CTRL",
+      "props": {
+        "transform/anchor": [
+          0,
+          0
+        ],
+        "transform/position": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  1500,
+                  0.2
+                ],
+                [
+                  1500,
+                  0.2
+                ],
+                [
+                  1500,
+                  0.2
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 0,
+              "value": [
+                960,
+                -650
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.8
+                ],
+                [
+                  0,
+                  0.8
+                ],
+                [
+                  0,
+                  0.8
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.99
+                ],
+                [
+                  0,
+                  0.99
+                ],
+                [
+                  0,
+                  0.99
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 1.2667,
+              "value": [
+                960,
+                613.5
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.01
+                ],
+                [
+                  0,
+                  0.01
+                ],
+                [
+                  0,
+                  0.01
+                ]
+              ],
+              "out": [
+                [
+                  69.57,
+                  0.583
+                ],
+                [
+                  69.57,
+                  0.583
+                ],
+                [
+                  69.57,
+                  0.583
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 1.6333,
+              "value": [
+                960,
+                613.5
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.99
+                ],
+                [
+                  0,
+                  0.99
+                ],
+                [
+                  0,
+                  0.99
+                ]
+              ],
+              "out": [
+                [
+                  21.18,
+                  0.568
+                ],
+                [
+                  21.18,
+                  0.568
+                ],
+                [
+                  21.18,
+                  0.568
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 2.4333,
+              "value": [
+                960,
+                798.13
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.909
+                ],
+                [
+                  0,
+                  0.909
+                ],
+                [
+                  0,
+                  0.909
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.288
+                ],
+                [
+                  0,
+                  0.288
+                ],
+                [
+                  0,
+                  0.288
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 3.2,
+              "value": [
+                960,
+                993.48
+              ]
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.624
+                ],
+                [
+                  0,
+                  0.624
+                ],
+                [
+                  0,
+                  0.624
+                ]
+              ],
+              "out": [
+                [
+                  240.19,
+                  0.305
+                ],
+                [
+                  240.19,
+                  0.305
+                ],
+                [
+                  240.19,
+                  0.305
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 3.7333,
+              "value": [
+                960,
+                1001.03
+              ]
+            },
+            {
+              "in": [
+                [
+                  2619.97,
+                  0.299
+                ],
+                [
+                  2619.97,
+                  0.299
+                ],
+                [
+                  2619.97,
+                  0.299
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "spatial_auto": false,
+              "time": 5.0667,
+              "value": [
+                960,
+                2960
+              ]
+            }
+          ]
+        },
+        "transform/scale": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 0,
+              "value": [
+                100,
+                100,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -1.08,
+                  0.99
+                ],
+                [
+                  -1.08,
+                  0.99
+                ],
+                [
+                  -1.08,
+                  0.99
+                ]
+              ],
+              "out": [
+                [
+                  -3.54,
+                  0.698
+                ],
+                [
+                  -3.54,
+                  0.698
+                ],
+                [
+                  -3.54,
+                  0.698
+                ]
+              ],
+              "time": 1.6667,
+              "value": [
+                99.35,
+                99.35,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -31.49,
+                  0.207
+                ],
+                [
+                  -31.49,
+                  0.207
+                ],
+                [
+                  -31.49,
+                  0.207
+                ]
+              ],
+              "out": [
+                [
+                  -1.01,
+                  0.165
+                ],
+                [
+                  -1.01,
+                  0.165
+                ],
+                [
+                  -1.01,
+                  0.165
+                ]
+              ],
+              "time": 2,
+              "value": [
+                93.89,
+                93.89,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -10.12,
+                  0.38
+                ],
+                [
+                  -10.12,
+                  0.38
+                ],
+                [
+                  -10.12,
+                  0.38
+                ]
+              ],
+              "out": [
+                [
+                  -0.52,
+                  0.297
+                ],
+                [
+                  -0.52,
+                  0.297
+                ],
+                [
+                  -0.52,
+                  0.297
+                ]
+              ],
+              "time": 2.5667,
+              "value": [
+                93.51,
+                93.51,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -7.66,
+                  0.807
+                ],
+                [
+                  -7.66,
+                  0.807
+                ],
+                [
+                  -7.66,
+                  0.807
+                ]
+              ],
+              "out": [
+                [
+                  -14.41,
+                  0.371
+                ],
+                [
+                  -14.41,
+                  0.371
+                ],
+                [
+                  -14.41,
+                  0.371
+                ]
+              ],
+              "time": 2.9,
+              "value": [
+                78.65,
+                78.65,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -18.7,
+                  0.46
+                ],
+                [
+                  -18.7,
+                  0.46
+                ],
+                [
+                  -18.7,
+                  0.46
+                ]
+              ],
+              "out": [
+                [
+                  -34.47,
+                  0.251
+                ],
+                [
+                  -34.47,
+                  0.251
+                ],
+                [
+                  -34.47,
+                  0.251
+                ]
+              ],
+              "time": 3.3,
+              "value": [
+                74.61,
+                74.61,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -8.73,
+                  0.99
+                ],
+                [
+                  -8.73,
+                  0.99
+                ],
+                [
+                  -8.73,
+                  0.99
+                ]
+              ],
+              "out": [
+                [
+                  -11.46,
+                  0.379
+                ],
+                [
+                  -11.46,
+                  0.379
+                ],
+                [
+                  -11.46,
+                  0.379
+                ]
+              ],
+              "time": 3.6667,
+              "value": [
+                54.44,
+                54.44,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -1.22,
+                  0.99
+                ],
+                [
+                  -1.22,
+                  0.99
+                ],
+                [
+                  -1.22,
+                  0.99
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ],
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 4.4667,
+              "value": [
+                43.37,
+                43.37,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "switches": {
+        "video": false
+      },
+      "type": "null"
+    },
+    {
+      "comp": "DJ2 Trial Toggle - UI",
+      "name": "UI",
+      "parent": "CAM CTRL",
+      "props": {
+        "transform/opacity": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 2.4333,
+              "value": 100
+            },
+            {
+              "in": [
+                [
+                  -20,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  -20,
+                  0.33
+                ]
+              ],
+              "time": 2.6667,
+              "value": 96.5
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 2.7,
+              "value": 88
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.6
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 2.9,
+              "value": 84.5
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.5
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 3.8,
+              "value": 82.5
+            }
+          ]
+        },
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "precomp"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray -3"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray -2"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray -1"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray 0"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray 1"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray 2"
+        },
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Ray 3"
+        }
+      ],
+      "effects": [
+        {
+          "effect": "ec.control.slider",
+          "name": "S2"
+        },
+        {
+          "effect": "ec.control.slider",
+          "name": "S3"
+        },
+        {
+          "effect": "ec.control.slider",
+          "name": "Asym"
+        }
+      ],
+      "masks": [
+        {
+          "inverted": true
+        }
+      ],
+      "name": "Rays",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group#2/contents/path/path": {
+          "expr": "var k=-2, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group#2/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group#2/contents/stroke/width": 2.5,
+        "contents/group#3/contents/path/path": {
+          "expr": "var k=-1, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group#3/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group#3/contents/stroke/width": 2.5,
+        "contents/group#4/contents/path/path": {
+          "expr": "var k=0, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group#4/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group#4/contents/stroke/width": 2.5,
+        "contents/group#5/contents/path/path": {
+          "expr": "var k=1, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group#5/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group#5/contents/stroke/width": 2.5,
+        "contents/group#6/contents/path/path": {
+          "expr": "var k=2, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group#6/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group#6/contents/stroke/width": 2.5,
+        "contents/group#7/contents/path/path": {
+          "expr": "var k=3, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group#7/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group#7/contents/stroke/width": 2.5,
+        "contents/group/contents/path/path": {
+          "expr": "var k=-3, L=1600, S2=effect(\"S2\")(\"Slider\"), S3=effect(\"S3\")(\"Slider\"), a=effect(\"Asym\")(\"Slider\");\nvar w=k/3*(1+a*(k<0?-1:(k>0?1:0)));\ncreatePath([[0,0],[w*S3,L]],[[0,0],[w*(S2-S3),-L/3]],[[0,L/3],[0,0]],false)",
+          "value": {
+            "closed": false,
+            "vertices": []
+          }
+        },
+        "contents/group/contents/stroke/color": [
+          0.93,
+          0.93,
+          0.95
+        ],
+        "contents/group/contents/stroke/width": 2.5,
+        "effects/#1/slider": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.367
+                ]
+              ],
+              "time": 0.5,
+              "value": 2201.1
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.085
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 1,
+              "value": 1927.2
+            }
+          ]
+        },
+        "effects/#2/slider": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.273
+                ]
+              ],
+              "time": 0.5,
+              "value": -617.5
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.307
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 1,
+              "value": 1122.4
+            }
+          ]
+        },
+        "effects/#3/slider": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 0.5,
+              "value": -0.1
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.33
+                ]
+              ],
+              "time": 0.7,
+              "value": -0.05
+            }
+          ]
+        },
+        "masks/mask/path": {
+          "closed": true,
+          "vertices": [
+            [
+              -860.709,
+              1461.0037
+            ],
+            [
+              743.3459,
+              1461.0037
+            ],
+            [
+              743.3459,
+              1613.1498
+            ],
+            [
+              -860.709,
+              1613.1498
+            ]
+          ]
+        },
+        "transform/position": [
+          0,
+          -10.5
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "stroke"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Card"
+        },
+        {
+          "kind": "repeater",
+          "name": "Columns"
+        },
+        {
+          "kind": "repeater",
+          "name": "Rows"
+        }
+      ],
+      "name": "Reel Grid",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group/contents/fill/color": [
+          0.1,
+          0.1,
+          0.13
+        ],
+        "contents/group/contents/rect/roundness": 12,
+        "contents/group/contents/rect/size": [
+          293,
+          474
+        ],
+        "contents/group/contents/stroke/color": [
+          0.82,
+          0.82,
+          0.84
+        ],
+        "contents/group/contents/stroke/opacity": 35,
+        "contents/group/contents/stroke/width": 2.5,
+        "contents/group/transform/position": [
+          0,
+          -449.6
+        ],
+        "contents/repeater#2/copies": {
+          "keys": [
+            {
+              "in": "hold",
+              "out": "hold",
+              "time": 0,
+              "value": 0
+            },
+            {
+              "in": "hold",
+              "out": "hold",
+              "time": 1.9333,
+              "value": 1
+            },
+            {
+              "in": "hold",
+              "out": "hold",
+              "time": 2.7333,
+              "value": 2
+            },
+            {
+              "in": "hold",
+              "out": "hold",
+              "time": 3.3667,
+              "value": 3
+            },
+            {
+              "in": "hold",
+              "out": "hold",
+              "time": 3.8333,
+              "value": 24
+            }
+          ]
+        },
+        "contents/repeater#2/transform/position": [
+          0,
+          -498
+        ],
+        "contents/repeater/copies": 7,
+        "contents/repeater/offset": -3,
+        "contents/repeater/transform/position": [
+          313,
+          0
+        ],
+        "transform/position": [
+          0,
+          0
+        ]
+      },
+      "switches": {
+        "motion_blur": true
+      },
+      "type": "shape"
+    },
+    {
+      "color": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "effects": [
+        {
+          "effect": "ec.generate.gradientramp"
+        }
+      ],
+      "name": "BG",
+      "props": {
+        "effects/#1/end": [
+          1960,
+          560
+        ],
+        "effects/#1/endColor": [
+          0.018,
+          0.018,
+          0.018
+        ],
+        "effects/#1/scatter": 50,
+        "effects/#1/shape": "Radial Ramp",
+        "effects/#1/start": [
+          960,
+          560
+        ],
+        "effects/#1/startColor": [
+          0.04,
+          0.04,
+          0.04
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ],
+      "type": "solid"
+    }
+  ],
+  "precomps": [
+    {
+      "comp": {
+        "duration": 5.1,
+        "frameRate": 30,
+        "height": 1080,
+        "name": "DJ2 Trial Toggle - UI",
+        "width": 1920
+      },
+      "layers": [
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "rect"
+                },
+                {
+                  "kind": "stroke"
+                }
+              ],
+              "kind": "group",
+              "name": "Dashed Square"
+            },
+            {
+              "contents": [
+                {
+                  "kind": "star"
+                },
+                {
+                  "kind": "stroke"
+                }
+              ],
+              "kind": "group",
+              "name": "Play"
+            }
+          ],
+          "name": "Trial Icon",
+          "props": {
+            "contents/group#2/contents/star/outerRadius": 15,
+            "contents/group#2/contents/star/outerRoundness": 12,
+            "contents/group#2/contents/star/points": 3,
+            "contents/group#2/contents/star/rotation": 90,
+            "contents/group#2/contents/star/type": "Polygon",
+            "contents/group#2/contents/stroke/width": 4.5,
+            "contents/group#2/transform/position": [
+              -0.4941,
+              0
+            ],
+            "contents/group/contents/rect/roundness": 18,
+            "contents/group/contents/rect/size": [
+              68,
+              68
+            ],
+            "contents/group/contents/stroke/dashes/dash": 19.5,
+            "contents/group/contents/stroke/dashes/gap": 10.6,
+            "contents/group/contents/stroke/dashes/offset": -5,
+            "contents/group/contents/stroke/width": 4.5,
+            "transform/position": [
+              656,
+              411
+            ]
+          },
+          "type": "shape"
+        },
+        {
+          "name": "Trial",
+          "props": {
+            "transform/position": [
+              741,
+              429.5
+            ]
+          },
+          "text": {
+            "font": "SFProDisplay-Medium",
+            "size": 52,
+            "text": "Trial"
+          },
+          "type": "text"
+        },
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "ellipse"
+                },
+                {
+                  "kind": "fill"
+                }
+              ],
+              "kind": "group",
+              "name": "Knob"
+            },
+            {
+              "contents": [
+                {
+                  "kind": "rect"
+                },
+                {
+                  "kind": "fill"
+                }
+              ],
+              "kind": "group",
+              "name": "Track"
+            }
+          ],
+          "name": "Toggle",
+          "props": {
+            "contents/group#2/contents/fill/color": {
+              "expr": "var t=thisComp.layer(\"UI CTRL\").effect(\"Toggle\")(\"Slider\"); linear(t,0,1,[0.3,0.3,0.33,1],[0.075,0.522,1,1])",
+              "value": [
+                0.075,
+                0.522,
+                1
+              ]
+            },
+            "contents/group#2/contents/rect/roundness": 32,
+            "contents/group#2/contents/rect/size": [
+              126,
+              64
+            ],
+            "contents/group/contents/ellipse/size": [
+              50,
+              50
+            ],
+            "contents/group/contents/fill/color": [
+              1,
+              1,
+              1
+            ],
+            "contents/group/transform/position": {
+              "expr": "var t=thisComp.layer(\"UI CTRL\").effect(\"Toggle\")(\"Slider\"); [linear(t,0,1,-31,32.5), 1]",
+              "value": [
+                0,
+                0
+              ]
+            },
+            "transform/position": [
+              1236.5,
+              410
+            ]
+          },
+          "type": "shape"
+        },
+        {
+          "name": "Post",
+          "props": {
+            "transform/position": [
+              960,
+              556.5
+            ]
+          },
+          "text": {
+            "font": "SFProDisplay-Medium",
+            "justify": "Center",
+            "size": 47,
+            "text": "Post"
+          },
+          "type": "text"
+        },
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "ellipse"
+                },
+                {
+                  "kind": "gfill",
+                  "raw": {
+                    "children": [
+                      {
+                        "hold_only": true,
+                        "match": "blend",
+                        "name": "Blend Mode",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Hidden"
+                        },
+                        "value": {
+                          "t": "Enum",
+                          "v": 0
+                        }
+                      },
+                      {
+                        "hold_only": true,
+                        "match": "rule",
+                        "name": "Fill Rule",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Popup",
+                          "options": [
+                            "Non-Zero Winding",
+                            "Even-Odd"
+                          ]
+                        },
+                        "value": {
+                          "t": "Enum",
+                          "v": 0
+                        }
+                      },
+                      {
+                        "hold_only": true,
+                        "match": "type",
+                        "name": "Type",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Popup",
+                          "options": [
+                            "Linear",
+                            "Radial"
+                          ]
+                        },
+                        "value": {
+                          "t": "Enum",
+                          "v": 1
+                        }
+                      },
+                      {
+                        "match": "start",
+                        "name": "Start Point",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Point"
+                        },
+                        "value": {
+                          "t": "Vec2",
+                          "v": [
+                            0.0,
+                            0.0
+                          ]
+                        }
+                      },
+                      {
+                        "match": "end",
+                        "name": "End Point",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Point"
+                        },
+                        "value": {
+                          "t": "Vec2",
+                          "v": [
+                            37.0,
+                            0.0
+                          ]
+                        }
+                      },
+                      {
+                        "match": "highlightLength",
+                        "name": "Highlight Length",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Percent"
+                        },
+                        "value": {
+                          "t": "Scalar",
+                          "v": 0.0
+                        }
+                      },
+                      {
+                        "match": "highlightAngle",
+                        "name": "Highlight Angle",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Angle"
+                        },
+                        "value": {
+                          "t": "Scalar",
+                          "v": 0.0
+                        }
+                      },
+                      {
+                        "match": "colors",
+                        "name": "Colors",
+                        "node": "Prop",
+                        "ui": {
+                          "kind": "Gradient"
+                        },
+                        "value": {
+                          "t": "Gradient",
+                          "v": {
+                            "colors": [
+                              [
+                                0.0,
+                                [
+                                  0.3843137323856354,
+                                  0.43921568989753723,
+                                  0.9843137264251709,
+                                  1.0
+                                ]
+                              ],
+                              [
+                                0.55,
+                                [
+                                  0.4156862795352936,
+                                  0.5529412031173706,
+                                  1.0,
+                                  1.0
+                                ]
+                              ],
+                              [
+                                0.88,
+                                [
+                                  0.4941176474094391,
+                                  0.8470588326454163,
+                                  1.0,
+                                  1.0
+                                ]
+                              ],
+                              [
+                                1.0,
+                                [
+                                  0.5490196347236633,
+                                  0.9098039269447327,
+                                  1.0,
+                                  1.0
+                                ]
+                              ]
+                            ],
+                            "opacities": [
+                              [
+                                0.0,
+                                1.0
+                              ],
+                              [
+                                1.0,
+                                1.0
+                              ]
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "match": "opacity",
+                        "name": "Opacity",
+                        "node": "Prop",
+                        "ui": {
+                          "decimals": 0,
+                          "kind": "Slider",
+                          "max": 100.0,
+                          "min": 0.0,
+                          "slider_max": 100.0,
+                          "slider_min": 0.0
+                        },
+                        "value": {
+                          "t": "Scalar",
+                          "v": 100.0
+                        }
+                      }
+                    ],
+                    "enabled": true,
+                    "kind": {
+                      "kind": "Indexed"
+                    },
+                    "match": "gfill",
+                    "name": "Gradient Fill 1",
+                    "node": "Group"
+                  }
+                }
+              ],
+              "kind": "group",
+              "name": "Tap"
+            }
+          ],
+          "name": "Tap",
+          "props": {
+            "contents/group/contents/ellipse/size": [
+              74,
+              74
+            ],
+            "transform/position": {
+              "keys": [
+                {
+                  "in": [
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ]
+                  ],
+                  "out": [
+                    [
+                      0,
+                      0.2
+                    ],
+                    [
+                      0,
+                      0.2
+                    ],
+                    [
+                      0,
+                      0.2
+                    ]
+                  ],
+                  "time": 0.5,
+                  "value": [
+                    1228,
+                    555
+                  ]
+                },
+                {
+                  "in": [
+                    [
+                      0,
+                      0.9
+                    ],
+                    [
+                      0,
+                      0.9
+                    ],
+                    [
+                      0,
+                      0.9
+                    ]
+                  ],
+                  "out": [
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ]
+                  ],
+                  "time": 1.5,
+                  "value": [
+                    1207,
+                    551
+                  ]
+                }
+              ]
+            },
+            "transform/scale": {
+              "keys": [
+                {
+                  "in": [
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ]
+                  ],
+                  "out": [
+                    [
+                      0,
+                      0.2
+                    ],
+                    [
+                      0,
+                      0.2
+                    ],
+                    [
+                      0,
+                      0.2
+                    ]
+                  ],
+                  "time": 0.5,
+                  "value": [
+                    90,
+                    90,
+                    0
+                  ]
+                },
+                {
+                  "in": [
+                    [
+                      0,
+                      0.9
+                    ],
+                    [
+                      0,
+                      0.9
+                    ],
+                    [
+                      0,
+                      0.9
+                    ]
+                  ],
+                  "out": [
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ],
+                    [
+                      0,
+                      0.33
+                    ]
+                  ],
+                  "time": 1.5,
+                  "value": [
+                    100,
+                    100,
+                    0
+                  ]
+                }
+              ]
+            }
+          },
+          "type": "shape"
+        },
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "rect"
+                },
+                {
+                  "kind": "fill"
+                }
+              ],
+              "kind": "group",
+              "name": "Button"
+            }
+          ],
+          "name": "Post Button",
+          "props": {
+            "contents/group/contents/fill/color": [
+              0.337,
+              0.416,
+              0.98
+            ],
+            "contents/group/contents/rect/roundness": 14,
+            "contents/group/contents/rect/size": [
+              680,
+              93
+            ],
+            "transform/position": [
+              959.5,
+              540.5
+            ]
+          },
+          "type": "shape"
+        },
+        {
+          "contents": [
+            {
+              "contents": [
+                {
+                  "kind": "rect"
+                },
+                {
+                  "kind": "fill"
+                }
+              ],
+              "kind": "group",
+              "name": "Haze"
+            }
+          ],
+          "effects": [
+            {
+              "effect": "ec.blur.gaussian"
+            }
+          ],
+          "name": "UI Haze",
+          "props": {
+            "contents/group/contents/fill/color": [
+              0.095,
+              0.1,
+              0.15
+            ],
+            "contents/group/contents/rect/roundness": 115,
+            "contents/group/contents/rect/size": [
+              860,
+              230
+            ],
+            "effects/#1/blurriness": 150,
+            "transform/position": [
+              960,
+              478
+            ]
+          },
+          "switches": {
+            "video": false
+          },
+          "type": "shape"
+        },
+        {
+          "effects": [
+            {
+              "effect": "ec.control.slider",
+              "name": "Toggle"
+            }
+          ],
+          "name": "UI CTRL",
+          "props": {
+            "effects/#1/slider": 1
+          },
+          "switches": {
+            "video": false
+          },
+          "type": "null"
+        }
+      ]
+    }
+  ],
+  "version": 1
+}

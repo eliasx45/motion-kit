@@ -1,0 +1,2887 @@
+{
+  "comp": {
+    "background": [
+      0.006,
+      0.006,
+      0.006
+    ],
+    "duration": 4.2667,
+    "frameRate": 30,
+    "height": 1080,
+    "name": "DJ3 Views Counter",
+    "width": 1920
+  },
+  "format": "effectcraft-recipe",
+  "layers": [
+    {
+      "effects": [
+        {
+          "effect": "ec.control.slider",
+          "name": "Views (M)"
+        }
+      ],
+      "name": "CAM CTRL",
+      "props": {
+        "effects/#1/slider": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  220,
+                  0.01
+                ]
+              ],
+              "time": 0,
+              "value": 6.8
+            },
+            {
+              "in": [
+                [
+                  0,
+                  0.95
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 1.9333,
+              "value": 42.8
+            }
+          ]
+        },
+        "transform/scale": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  -425,
+                  0.0197
+                ],
+                [
+                  -425,
+                  0.0197
+                ],
+                [
+                  -425,
+                  0.0197
+                ]
+              ],
+              "time": 0,
+              "value": [
+                195.81,
+                195.81,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -0.4625,
+                  0.9512
+                ],
+                [
+                  -0.4625,
+                  0.9512
+                ],
+                [
+                  -0.4625,
+                  0.9512
+                ]
+              ],
+              "out": [
+                [
+                  -0.4625,
+                  0.05
+                ],
+                [
+                  -0.4625,
+                  0.05
+                ],
+                [
+                  -0.4625,
+                  0.05
+                ]
+              ],
+              "time": 2.1667,
+              "value": [
+                104.074,
+                104.074,
+                0
+              ]
+            },
+            {
+              "in": [
+                [
+                  -5.5,
+                  0.2628
+                ],
+                [
+                  -5.5,
+                  0.2628
+                ],
+                [
+                  -5.5,
+                  0.2628
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ],
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 4.2333,
+              "value": [
+                100,
+                100,
+                0
+              ]
+            }
+          ]
+        }
+      },
+      "switches": {
+        "video": false
+      },
+      "type": "null"
+    },
+    {
+      "color": [
+        1,
+        1,
+        1
+      ],
+      "effects": [
+        {
+          "effect": "ec.blur.gaussian"
+        }
+      ],
+      "name": "Defocus",
+      "props": {
+        "effects/#1/blurriness": {
+          "keys": [
+            {
+              "in": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "out": [
+                [
+                  -130,
+                  0.33
+                ]
+              ],
+              "time": 0,
+              "value": 40
+            },
+            {
+              "in": [
+                [
+                  -110,
+                  0.33
+                ]
+              ],
+              "out": [
+                [
+                  0,
+                  0.1667
+                ]
+              ],
+              "time": 0.3,
+              "value": 0
+            }
+          ]
+        },
+        "effects/#1/repeatEdge": true
+      },
+      "size": [
+        1920,
+        1080
+      ],
+      "switches": {
+        "adjustment": true
+      },
+      "type": "solid"
+    },
+    {
+      "blendMode": "Multiply",
+      "color": [
+        1,
+        1,
+        1
+      ],
+      "effects": [
+        {
+          "effect": "ec.generate.gradientramp"
+        }
+      ],
+      "name": "Light Falloff",
+      "parent": "CAM CTRL",
+      "props": {
+        "effects/#1/end": [
+          1950,
+          540
+        ],
+        "effects/#1/endColor": [
+          0.15,
+          0.15,
+          0.15
+        ],
+        "effects/#1/start": [
+          1200,
+          540
+        ],
+        "effects/#1/startColor": [
+          1,
+          1,
+          1
+        ],
+        "transform/position": [
+          50,
+          50
+        ]
+      },
+      "size": [
+        1920,
+        1080
+      ],
+      "type": "solid"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "path"
+            },
+            {
+              "kind": "stroke"
+            }
+          ],
+          "kind": "group",
+          "name": "Arrow"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "ec.stylize.deepglow",
+          "raw": {
+            "children": [
+              {
+                "match": "PEDG-0001",
+                "name": "Radius",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2000.0,
+                  "min": 0.0,
+                  "slider_max": 500.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 150.0
+                }
+              },
+              {
+                "match": "PEDG-0004",
+                "name": "Threshold",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 1600.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "match": "PEDG-0005",
+                "name": "Threshold Smooth",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0008",
+                "name": "Blend Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Screen",
+                    "Add"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0009",
+                "name": "Gamma Correction",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0010",
+                "name": "Aspect Ratio",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "match": "PEDG-0011",
+                "name": "Spread",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 33.0
+                }
+              },
+              {
+                "match": "PEDG-0019",
+                "name": "Downsample",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 10.0,
+                  "slider_max": 100.0,
+                  "slider_min": 10.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 80.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0025",
+                "name": "Unmult (Generate Alpha)",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0031",
+                "name": "Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0032",
+                "name": "Monochromatic Dither",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0033",
+                "name": "Dither Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 50.0
+                }
+              },
+              {
+                "match": "PEDG-0055",
+                "name": "Edge Behaviour",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 1.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0084",
+                "name": "Buffer Expansion",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Auto",
+                    "Compatibility"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0013",
+                "name": "Chromatic Aberration",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0015",
+                "name": "Chromatic Amount",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 2,
+                  "kind": "Slider",
+                  "max": 2.0,
+                  "min": 0.0,
+                  "slider_max": 2.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.25
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0037",
+                "name": "Tint",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "match": "PEDG-0038",
+                "name": "Tint Color",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Color"
+                },
+                "value": {
+                  "t": "Color",
+                  "v": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    1.0
+                  ]
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0039",
+                "name": "Tint Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Standard",
+                    "Overlay",
+                    "Soft Light"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "match": "PEDG-0041",
+                "name": "Tint Mix",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0043",
+                "name": "Auto Detect Gamma",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": true
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056",
+                "name": "Mask Layer",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Layer"
+                },
+                "value": {
+                  "t": "Layer",
+                  "v": null
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0056Source",
+                "name": "Mask Layer Source",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Hidden"
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 2
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0057",
+                "name": "Mask Mode",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Alpha",
+                    "Luminance"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 0
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0059",
+                "name": "Invert Mask",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Checkbox"
+                },
+                "value": {
+                  "t": "Bool",
+                  "v": false
+                }
+              },
+              {
+                "hold_only": true,
+                "match": "PEDG-0023",
+                "name": "View",
+                "node": "Prop",
+                "ui": {
+                  "kind": "Popup",
+                  "options": [
+                    "Glow Input",
+                    "Final"
+                  ]
+                },
+                "value": {
+                  "t": "Enum",
+                  "v": 1
+                }
+              },
+              {
+                "match": "PEDG-0024",
+                "name": "Source Opacity",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 0,
+                  "kind": "Slider",
+                  "max": 100.0,
+                  "min": 0.0,
+                  "slider_max": 100.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 100.0
+                }
+              },
+              {
+                "match": "exposure",
+                "name": "Exposure",
+                "node": "Prop",
+                "ui": {
+                  "decimals": 3,
+                  "kind": "Slider",
+                  "max": 128.0,
+                  "min": 0.0,
+                  "slider_max": 4.0,
+                  "slider_min": 0.0
+                },
+                "value": {
+                  "t": "Scalar",
+                  "v": 0.02
+                }
+              }
+            ],
+            "enabled": true,
+            "kind": {
+              "effect": "ec.stylize.deepglow",
+              "kind": "Effect"
+            },
+            "match": "ec.stylize.deepglow",
+            "name": "Deep Glow (Native)",
+            "node": "Group"
+          }
+        },
+        {
+          "effect": "ec.generate.cclightsweep"
+        }
+      ],
+      "name": "Arrow",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group/contents/path#2/path": {
+          "closed": false,
+          "vertices": [
+            [
+              -6,
+              -21.5
+            ],
+            [
+              21,
+              -21.5
+            ],
+            [
+              21,
+              5.5
+            ]
+          ]
+        },
+        "contents/group/contents/path/path": {
+          "closed": false,
+          "vertices": [
+            [
+              -22,
+              21.5
+            ],
+            [
+              21,
+              -21.5
+            ]
+          ]
+        },
+        "contents/group/contents/stroke/cap": "Round Cap",
+        "contents/group/contents/stroke/color": [
+          0.36,
+          0.92,
+          0.27
+        ],
+        "contents/group/contents/stroke/join": "Round Join",
+        "contents/group/contents/stroke/width": 6.5,
+        "effects/#2/center": [
+          960,
+          409.8828
+        ],
+        "effects/#2/direction": {
+          "expr": "wiggle(1,100)",
+          "value": -1899.6772
+        },
+        "transform/position": [
+          -82,
+          53.5
+        ]
+      },
+      "type": "shape"
+    },
+    {
+      "name": "Counter",
+      "parent": "CAM CTRL",
+      "props": {
+        "text/sourceText": {
+          "expr": "thisComp.layer(\"CAM CTRL\").effect(\"Views (M)\")(\"Slider\").value.toFixed(1) + \"M\"",
+          "value": {
+            "font": "SFProDisplay-Regular",
+            "size": 69,
+            "text": "42.8M"
+          }
+        },
+        "transform/position": [
+          -38,
+          68
+        ]
+      },
+      "type": "text"
+    },
+    {
+      "effects": [
+        {
+          "effect": "ec.blur.gaussian"
+        }
+      ],
+      "name": "Views Label",
+      "parent": "CAM CTRL",
+      "props": {
+        "effects/#1/blurriness": 1.5,
+        "transform/position": {
+          "expr": "var c = thisComp.layer(\"Counter\"); var r = c.sourceRectAtTime(time, false);\n[c.transform.position[0] + r.left + r.width + 15, value[1]]",
+          "value": [
+            170,
+            68
+          ]
+        }
+      },
+      "text": {
+        "fill": [
+          0.26,
+          0.27,
+          0.3,
+          1
+        ],
+        "font": "SFProDisplay-Regular",
+        "size": 69,
+        "text": "views in the last 30 days"
+      },
+      "type": "text"
+    },
+    {
+      "effects": [
+        {
+          "effect": "ec.blur.gaussian"
+        }
+      ],
+      "name": "Title",
+      "parent": "CAM CTRL",
+      "props": {
+        "effects/#1/blurriness": 2.5,
+        "transform/position": [
+          -140,
+          -29
+        ]
+      },
+      "text": {
+        "fill": [
+          0.27,
+          0.285,
+          0.315,
+          1
+        ],
+        "font": "SFProDisplay-Medium",
+        "size": 86,
+        "text": "Professional dashboard"
+      },
+      "type": "text"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -162.5
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        172.5
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.08235294371843338,
+                              0.09019608050584793,
+                              0.10588235408067703,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.36,
+                            [
+                              0.13333334028720856,
+                              0.14901961386203766,
+                              0.16862745583057404,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.63,
+                            [
+                              0.15294118225574493,
+                              0.16862745583057404,
+                              0.1882352977991104,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.9,
+                            [
+                              0.1411764770746231,
+                              0.1568627506494522,
+                              0.1764705926179886,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.125490203499794,
+                              0.1411764770746231,
+                              0.1568627506494522,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Card"
+        }
+      ],
+      "name": "Card",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group/contents/rect/roundness": 24,
+        "contents/group/contents/rect/size": [
+          1512,
+          345
+        ],
+        "transform/position": [
+          534,
+          -7.5
+        ]
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Glyph 1"
+        },
+        {
+          "contents": [
+            {
+              "kind": "ellipse"
+            },
+            {
+              "kind": "stroke"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -148.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        142.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.5411764979362488,
+                              0.5411764979362488,
+                              0.545098066329956,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.45,
+                            [
+                              0.22745098173618317,
+                              0.22745098173618317,
+                              0.23137255012989044,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.05098039284348488,
+                              0.05098039284348488,
+                              0.05098039284348488,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Circle 1"
+        },
+        {
+          "contents": [
+            {
+              "kind": "ellipse"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Glyph 2"
+        },
+        {
+          "contents": [
+            {
+              "kind": "ellipse"
+            },
+            {
+              "kind": "stroke"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -148.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        142.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.5411764979362488,
+                              0.5411764979362488,
+                              0.545098066329956,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.45,
+                            [
+                              0.22745098173618317,
+                              0.22745098173618317,
+                              0.23137255012989044,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.05098039284348488,
+                              0.05098039284348488,
+                              0.05098039284348488,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Circle 2"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Glyph 3"
+        },
+        {
+          "contents": [
+            {
+              "kind": "ellipse"
+            },
+            {
+              "kind": "stroke"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -148.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        142.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.5411764979362488,
+                              0.5411764979362488,
+                              0.545098066329956,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.45,
+                            [
+                              0.22745098173618317,
+                              0.22745098173618317,
+                              0.23137255012989044,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.05098039284348488,
+                              0.05098039284348488,
+                              0.05098039284348488,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Circle 3"
+        }
+      ],
+      "effects": [
+        {
+          "effect": "ec.blur.gaussian"
+        }
+      ],
+      "name": "Highlights",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group#2/contents/ellipse/size": [
+          296,
+          296
+        ],
+        "contents/group#2/contents/stroke/color": [
+          0.1,
+          0.11,
+          0.13
+        ],
+        "contents/group#2/contents/stroke/width": 10,
+        "contents/group#2/transform/position": [
+          -20,
+          358
+        ],
+        "contents/group#3/contents/ellipse/size": [
+          46,
+          88
+        ],
+        "contents/group#3/contents/fill/color": [
+          0.03,
+          0.03,
+          0.03
+        ],
+        "contents/group#3/contents/fill/opacity": 70,
+        "contents/group#3/transform/position": [
+          350,
+          360
+        ],
+        "contents/group#3/transform/rotation": 45,
+        "contents/group#4/contents/ellipse/size": [
+          296,
+          296
+        ],
+        "contents/group#4/contents/stroke/color": [
+          0.1,
+          0.11,
+          0.13
+        ],
+        "contents/group#4/contents/stroke/width": 10,
+        "contents/group#4/transform/opacity": 90,
+        "contents/group#4/transform/position": [
+          350,
+          358
+        ],
+        "contents/group#5/contents/fill/color": [
+          0.03,
+          0.03,
+          0.03
+        ],
+        "contents/group#5/contents/fill/opacity": 70,
+        "contents/group#5/contents/rect/roundness": 8,
+        "contents/group#5/contents/rect/size": [
+          70,
+          64
+        ],
+        "contents/group#5/transform/position": [
+          720,
+          360
+        ],
+        "contents/group#6/contents/ellipse/size": [
+          296,
+          296
+        ],
+        "contents/group#6/contents/stroke/color": [
+          0.1,
+          0.11,
+          0.13
+        ],
+        "contents/group#6/contents/stroke/width": 10,
+        "contents/group#6/transform/opacity": 82,
+        "contents/group#6/transform/position": [
+          720,
+          358
+        ],
+        "contents/group/contents/fill/color": [
+          0.03,
+          0.03,
+          0.03
+        ],
+        "contents/group/contents/fill/opacity": 70,
+        "contents/group/contents/rect/roundness": 8,
+        "contents/group/contents/rect/size": [
+          70,
+          64
+        ],
+        "contents/group/transform/position": [
+          -20,
+          360
+        ],
+        "effects/#1/blurriness": 9,
+        "transform/position": [
+          50,
+          50
+        ]
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Icon 1"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Line 1"
+        },
+        {
+          "contents": [
+            {
+              "kind": "ellipse"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Icon 2"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "fill"
+            }
+          ],
+          "kind": "group",
+          "name": "Line 2"
+        }
+      ],
+      "effects": [
+        {
+          "effect": "ec.blur.gaussian"
+        }
+      ],
+      "name": "Header Placeholder",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group#2/contents/fill/color": [
+          0.03,
+          0.03,
+          0.034
+        ],
+        "contents/group#2/contents/rect/roundness": 14,
+        "contents/group#2/contents/rect/size": [
+          1150,
+          56
+        ],
+        "contents/group#2/transform/position": [
+          405,
+          -470
+        ],
+        "contents/group#3/contents/ellipse/size": [
+          64,
+          64
+        ],
+        "contents/group#3/contents/fill/color": [
+          0.04,
+          0.04,
+          0.045
+        ],
+        "contents/group#3/transform/position": [
+          -225,
+          -355
+        ],
+        "contents/group#4/contents/fill/color": [
+          0.032,
+          0.036,
+          0.075
+        ],
+        "contents/group#4/contents/rect/roundness": 12,
+        "contents/group#4/contents/rect/size": [
+          1100,
+          46
+        ],
+        "contents/group#4/transform/position": [
+          380,
+          -352
+        ],
+        "contents/group/contents/fill/color": [
+          0.07,
+          0.1,
+          0.1
+        ],
+        "contents/group/contents/rect/roundness": 12,
+        "contents/group/contents/rect/size": [
+          70,
+          62
+        ],
+        "contents/group/transform/position": [
+          -230,
+          -472
+        ],
+        "effects/#1/blurriness": 12,
+        "transform/position": [
+          50,
+          50
+        ]
+      },
+      "type": "shape"
+    },
+    {
+      "contents": [
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -180.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        300.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.03921568766236305,
+                              0.04313725605607033,
+                              0.05098039284348488,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.5,
+                            [
+                              0.33725491166114807,
+                              0.35686275362968445,
+                              0.4000000059604645,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.03921568766236305,
+                              0.04313725605607033,
+                              0.05098039284348488,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Button"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -540.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        580.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.0235294122248888,
+                              0.0235294122248888,
+                              0.027450980618596077,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.21,
+                            [
+                              0.07058823853731155,
+                              0.07450980693101883,
+                              0.08235294371843338,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.32,
+                            [
+                              0.21568627655506134,
+                              0.22745098173618317,
+                              0.250980406999588,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.43,
+                            [
+                              0.35686275362968445,
+                              0.3686274588108063,
+                              0.40784314274787903,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.49,
+                            [
+                              0.3764705955982208,
+                              0.38823530077934265,
+                              0.4313725531101227,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.59,
+                            [
+                              0.29411765933036804,
+                              0.30588236451148987,
+                              0.34117648005485535,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.7,
+                            [
+                              0.13333334028720856,
+                              0.13725490868091583,
+                              0.15294118225574493,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.8,
+                            [
+                              0.04313725605607033,
+                              0.04313725605607033,
+                              0.0470588244497776,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.0235294122248888,
+                              0.0235294122248888,
+                              0.027450980618596077,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Rail"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -540.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        580.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.019607843831181526,
+                              0.019607843831181526,
+                              0.019607843831181526,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.25,
+                            [
+                              0.03921568766236305,
+                              0.03921568766236305,
+                              0.04313725605607033,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.49,
+                            [
+                              0.29019609093666077,
+                              0.2980392277240753,
+                              0.32156863808631897,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.72,
+                            [
+                              0.03921568766236305,
+                              0.03921568766236305,
+                              0.04313725605607033,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.019607843831181526,
+                              0.019607843831181526,
+                              0.019607843831181526,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Edge"
+        },
+        {
+          "contents": [
+            {
+              "kind": "rect"
+            },
+            {
+              "kind": "gfill",
+              "raw": {
+                "children": [
+                  {
+                    "hold_only": true,
+                    "match": "blend",
+                    "name": "Blend Mode",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Hidden"
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "rule",
+                    "name": "Fill Rule",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Non-Zero Winding",
+                        "Even-Odd"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "hold_only": true,
+                    "match": "type",
+                    "name": "Type",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Popup",
+                      "options": [
+                        "Linear",
+                        "Radial"
+                      ]
+                    },
+                    "value": {
+                      "t": "Enum",
+                      "v": 0
+                    }
+                  },
+                  {
+                    "match": "start",
+                    "name": "Start Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        -400.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "end",
+                    "name": "End Point",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Point"
+                    },
+                    "value": {
+                      "t": "Vec2",
+                      "v": [
+                        0.0,
+                        440.0
+                      ]
+                    }
+                  },
+                  {
+                    "match": "highlightLength",
+                    "name": "Highlight Length",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Percent"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "highlightAngle",
+                    "name": "Highlight Angle",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Angle"
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 0.0
+                    }
+                  },
+                  {
+                    "match": "colors",
+                    "name": "Colors",
+                    "node": "Prop",
+                    "ui": {
+                      "kind": "Gradient"
+                    },
+                    "value": {
+                      "t": "Gradient",
+                      "v": {
+                        "colors": [
+                          [
+                            0.0,
+                            [
+                              0.003921568859368563,
+                              0.003921568859368563,
+                              0.003921568859368563,
+                              1.0
+                            ]
+                          ],
+                          [
+                            0.5,
+                            [
+                              0.054901961237192154,
+                              0.062745101749897,
+                              0.07450980693101883,
+                              1.0
+                            ]
+                          ],
+                          [
+                            1.0,
+                            [
+                              0.003921568859368563,
+                              0.003921568859368563,
+                              0.003921568859368563,
+                              1.0
+                            ]
+                          ]
+                        ],
+                        "opacities": [
+                          [
+                            0.0,
+                            1.0
+                          ],
+                          [
+                            1.0,
+                            1.0
+                          ]
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "match": "opacity",
+                    "name": "Opacity",
+                    "node": "Prop",
+                    "ui": {
+                      "decimals": 0,
+                      "kind": "Slider",
+                      "max": 100.0,
+                      "min": 0.0,
+                      "slider_max": 100.0,
+                      "slider_min": 0.0
+                    },
+                    "value": {
+                      "t": "Scalar",
+                      "v": 100.0
+                    }
+                  }
+                ],
+                "enabled": true,
+                "kind": {
+                  "kind": "Indexed"
+                },
+                "match": "gfill",
+                "name": "Gradient Fill 1",
+                "node": "Group"
+              }
+            }
+          ],
+          "kind": "group",
+          "name": "Screen"
+        }
+      ],
+      "effects": [
+        {
+          "effect": "ec.blur.gaussian"
+        }
+      ],
+      "name": "Phone",
+      "parent": "CAM CTRL",
+      "props": {
+        "contents/group#2/contents/rect/size": [
+          30,
+          1400
+        ],
+        "contents/group#2/transform/position": [
+          -507,
+          0
+        ],
+        "contents/group#3/contents/rect/size": [
+          9,
+          1400
+        ],
+        "contents/group#3/transform/position": [
+          -484,
+          0
+        ],
+        "contents/group#4/contents/rect/roundness": 40,
+        "contents/group#4/contents/rect/size": [
+          1900,
+          1600
+        ],
+        "contents/group#4/transform/position": [
+          531,
+          0
+        ],
+        "contents/group/contents/rect/roundness": 8,
+        "contents/group/contents/rect/size": [
+          18,
+          415
+        ],
+        "contents/group/transform/position": [
+          -533,
+          -47.5
+        ],
+        "effects/#1/blurriness": 3,
+        "transform/position": [
+          50,
+          50
+        ]
+      },
+      "type": "shape"
+    },
+    {
+      "color": [
+        0.006,
+        0.006,
+        0.006
+      ],
+      "name": "BG",
+      "size": [
+        1920,
+        1080
+      ],
+      "type": "solid"
+    }
+  ],
+  "version": 1
+}

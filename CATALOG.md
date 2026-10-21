@@ -32,10 +32,17 @@ Empty. During an edit, say “inbox this”.
 
 Notes from the edits: [inbox/NOTES.md](inbox/NOTES.md).
 
-## References (1 converted comps)
+## References (8 converted comps)
 
 | Preview | Comp |
 |---|---|
 | <img src="references/dj1-trial-rings.gif" width="320"> | [dj1-trial-rings](references/dj1-trial-rings.recipe.json) |
+| <img src="references/dj2-trial-toggle.gif" width="320"> | [dj2-trial-toggle](references/dj2-trial-toggle.recipe.json) |
+| <img src="references/dj3-views-counter.gif" width="320"> | [dj3-views-counter](references/dj3-views-counter.recipe.json) |
+| <img src="references/dj4-tilted-stats.gif" width="320"> | [dj4-tilted-stats](references/dj4-tilted-stats.recipe.json) |
+| <img src="references/dj5-card-variants.gif" width="320"> | [dj5-card-variants](references/dj5-card-variants.recipe.json) |
+| <img src="references/drag-drop.gif" width="320"> | [drag-drop](references/drag-drop.recipe.json) |
+| <img src="references/ig1.gif" width="320"> | [ig1](references/ig1.recipe.json) |
+| <img src="references/youtube-zoom-out-link.gif" width="320"> | [youtube-zoom-out-link](references/youtube-zoom-out-link.recipe.json) |
 
 Details and rebuild checks: [references/README.md](references/README.md).
