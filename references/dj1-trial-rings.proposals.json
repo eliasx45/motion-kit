@@ -24,7 +24,19 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--dashedConnector.gif",
+      "preview": {
+        "layers": [
+          "Path A",
+          "WORLD"
+        ],
+        "keep": [
+          "Inactive (dim)",
+          "BG"
+        ],
+        "start": 1.5,
+        "end": 2.9
+      }
     },
     {
       "id": "ringStat",
@@ -37,7 +49,22 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--ringStat.gif",
+      "preview": {
+        "layers": [
+          "Ring L Base",
+          "Ring L Fill",
+          "Counter L",
+          "Non-Followers",
+          "CTRL",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 2.4,
+        "end": 4.0
+      }
     },
     {
       "id": "countUp",
@@ -50,7 +77,19 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--countUp.gif",
+      "preview": {
+        "layers": [
+          "Counter L",
+          "CTRL",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 2.1,
+        "end": 4.0
+      }
     },
     {
       "id": "focusBranch",
@@ -63,7 +102,24 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--focusBranch.gif",
+      "preview": {
+        "layers": [
+          "Ring L Base",
+          "Counter L",
+          "Non-Followers",
+          "Counter R",
+          "Followers",
+          "CTRL",
+          "WORLD"
+        ],
+        "keep": [
+          "Inactive (dim)",
+          "BG"
+        ],
+        "start": 1.8,
+        "end": 2.7
+      }
     },
     {
       "id": "scrollStops",
@@ -76,7 +132,36 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--scrollStops.gif",
+      "preview": {
+        "layers": [
+          "WORLD",
+          "ICON",
+          "Trial Reels",
+          "Label BG",
+          "Reels Icon",
+          "Path A",
+          "Path C",
+          "Inactive (dim)",
+          "Ring L Base",
+          "Ring L Fill",
+          "Counter L",
+          "Non-Followers",
+          "Counter R",
+          "Followers",
+          "Card",
+          "693K",
+          "Post",
+          "CTRL"
+        ],
+        "keep": [
+          "BG",
+          "Haze"
+        ],
+        "start": 2.0,
+        "end": 6.0,
+        "fullFrame": true
+      }
     },
     {
       "id": "titleTag",
@@ -89,7 +174,20 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--titleTag.gif",
+      "preview": {
+        "layers": [
+          "Label BG",
+          "Trial Reels",
+          "ICON",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0.0,
+        "end": 1.5
+      }
     },
     {
       "id": "liftSettle",
@@ -102,7 +200,22 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--liftSettle.gif",
+      "preview": {
+        "layers": [
+          "Trial Reels",
+          "Label BG",
+          "Reels Icon",
+          "ICON",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0.7,
+        "end": 1.8
+      },
+      "previewNote": "The WORLD scroll moves the tag + icon up the frame at the same time, so the 19.7 px lift and the shrink to 92.5 % are hard to see on their own here."
     },
     {
       "id": "reelsGlyph",
@@ -115,7 +228,19 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--reelsGlyph.gif",
+      "preview": {
+        "layers": [
+          "Reels Icon",
+          "ICON",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0.0,
+        "end": 1.2
+      }
     },
     {
       "id": "postCard",
@@ -128,7 +253,22 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--postCard.gif",
+      "preview": {
+        "layers": [
+          "Card",
+          "693K",
+          "Eye (Library)",
+          "Post",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 5.2,
+        "end": 6.3
+      },
+      "previewNote": "The eye icon (Eye (Library)) is a PDF in Elias's Motion Library cache under /Users/elias, so it is missing from this preview; the card, 693K, Post and Trash buttons render."
     },
     {
       "id": "cursorClick",
@@ -141,7 +281,22 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--cursorClick.gif",
+      "preview": {
+        "layers": [
+          "Cursor (Library)",
+          "Cursor",
+          "Card",
+          "Post",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 4.8,
+        "end": 6.3
+      },
+      "previewNote": "The cursor art (Cursor (Library)) is a PDF in Elias's Motion Library cache under /Users/elias, so the cursor itself is missing from this preview; only the card and Post button it lands on show. Re-render on his Mac to see the move."
     },
     {
       "id": "accentGlow",
@@ -154,7 +309,24 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--accentGlow.gif",
+      "preview": {
+        "layers": [
+          "Path A",
+          "Ring L Fill",
+          "Ring L Base",
+          "Label BG",
+          "Reels Icon",
+          "ICON",
+          "CTRL",
+          "WORLD"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 2.6,
+        "end": 3.6
+      }
     },
     {
       "id": "darkStage",
@@ -167,7 +339,18 @@
       "from": [
         "references/dj1-trial-rings.recipe.json"
       ],
-      "gif": "references/dj1-trial-rings.gif"
+      "gif": "references/parts/dj1-trial-rings--darkStage.gif",
+      "preview": {
+        "layers": [
+          "BG",
+          "Haze"
+        ],
+        "keep": [],
+        "start": 0.0,
+        "end": 1.0,
+        "fullFrame": true
+      },
+      "previewNote": "A static background: the preview is near-black on purpose."
     }
   ]
 }
