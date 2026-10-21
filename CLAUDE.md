@@ -27,12 +27,14 @@ AI. **Build from this kit; don't design from scratch.**
 ## Layout
 | File | What it is |
 |---|---|
-| `style.jsx` | `STYLE`: bg, orb, stroke, innerShadow, pop. The only place for look values |
+| `style.jsx` | `STYLE`: bg, orb, stroke, innerShadow, stagger, pop. The only place for look values |
 | `lib/kit.jsx` | `unit`, `px`, `set(layer, path, value)`, `key(layer, path, time, value)`, `ease(layer, keys)`, `newComp(name, w, h, dur)`, `newShape(params)` |
 | `lib/background.jsx` | `background(comp, {center?, edge?, name?})`: full-frame radial grey, sent to the back |
 | `lib/orb.jsx` | `orb(comp, {shape: "circle"\|"rounded", size?, x?, y?, name?})`: radial gradient, inner shadow, hairline stroke |
 | `lib/pop.jsx` | `pop(layer, {at?})`: scale in with one overshoot and one rebound, fading in |
+| `lib/stagger.jsx` | `stagger(layers, {at?, step?, order?: "in-order"\|"reverse"\|"center-out", enter?})`: enter many layers one after another; `enter` is any entrance primitive (default `pop`) |
 | `hero.jsx` | Scene: orb + rounded square, side by side (landscape) or stacked (portrait) |
+| `row.jsx` | Scene: 5 orbs (alternating circle/rounded) in a row, staggered center-out |
 | `hero-vertical.jsx` | `hero.jsx` at 1080×1920 (sets `SIZE` before including) |
 | `refs/` | Reference frames (`<scene>-1s.png`) that `build.sh` compares against |
 | `build.sh` | `./build.sh <scene> [--bless]`; `EFFECTCRAFT_CLI` picks the CLI |

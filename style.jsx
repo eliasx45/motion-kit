@@ -24,6 +24,10 @@ var STYLE = {
     size: 70 / 600,            // softness, fraction of shape size
     choke: 10
   },
+  stagger: {
+    step: 0.08,              // seconds between one item's entrance and the next
+    order: "in-order"        // in-order | reverse | center-out
+  },
   pop: {
     overshoot: 115, undershoot: 95,   // scale %, the spring
     peakAt: 0.28, dipAt: 0.42, settleAt: 0.54, fadeIn: 0.12   // seconds
