@@ -1,5 +1,7 @@
 # motion-kit
 
+**Browse it: [CATALOG.md](CATALOG.md)** (every primitive and scene with a preview, proposals, inbox).
+
 Reusable motion for EffectCraft: one style file, small primitives, and scenes built from them.
 The scripts are the source of truth; a comp is just their output.
 

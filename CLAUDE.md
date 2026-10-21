@@ -64,6 +64,10 @@ instead of building a primitive. Turn inbox items into primitives when asked, no
 | `row-slide.jsx` | Scene: the row rising in left to right with `slideUp`, all landed by 1.5 s |
 | `hero-vertical.jsx` | `hero.jsx` at 1080×1920 (sets `SIZE` before including) |
 | `inbox/` | Candidates captured during edits (recipes + `NOTES.md`), to become primitives later |
+| `catalog.json` | The list of primitives and scenes `catalog.py` shows (with what each does and its call) |
+| `proposals.json` | Primitives agents suggest, waiting for Elias's yes/no |
+| `references/` | Elias's important comps as recipes + GIFs |
+| `catalog.py` | Regenerates `catalog/`, `CATALOG.md` and `library.json` |
 | `refs/` | Reference frames (`<scene>-1s.png`) that `build.sh` compares against |
 | `build.sh` | `./build.sh <scene> [--bless]`; `EFFECTCRAFT_CLI` picks the CLI |
 
@@ -78,13 +82,45 @@ instead of building a primitive. Turn inbox items into primitives when asked, no
 - Property paths are the ones `effectcraft-cli props <comp> <layer> --project F` prints, e.g.
   `contents/group/contents/gfill/colors`, `layerStyles/innerShadow/size`, `transform/scale`.
 
-## Adding a primitive
+## The catalog: what exists, what's proposed
+[`CATALOG.md`](CATALOG.md) is Elias's view of the kit: every primitive and scene with a GIF, the
+open proposals, the inbox and the converted references. It's generated; never edit it by hand.
+
+- `python3 catalog.py` rebuilds every scene into `catalog/` (project, PNG, GIF, MP4) and writes
+  `CATALOG.md` and `library.json`; `--no-render` only rewrites the two files.
+- `library.json` makes the kit an EffectCraft folder library: `library.addFolder {path: <kit>}`
+  once, and the scenes appear in the Motion Library panel and in `library.search`.
+- **Nothing is added until it's in the catalog.** After any change to a primitive or scene, run
+  `catalog.py` and commit `catalog/`, `CATALOG.md` and `library.json` with it.
+
+## Proposals: suggest, don't build
+Never build a new primitive on your own. Propose it in `proposals.json` and let Elias decide:
+
+```json
+{"id": "cardRow", "title": "2:3 post cards rising in a row", "status": "proposed",
+ "why": "what it captures, in one line", "call": "cardRow(comp, {count, at})",
+ "overlaps": "slideUp + stagger (would add the card look only)",
+ "from": "inbox/2026-10-21-card-row.recipe.json", "gif": "inbox/2026-10-21-card-row.gif"}
+```
+
+Run `catalog.py --no-render` so it shows under **Proposed**. Elias answers yes / no / merge with
+`<primitive>`; set `status` to `approved`, `rejected` or `merged` (with a `note`). Prefer extending
+an existing primitive (a new option or STYLE knob) over adding a near-duplicate.
+
+## Building an approved primitive
 1. Write it as a function in `lib/<name>.jsx` that takes `(comp or layer, options)`, reads look
    values from `STYLE` (add knobs there), and returns the layer it made.
-2. Use it in a scene at the top level (`<scene>.jsx`) and `#include` what it needs.
+2. Use it in a scene at the top level (`<scene>.jsx`) and `#include` what it needs. When it
+   comes from an inbox or reference recipe, the scene must rebuild that original:
+   `./build.sh <scene>` against a reference frame rendered from the recipe.
 3. `./build.sh <scene>`, look at the render, then `--bless` to save the reference.
-4. Add it to the Layout table above and to README.md. Commit the primitive, the scene and its
-   reference together.
+4. Add it to `catalog.json` (and the Layout table above), run `python3 catalog.py`, commit
+   everything together.
+
+## References: Elias's converted comps
+`references/<slug>.recipe.json` (+ `.gif`, and a row in `references/README.md` with the rebuild
+check) are his important finished comps as recipes. Read them for exact values and structure.
+They are references, not primitives: patterns that repeat across them become proposals.
 
 ## EffectCraft gotchas
 - `shape.newShape` adds the shape *into* the selected shape layer. Use `newShape()`, which

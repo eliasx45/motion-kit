@@ -1,0 +1,24 @@
+{
+  "primitives": [
+    {"id": "orb", "file": "lib/orb.jsx", "demo": "hero",
+     "what": "The style's hero shape: radial gradient, inner shadow (bottom-right), 0.7 px white hairline. Circle or rounded square.",
+     "call": "orb(comp, {shape: \"circle\"|\"rounded\", size, x, y})"},
+    {"id": "background", "file": "lib/background.jsx", "demo": "hero",
+     "what": "Full-frame radial grey (#4d4f56 → #121317), sent to the back. Only added when a scene makes its own comp.",
+     "call": "background(comp)"},
+    {"id": "pop", "file": "lib/pop.jsx", "demo": "hero",
+     "what": "Scale in 0 → 115 → 95 → 100 % by 0.54 s, eased, with a 0.12 s fade.",
+     "call": "pop(layer, {at})"},
+    {"id": "slideUp", "file": "lib/slide.jsx", "demo": "row-slide",
+     "what": "Rise 120 px (at 1080p) into place on expo out (out influence 0 / in influence 100) over 1 s, with a 0.12 s fade.",
+     "call": "slideUp(layer, {at, duration, distance})"},
+    {"id": "stagger", "file": "lib/stagger.jsx", "demo": "row",
+     "what": "Many entrances in rhythm: in-order, reverse or center-out, 0.08 s apart, or fitted into a total time. Works on any layers and any entrance.",
+     "call": "stagger(layers, {enter: slideUp, at, total: 1.5, duration: 1.0, order})"}
+  ],
+  "scenes": [
+    {"id": "hero", "what": "Orb and rounded square, popping in (side by side; stacked in portrait)."},
+    {"id": "row", "what": "Five orbs rippling in from the centre with pop."},
+    {"id": "row-slide", "what": "Five orbs rising in left to right with slideUp, all landed by 1.5 s."}
+  ]
+}

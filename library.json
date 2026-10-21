@@ -1,0 +1,57 @@
+{
+  "format": "effectcraft-library",
+  "version": 1,
+  "name": "Motion kit",
+  "entries": [
+    {
+      "id": "kit-hero",
+      "name": "Kit \u00b7 hero",
+      "kind": "comp",
+      "file": "catalog/hero.ecproj",
+      "comp": "Main",
+      "category": "Motion kit",
+      "tags": [
+        "motion-kit",
+        "orb",
+        "background",
+        "pop"
+      ],
+      "description": "Orb and rounded square, popping in (side by side; stacked in portrait).",
+      "thumbnail": "catalog/hero.png",
+      "preview": "catalog/hero.mp4",
+      "duration": 2.002
+    },
+    {
+      "id": "kit-row",
+      "name": "Kit \u00b7 row",
+      "kind": "comp",
+      "file": "catalog/row.ecproj",
+      "comp": "Main",
+      "category": "Motion kit",
+      "tags": [
+        "motion-kit",
+        "stagger"
+      ],
+      "description": "Five orbs rippling in from the centre with pop.",
+      "thumbnail": "catalog/row.png",
+      "preview": "catalog/row.mp4",
+      "duration": 2.002
+    },
+    {
+      "id": "kit-row-slide",
+      "name": "Kit \u00b7 row-slide",
+      "kind": "comp",
+      "file": "catalog/row-slide.ecproj",
+      "comp": "Main",
+      "category": "Motion kit",
+      "tags": [
+        "motion-kit",
+        "slideUp"
+      ],
+      "description": "Five orbs rising in left to right with slideUp, all landed by 1.5 s.",
+      "thumbnail": "catalog/row-slide.png",
+      "preview": "catalog/row-slide.mp4",
+      "duration": 2.502
+    }
+  ]
+}
