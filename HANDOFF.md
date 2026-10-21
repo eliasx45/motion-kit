@@ -97,6 +97,11 @@ Templates (whole comps) are already usable as recipes; parts are what's missing.
      seeds (DJ3's wiggle, DJ5's Scatter noise), so those two rebuild "not exact".
    - `prop.set` with `[x, y]` on Scale stores `[x, y, 0]`.
    - A relative script path fails ("no folder to look in"); scripts must run by absolute path.
+   - `comp.cropToRegionOfInterest` moves layers but not effect points like CC Light Sweep's
+     `center`, so `part_preview.py`'s crop loses the sweep. Six previews (marked in their
+     `previewNote`) were rendered full frame and cropped afterwards instead; re-rendering them
+     with `part_preview.py` loses the sweep until this is fixed (fix in EffectCraft:
+     `crates/engine/src/commands/comp_more.rs`, shift point-type effect params with the layers).
 3. Building approved primitives, one at a time (CLAUDE.md, "Building an approved primitive"):
    each must rebuild the part of the original comp it came from.
 

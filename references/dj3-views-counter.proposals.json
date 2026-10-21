@@ -8,7 +8,9 @@
       "why": "DJ3 whole: one CAM CTRL null scales the scene 195.8% to 100% while the frame racks into focus (blur 40 to 0 in 0.3 s) and a green trend arrow + counter run 6.8M to 42.8M with a trailing label, over a blurred app screen and phone edge.",
       "call": "viewsCounterCard(comp, {at, title: \"Professional dashboard\", label: \"views in the last 30 days\", from: 6.8, to: 42.8, decimals: 1, suffix: \"M\", countDuration: 1.9333, color: \"#5ceb45\", zoomFrom: 195.81, focusBlur: 40})",
       "overlaps": "uses countUp, trendArrow, statCard, nullPullBack, defocusIn, focusFalloffUI, phoneEdgeCloseup, sideFalloff; nothing in the kit yet",
-      "from": ["references/dj3-views-counter.recipe.json"],
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
       "gif": "references/dj3-views-counter.gif"
     },
     {
@@ -19,8 +21,30 @@
       "why": "Every layer is parented to CAM CTRL; its scale goes 195.81% to 104.074% in 2.17 s (out -425%/s at 1.97% influence, in 95.12%) then creeps to 100% by 4.23 s, speeding up slightly so the shot still moves at the cut.",
       "call": "nullPullBack(comp, {at, from: 195.81, settle: 104.074, end: 100, duration: 2.1667, creep: 2.0667})",
       "overlaps": "cameraDrift (proposals.json) is the slow push; this is the launch-and-glide pull-back that hands off into a drift. Could be a `pullBack` option of cameraDrift.",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--nullPullBack.gif",
+      "preview": {
+        "layers": [
+          "CAM CTRL",
+          "Light Falloff",
+          "Arrow",
+          "Counter",
+          "Views Label",
+          "Title",
+          "Card",
+          "Highlights",
+          "Header Placeholder",
+          "Phone"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 3,
+        "fullFrame": true
+      }
     },
     {
       "id": "defocusIn",
@@ -30,8 +54,31 @@
       "why": "An adjustment layer with Gaussian Blur (Repeat Edge Pixels) drops from 40 to 0 over 0.3 s, still moving when it lands, so the scene clicks sharp as the shot starts.",
       "call": "defocusIn(comp, {at, amount: 40, duration: 0.3})",
       "overlaps": "none",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--defocusIn.gif",
+      "preview": {
+        "layers": [
+          "Defocus",
+          "CAM CTRL",
+          "Light Falloff",
+          "Arrow",
+          "Counter",
+          "Views Label",
+          "Title",
+          "Card",
+          "Highlights",
+          "Header Placeholder",
+          "Phone"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 0.75,
+        "fullFrame": true
+      }
     },
     {
       "id": "countUp",
@@ -41,8 +88,21 @@
       "why": "Counter's Source Text reads CAM CTRL's Views (M) slider with .toFixed(1) + \"M\"; the slider launches at 220/s (1% influence) and glides in (95%), so most of the count happens in the first 0.4 s.",
       "call": "countUp(textLayer, {from: 6.8, to: 42.8, at, duration: 1.9333, decimals: 1, suffix: \"M\"})",
       "overlaps": "same as countUp in proposals.json",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--countUp.gif",
+      "preview": {
+        "layers": [
+          "Counter",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 2.2
+      }
     },
     {
       "id": "trailingLabel",
@@ -52,8 +112,23 @@
       "why": "Views Label's x is Counter's right edge (sourceRectAtTime) + 15 px every frame, so the words slide over as the number gets wider.",
       "call": "trailingLabel(label, anchorText, {gap: 15})",
       "overlaps": "none; pairs with countUp",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--trailingLabel.gif",
+      "preview": {
+        "layers": [
+          "Counter",
+          "Views Label",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 2.2
+      },
+      "previewNote": "The label runs past the comp's right edge in the original (it is clipped by the frame itself early in the pull-back)."
     },
     {
       "id": "trendArrow",
@@ -63,8 +138,22 @@
       "why": "A 43 px stroked arrow (#5ceb45, 6.5 px, round caps/joins) with Deep Glow (radius 150, exposure 0.02) and a shimmering CC Light Sweep: the 'growth' cue next to the stat.",
       "call": "trendArrow(comp, {x, y, size: 43, color: \"#5ceb45\", direction: \"up\"})",
       "overlaps": "built from accentGlow + lightSweep",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--trendArrow.gif",
+      "preview": {
+        "layers": [
+          "Arrow",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 2
+      },
+      "previewNote": "Rendered with a post-crop (full-frame render, frames cropped afterwards) because part_preview.py's comp crop (comp.cropToRegionOfInterest) leaves CC Light Sweep's center behind, so the sweep vanishes; the plain tool with this spec renders the arrow/ring without its sweep until that is fixed."
     },
     {
       "id": "lightSweep",
@@ -74,8 +163,22 @@
       "why": "CC Light Sweep (Smooth, width 50, sweep 50, edge 100, white, Add) on the arrow; here the direction is wiggle(1,100), a continuous shimmer (DJ4 uses a keyed one-shot pass).",
       "call": "lightSweep(layer, {mode: \"shimmer\", wiggle: [1, 100], width: 50, sweep: 50, edge: 100})",
       "overlaps": "same as lightSweep in proposals.json; key the angle instead of wiggle so rebuilds match",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--lightSweep.gif",
+      "preview": {
+        "layers": [
+          "Arrow",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 1.5,
+        "end": 4.2
+      },
+      "previewNote": "Rendered with a post-crop (full-frame render, frames cropped afterwards) because part_preview.py's comp crop (comp.cropToRegionOfInterest) leaves CC Light Sweep's center behind, so the sweep vanishes; the plain tool with this spec renders the arrow/ring without its sweep until that is fixed. The wiggle(1,100) sweep angle is seeded by layer id, so the shimmer timing differs from Elias's original."
     },
     {
       "id": "accentGlow",
@@ -85,8 +188,23 @@
       "why": "Deep Glow radius 150, exposure 0.02, spread 33 makes the green arrow bloom on the dark card.",
       "call": "glow(layer, {radius: 150, exposure: 0.02})",
       "overlaps": "same as accentGlow in proposals.json",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--accentGlow.gif",
+      "preview": {
+        "layers": [
+          "Arrow",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "Card",
+          "BG"
+        ],
+        "start": 2,
+        "end": 3.5
+      },
+      "previewNote": "Rendered with a post-crop (full-frame render, frames cropped afterwards) because part_preview.py's comp crop (comp.cropToRegionOfInterest) leaves CC Light Sweep's center behind, so the sweep vanishes; the plain tool with this spec renders the arrow/ring without its sweep until that is fixed."
     },
     {
       "id": "statCard",
@@ -96,8 +214,26 @@
       "why": "1512x345 r24 card with a 5-stop vertical gradient (#15171b to #272b30 to #202428), grey title (SF Pro Medium 86, #454950, blur 2.5), white number (Regular 69) and grey label (#42454d, blur 1.5): focus lands on the number.",
       "call": "statCard(comp, {title, value, label, x, y, width})",
       "overlaps": "none; would host countUp + trendArrow + trailingLabel",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--statCard.gif",
+      "preview": {
+        "layers": [
+          "Card",
+          "Title",
+          "Counter",
+          "Views Label",
+          "Arrow",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 2.4
+      },
+      "previewNote": "Rendered with a post-crop (full-frame render, frames cropped afterwards) because part_preview.py's comp crop (comp.cropToRegionOfInterest) leaves CC Light Sweep's center behind, so the sweep vanishes; the plain tool with this spec renders the arrow/ring without its sweep until that is fixed."
     },
     {
       "id": "focusFalloffUI",
@@ -107,8 +243,22 @@
       "why": "Placeholder header bars + story-highlight circles drawn as shapes and blurred more the further they are from the number (1.5, 2.5, 3, 9, 12): a flat comp that reads as a macro shot of a real app.",
       "call": "focusFalloffUI(comp, {rows: [\"header\", \"highlights\"], blur: [9, 12]})",
       "overlaps": "none",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--focusFalloffUI.gif",
+      "preview": {
+        "layers": [
+          "Highlights",
+          "Header Placeholder",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0.8,
+        "end": 3.2
+      }
     },
     {
       "id": "phoneEdgeCloseup",
@@ -118,8 +268,22 @@
       "why": "Four gradient rects (side button, 9-stop metallic rail, bezel edge, dark screen) blurred 3 give the bright sliver of hardware that sells 'this is on a phone'.",
       "call": "phoneEdgeCloseup(comp, {x, y, side: \"left\", blur: 3})",
       "overlaps": "phoneMock (proposals.json) is a whole phone; this is the extreme close-up",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--phoneEdgeCloseup.gif",
+      "preview": {
+        "layers": [
+          "Phone",
+          "CAM CTRL"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 2.4
+      },
+      "previewNote": "Phone includes the 1900x1600 dark screen, so the crop is the whole frame; the bright button/rail sliver is the thin strip on the left."
     },
     {
       "id": "sideFalloff",
@@ -129,8 +293,20 @@
       "why": "A Multiply solid with a linear ramp white at x 1200 to 15% grey at x 1950 shades the right of the frame so the card fades into darkness.",
       "call": "sideFalloff(comp, {from: [1200, 540], to: [1950, 540], darkness: 0.15})",
       "overlaps": "background (that is the backdrop; this is a shading pass on top)",
-      "from": ["references/dj3-views-counter.recipe.json"],
-      "gif": "references/dj3-views-counter.gif"
+      "from": [
+        "references/dj3-views-counter.recipe.json"
+      ],
+      "gif": "references/parts/dj3-views-counter--sideFalloff.gif",
+      "preview": {
+        "layers": [
+          "Light Falloff",
+          "CAM CTRL"
+        ],
+        "keep": [],
+        "start": 1.5,
+        "end": 3
+      },
+      "previewNote": "Shown alone: the Multiply ramp itself (white to 15% grey). Over the scene it just darkens the right third."
     }
   ]
 }

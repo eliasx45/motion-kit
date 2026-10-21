@@ -24,7 +24,20 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--tiltedCardPush.gif",
+      "preview": {
+        "layers": [
+          "Camera 50mm",
+          "Tilted Cards"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 0,
+        "end": 1,
+        "fullFrame": true
+      },
+      "previewNote": "Full frame: the crop measures the 3D precomp layer without its perspective and cut the cards off."
     },
     {
       "id": "reelCard",
@@ -37,7 +50,19 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--reelCard.gif",
+      "preview": {
+        "layers": [
+          "Card L",
+          "Views 5.6M",
+          "Eye (Library) L"
+        ],
+        "keep": [],
+        "start": 0,
+        "end": 1,
+        "comp": "DJ4 Tilted Stats - Cards"
+      },
+      "previewNote": "The eye icon next to 5.6M is a PDF from Elias's Motion Library cache (/Users/elias/Library/Caches/EffectCraft/Motion Library/...Eye_White.pdf), so it renders empty here."
     },
     {
       "id": "driftApart",
@@ -50,7 +75,22 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--driftApart.gif",
+      "preview": {
+        "layers": [
+          "Card L",
+          "Card R",
+          "Views 5.6M",
+          "Views 3.2M",
+          "Eye (Library) L",
+          "Eye (Library) R"
+        ],
+        "keep": [],
+        "start": 0,
+        "end": 1,
+        "comp": "DJ4 Tilted Stats - Cards"
+      },
+      "previewNote": "Eye icons are a PDF only on Elias's Mac and render empty here."
     },
     {
       "id": "ringStat",
@@ -63,7 +103,21 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--ringStat.gif",
+      "preview": {
+        "layers": [
+          "Ring Base",
+          "Ring Fill",
+          "CTRL",
+          "Count",
+          "Eye (Library)"
+        ],
+        "keep": [],
+        "start": 1,
+        "end": 2.8,
+        "comp": "DJ4 Tilted Stats - Stats"
+      },
+      "previewNote": "Rendered with a post-crop (full-frame render, frames cropped afterwards) because part_preview.py's comp crop (comp.cropToRegionOfInterest) leaves CC Light Sweep's center behind, so the sweep vanishes; the plain tool with this spec renders the arrow/ring without its sweep until that is fixed. The eye icon beside the count is a PDF only on Elias's Mac and renders empty. Shown from the precomp, so the ring is round (the main comp stretches it 118% wide)."
     },
     {
       "id": "countUp",
@@ -76,7 +130,17 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--countUp.gif",
+      "preview": {
+        "layers": [
+          "Count",
+          "CTRL"
+        ],
+        "keep": [],
+        "start": 1,
+        "end": 2.8,
+        "comp": "DJ4 Tilted Stats - Stats"
+      }
     },
     {
       "id": "statLegend",
@@ -89,7 +153,18 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--statLegend.gif",
+      "preview": {
+        "layers": [
+          "Pct",
+          "Dot",
+          "Label"
+        ],
+        "keep": [],
+        "start": 1,
+        "end": 2,
+        "comp": "DJ4 Tilted Stats - Stats"
+      }
     },
     {
       "id": "mosaicEcho",
@@ -102,7 +177,19 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--mosaicEcho.gif",
+      "preview": {
+        "layers": [
+          "Mosaic (adj)",
+          "Reel Cards",
+          "Title A",
+          "Title B"
+        ],
+        "keep": [],
+        "start": 1,
+        "end": 2,
+        "comp": "DJ4 Tilted Stats - Stats"
+      }
     },
     {
       "id": "settleSlide",
@@ -115,7 +202,18 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--settleSlide.gif",
+      "preview": {
+        "layers": [
+          "Stats"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 1,
+        "end": 2.8,
+        "fullFrame": true
+      }
     },
     {
       "id": "lightSweep",
@@ -128,7 +226,19 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--lightSweep.gif",
+      "preview": {
+        "layers": [
+          "Ring Fill",
+          "Ring Base",
+          "CTRL"
+        ],
+        "keep": [],
+        "start": 2.1,
+        "end": 2.8,
+        "comp": "DJ4 Tilted Stats - Stats"
+      },
+      "previewNote": "Rendered with a post-crop (full-frame render, frames cropped afterwards) because part_preview.py's comp crop (comp.cropToRegionOfInterest) leaves CC Light Sweep's center behind, so the sweep vanishes; the plain tool with this spec renders the arrow/ring without its sweep until that is fixed."
     },
     {
       "id": "accentGlow",
@@ -141,7 +251,18 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--accentGlow.gif",
+      "preview": {
+        "layers": [
+          "Ring Fill",
+          "Ring Base",
+          "CTRL"
+        ],
+        "keep": [],
+        "start": 1,
+        "end": 2.2,
+        "comp": "DJ4 Tilted Stats - Stats"
+      }
     },
     {
       "id": "hazeGlow",
@@ -154,7 +275,19 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--hazeGlow.gif",
+      "preview": {
+        "layers": [
+          "Haze Blue"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 1,
+        "end": 2.8,
+        "fullFrame": true
+      },
+      "previewNote": "Very subtle by design: #0f1b23 added over near-black; watch it drift left with the Stats block."
     },
     {
       "id": "scanlineTexture",
@@ -167,7 +300,21 @@
       "from": [
         "references/dj4-tilted-stats.recipe.json"
       ],
-      "gif": "references/dj4-tilted-stats.gif"
+      "gif": "references/parts/dj4-tilted-stats--scanlineTexture.gif",
+      "preview": {
+        "layers": [
+          "Adjustment Layer 1",
+          "Stats",
+          "Haze Blue"
+        ],
+        "keep": [
+          "BG"
+        ],
+        "start": 1,
+        "end": 2.8,
+        "fullFrame": true
+      },
+      "previewNote": "Blinds at 14.85% opacity are faint; shown over the stat shot so there is something to texture."
     }
   ]
 }
