@@ -152,5 +152,4 @@ effectcraft-cli run file.newProject '{}' comp.fromRecipe '{"path":"/abs/x.recipe
 - For a Motion Library card: `library.apply` it (or open its project), then `comp.recipe` the comp.
 - To turn a recipe into kit material: copy its values into `style.jsx` knobs and its structure into
   a primitive, then prove the primitive by rebuilding the original (`./build.sh`, compare).
-- Needs EffectCraft with `comp.recipe` (fork branch `claude/rl-env-use-video-editing-a259xn`,
-  commit fbae31f, until it is merged).
+- Needs EffectCraft `main` from 41985bc on (21 Oct 2026).
