@@ -28,6 +28,13 @@ var STYLE = {
     step: 0.08,              // seconds between one item's entrance and the next
     order: "in-order"        // in-order | reverse | center-out
   },
+  slide: {
+    distance: 120 / 1080,    // how far below it starts, fraction of the comp's shorter side
+    duration: 1.0,           // seconds for one item's move
+    outInfluence: 0,         // expo out: leaves its start at full speed…
+    inInfluence: 100,        // …and glides into place
+    fadeIn: 0.12             // seconds; hides the item until its move starts
+  },
   pop: {
     overshoot: 115, undershoot: 95,   // scale %, the spring
     peakAt: 0.28, dipAt: 0.42, settleAt: 0.54, fadeIn: 0.12   // seconds

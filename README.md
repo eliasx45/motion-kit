@@ -9,9 +9,11 @@ lib/kit.jsx          helpers over app.run (EffectCraft engine commands with JSON
 lib/background.jsx   background(comp)                       radial grey, full frame, at the back
 lib/orb.jsx          orb(comp, {shape, size, x, y, name})   radial gradient, inner shadow, hairline stroke
 lib/pop.jsx          pop(layer, {at})                       scale in with one overshoot and one rebound
-lib/stagger.jsx      stagger(layers, {at, step, order, enter})  many entrances in rhythm (any entrance primitive)
+lib/slide.jsx        slideUp(layer, {at, duration, distance})  rise into place, expo out
+lib/stagger.jsx      stagger(layers, {at, step, order, enter, total, duration})  many entrances in rhythm (any entrance primitive)
 hero.jsx             scene: orb + rounded square (side by side, or stacked when portrait)
 row.jsx              scene: 5 orbs in a row, rippling in from the centre
+row-slide.jsx        scene: the row rising in left to right, landed by 1.5 s
 hero-vertical.jsx    the same scene at 1080x1920
 refs/                reference renders (frame at 1 s) that build.sh compares against
 ```
