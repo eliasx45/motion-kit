@@ -9,8 +9,8 @@
 #include "lib/stagger.jsx"
 
 var COUNT = 5;
-var comp = newComp("Main", 1920, 1080, 2.5);
-background(comp);
+var comp = target("Main", 1920, 1080, 2.5);
+if (comp.isNew) background(comp);
 var size = 0.22 * unit(comp), gap = 0.06 * unit(comp);
 var total = COUNT * size + (COUNT - 1) * gap;
 var items = [];
@@ -18,5 +18,5 @@ for (var i = 0; i < COUNT; i++) {
   items.push(orb(comp, { shape: i % 2 ? "rounded" : "circle", size: size,
     x: (comp.w - total) / 2 + size / 2 + i * (size + gap), name: "Orb " + (i + 1) }));
 }
-stagger(items, { enter: slideUp, order: "in-order", total: 1.5, duration: STYLE.slide.duration });
+stagger(items, { at: comp.t, enter: slideUp, order: "in-order", total: 1.5, duration: STYLE.slide.duration });
 "row-slide built";

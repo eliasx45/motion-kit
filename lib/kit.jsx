@@ -33,3 +33,17 @@ function velocity(layer, path, time, v) {                         // v: {inSpeed
   app.run("keys.select", { keys: [{ layer: layer, path: path, time: time }] });
   app.run("keys.velocity", v);
 }
+// target(name, w, h, dur) — where a scene builds. With a comp open (you're editing), the scene
+// goes into it at the playhead: {isNew: false, t: playhead}. With nothing open, it makes a new
+// comp: {isNew: true, t: 0}. Scenes add their background only when isNew.
+function target(name, w, h, dur) {
+  var active = app.project.activeItem;
+  if (active && typeof SCENE_NEW_COMP === "undefined") {
+    var info = app.run("comp.info", {});
+    COMP = { id: info.id, name: info.name, w: info.width, h: info.height, isNew: false, t: active.time };
+    return COMP;
+  }
+  var c = newComp(name, w, h, dur);
+  c.isNew = true; c.t = 0;
+  return c;
+}

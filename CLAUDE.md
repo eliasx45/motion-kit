@@ -24,11 +24,24 @@ AI. **Build from this kit; don't design from scratch.**
    changed and why in plain words, point out reusable patterns, and say when there's a
    higher-leverage way to do something.
 
+## Using the kit in a live edit
+Scenes build with `target()`: with a comp open in EffectCraft, they go **into that comp at the
+playhead** (no background, existing layers untouched); with nothing open, they make a new comp.
+Run a scene against the running app (control port 9877, or `EFFECTCRAFT_CONTROL_PORT`):
+
+```sh
+effectcraft-cli script /abs/path/motion-kit/row-slide.jsx --bridge 9877
+```
+
+Elias is often on a deadline. Then the edit comes first: use what the kit has, make anything
+missing directly in the edit, and capture it in `inbox/` (recipe + one line in `inbox/NOTES.md`)
+instead of building a primitive. Turn inbox items into primitives when asked, not mid-edit.
+
 ## Layout
 | File | What it is |
 |---|---|
 | `style.jsx` | `STYLE`: bg, orb, stroke, innerShadow, stagger, slide, pop. The only place for look values |
-| `lib/kit.jsx` | `unit`, `px`, `set(layer, path, value)`, `key(layer, path, time, value)`, `ease(layer, keys)`, `newComp(name, w, h, dur)` (also sets `COMP`), `newShape(params)`, `get(layer, path, time?)`, `velocity(layer, path, time, {inSpeed, inInfluence, outSpeed, outInfluence})` |
+| `lib/kit.jsx` | `unit`, `px`, `set(layer, path, value)`, `key(layer, path, time, value)`, `ease(layer, keys)`, `newComp(name, w, h, dur)` (also sets `COMP`), `target(name, w, h, dur)` (the open comp at the playhead, or a new comp: `{isNew, t}`), `newShape(params)`, `get(layer, path, time?)`, `velocity(layer, path, time, {inSpeed, inInfluence, outSpeed, outInfluence})` |
 | `lib/background.jsx` | `background(comp, {center?, edge?, name?})`: full-frame radial grey, sent to the back |
 | `lib/orb.jsx` | `orb(comp, {shape: "circle"\|"rounded", size?, x?, y?, name?})`: radial gradient, inner shadow, hairline stroke |
 | `lib/pop.jsx` | `pop(layer, {at?})`: scale in with one overshoot and one rebound, fading in |
@@ -38,6 +51,7 @@ AI. **Build from this kit; don't design from scratch.**
 | `row.jsx` | Scene: 5 orbs (alternating circle/rounded) in a row, staggered center-out |
 | `row-slide.jsx` | Scene: the row rising in left to right with `slideUp`, all landed by 1.5 s |
 | `hero-vertical.jsx` | `hero.jsx` at 1080×1920 (sets `SIZE` before including) |
+| `inbox/` | Candidates captured during edits (recipes + `NOTES.md`), to become primitives later |
 | `refs/` | Reference frames (`<scene>-1s.png`) that `build.sh` compares against |
 | `build.sh` | `./build.sh <scene> [--bless]`; `EFFECTCRAFT_CLI` picks the CLI |
 
