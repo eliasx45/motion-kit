@@ -24,6 +24,10 @@ what agents propose; what's waiting in the inbox. Answer proposals with one word
 
 ## Proposed (8 waiting for you)
 
+### Patterns across comps (earlier pass) (8)
+
+Found by looking for what repeats; many overlap the parts above.
+
 | Preview | Proposal | What it would capture | Call it would enable | Overlaps | From |
 |---|---|---|---|---|---|
 | <img src="references/dj5-card-variants.gif" width="320"> | **darkStage**<br>Near-black radial stage behind a scene | 6 of 8 references start from a solid with a centred Radial Ramp, near-black (DJ1 #050505→#000, DJ5 #090909→#020202, DJ2 #0a0a0a→#050505), often Scatter 50 against banding; DJ4 tints it blue, drag-drop/ig1 use slate. | `background(comp, {look: "stage", center, edge, scatter: 50})` | background (same job, different look): better as a `look` option + STYLE knobs than a new primitive. Note: Scatter is seeded per layer, so rebuilds differ by ±2/255 (see DJ5). | [dj1-trial-rings](references/dj1-trial-rings.recipe.json), [dj2-trial-toggle](references/dj2-trial-toggle.recipe.json), [dj4-tilted-stats](references/dj4-tilted-stats.recipe.json), [dj5-card-variants](references/dj5-card-variants.recipe.json), [drag-drop](references/drag-drop.recipe.json), [ig1](references/ig1.recipe.json) |
@@ -35,6 +39,7 @@ what agents propose; what's waiting in the inbox. Answer proposals with one word
 | <img src="references/dj3-views-counter.gif" width="320"> | **lightSweep**<br>Light sweep across a card | DJ3 (arrow/card) and DJ4 use CC Light Sweep (Width 50, Sweep 50, Edge 100) to catch the eye on a stat card. DJ3 drives its direction with wiggle(), which is why its rebuild isn't exact; a primitive should key the sweep instead. | `lightSweep(layer, {at, duration, angle, width: 50})` | none | [dj3-views-counter](references/dj3-views-counter.recipe.json), [dj4-tilted-stats](references/dj4-tilted-stats.recipe.json) |
 | <img src="references/ig1.gif" width="320"> | **phoneMock**<br>Phone frame with a UI screen inside | DJ3 (Phone shape under the views card) and ig1 (editable phone assembly with status bar, Instagram profile, scrolling matte) both put a card over a phone screen. | `phoneMock(comp, {screen: comp\|footage, x, y, scale})` | a scene more than a primitive; ig1 already is that scene | [dj3-views-counter](references/dj3-views-counter.recipe.json), [ig1](references/ig1.recipe.json) |
 
+
 ## Inbox (0 not yet looked at)
 
 Empty. During an edit, say “inbox this”.
@@ -43,15 +48,15 @@ Notes from the edits: [inbox/NOTES.md](inbox/NOTES.md).
 
 ## References (8 converted comps)
 
-| Preview | Comp |
-|---|---|
-| <img src="references/dj1-trial-rings.gif" width="320"> | [dj1-trial-rings](references/dj1-trial-rings.recipe.json) |
-| <img src="references/dj2-trial-toggle.gif" width="320"> | [dj2-trial-toggle](references/dj2-trial-toggle.recipe.json) |
-| <img src="references/dj3-views-counter.gif" width="320"> | [dj3-views-counter](references/dj3-views-counter.recipe.json) |
-| <img src="references/dj4-tilted-stats.gif" width="320"> | [dj4-tilted-stats](references/dj4-tilted-stats.recipe.json) |
-| <img src="references/dj5-card-variants.gif" width="320"> | [dj5-card-variants](references/dj5-card-variants.recipe.json) |
-| <img src="references/drag-drop.gif" width="320"> | [drag-drop](references/drag-drop.recipe.json) |
-| <img src="references/ig1.gif" width="320"> | [ig1](references/ig1.recipe.json) |
-| <img src="references/youtube-zoom-out-link.gif" width="320"> | [youtube-zoom-out-link](references/youtube-zoom-out-link.recipe.json) |
+| Preview | Comp | Breakdown |
+|---|---|---|
+| <img src="references/dj1-trial-rings.gif" width="320"> | [dj1-trial-rings](references/dj1-trial-rings.recipe.json) | (not decomposed yet) |
+| <img src="references/dj2-trial-toggle.gif" width="320"> | [dj2-trial-toggle](references/dj2-trial-toggle.recipe.json) | (not decomposed yet) |
+| <img src="references/dj3-views-counter.gif" width="320"> | [dj3-views-counter](references/dj3-views-counter.recipe.json) | (not decomposed yet) |
+| <img src="references/dj4-tilted-stats.gif" width="320"> | [dj4-tilted-stats](references/dj4-tilted-stats.recipe.json) | (not decomposed yet) |
+| <img src="references/dj5-card-variants.gif" width="320"> | [dj5-card-variants](references/dj5-card-variants.recipe.json) | (not decomposed yet) |
+| <img src="references/drag-drop.gif" width="320"> | [drag-drop](references/drag-drop.recipe.json) | (not decomposed yet) |
+| <img src="references/ig1.gif" width="320"> | [ig1](references/ig1.recipe.json) | (not decomposed yet) |
+| <img src="references/youtube-zoom-out-link.gif" width="320"> | [youtube-zoom-out-link](references/youtube-zoom-out-link.recipe.json) | (not decomposed yet) |
 
 Details and rebuild checks: [references/README.md](references/README.md).

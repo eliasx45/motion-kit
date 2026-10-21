@@ -76,9 +76,32 @@ def gif(path, width=320):
     return f'<img src="{path}" width="{width}">' if os.path.exists(os.path.join(KIT, path)) else "(no preview yet)"
 
 
+def all_proposals():
+    """Per-comp files (references/<slug>.proposals.json, inbox/*.proposals.json) plus proposals.json.
+    The same id in several files is one proposal with its sources merged; proposals.json wins on
+    status and note, so decisions are recorded there."""
+    merged = {}
+    for folder in ("references", "inbox"):
+        d = os.path.join(KIT, folder)
+        for f in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+            if f.endswith(".proposals.json"):
+                for p in load(os.path.join(folder, f), {}).get("proposals", []):
+                    if p.get("id") in merged:
+                        m = merged[p["id"]]
+                        m["from"] = sources(m.get("from")) + [x for x in sources(p.get("from")) if x not in sources(m.get("from"))]
+                    else:
+                        merged[p["id"]] = dict(p)
+    for p in load("proposals.json", {"proposals": []}).get("proposals", []):
+        if p.get("id") in merged:
+            merged[p["id"]].update({k: v for k, v in p.items() if k in ("status", "note")})
+        else:
+            merged[p["id"]] = dict(p)
+    return list(merged.values())
+
+
 def main():
     cat = load("catalog.json", {"primitives": [], "scenes": []})
-    props = load("proposals.json", {"proposals": []}).get("proposals", [])
+    props = all_proposals()
     os.makedirs(os.path.join(KIT, "catalog"), exist_ok=True)
 
     if "--no-render" not in sys.argv:
@@ -106,12 +129,22 @@ def main():
 
     open_props = [p for p in props if p.get("status", "proposed") == "proposed"]
     md += ["", f"## Proposed ({len(open_props)} waiting for you)", ""]
-    if open_props:
-        md += ["| Preview | Proposal | What it would capture | Call it would enable | Overlaps | From |", "|---|---|---|---|---|---|"]
-        for p in open_props:
+    groups = [
+        ("template", "Templates: a whole comp, reusable with knobs", "Each keeps the comp exactly as made; the call lists what you'd change per video."),
+        ("part", "Parts: distinctive pieces, reusable on their own", "Moves and elements taken out of one comp, even if they appear only there."),
+        (None, "Patterns across comps (earlier pass)", "Found by looking for what repeats; many overlap the parts above."),
+    ]
+    for kind, title, note in groups:
+        rows = [p for p in open_props if p.get("kind") == kind or (kind is None and p.get("kind") not in ("template", "part"))]
+        if not rows:
+            continue
+        md += [f"### {title} ({len(rows)})", "", note, "",
+               "| Preview | Proposal | What it would capture | Call it would enable | Overlaps | From |", "|---|---|---|---|---|---|"]
+        for p in rows:
             prev = gif(p["gif"]) if p.get("gif") else "(no preview)"
             md.append(f"| {prev} | **{p['id']}**<br>{cell(p.get('title'))} | {cell(p.get('why'))} | `{cell(p.get('call'))}` | {cell(p.get('overlaps', '—'))} | {links(p.get('from'))} |")
-    else:
+        md.append("")
+    if not open_props:
         md.append("Nothing proposed right now.")
     decided = [p for p in props if p.get("status", "proposed") != "proposed"]
     if decided:
@@ -129,8 +162,10 @@ def main():
     refs = sorted(f[: -len(".recipe.json")] for f in os.listdir(os.path.join(KIT, "references")) if f.endswith(".recipe.json")) if os.path.isdir(os.path.join(KIT, "references")) else []
     md += ["", f"## References ({len(refs)} converted comps)", ""]
     if refs:
-        md += ["| Preview | Comp |", "|---|---|"]
-        md += [f"| {gif('references/' + r + '.gif')} | [{r}](references/{r}.recipe.json) |" for r in refs]
+        md += ["| Preview | Comp | Breakdown |", "|---|---|---|"]
+        for r in refs:
+            bd = f"[how it's made](references/{r}.breakdown.md)" if os.path.exists(os.path.join(KIT, "references", f"{r}.breakdown.md")) else "(not decomposed yet)"
+            md.append(f"| {gif('references/' + r + '.gif')} | [{r}](references/{r}.recipe.json) | {bd} |")
         md += ["", "Details and rebuild checks: [references/README.md](references/README.md)."]
     else:
         md.append("None yet. Converted comps land here with their recipe and a GIF.")

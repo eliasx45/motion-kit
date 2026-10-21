@@ -94,7 +94,9 @@ open proposals, the inbox and the converted references. It's generated; never ed
   `catalog.py` and commit `catalog/`, `CATALOG.md` and `library.json` with it.
 
 ## Proposals: suggest, don't build
-Never build a new primitive on your own. Propose it in `proposals.json` and let Elias decide:
+Never build a new primitive on your own. Propose it (in `proposals.json`, or per comp in
+`references/<slug>.proposals.json`) and let Elias decide. `kind` is `template` (a whole comp with
+knobs), `part` (one distinctive move or element) or omitted (a pattern across comps):
 
 ```json
 {"id": "cardRow", "title": "2:3 post cards rising in a row", "status": "proposed",
@@ -121,8 +123,17 @@ an existing primitive (a new option or STYLE knob) over adding a near-duplicate.
 
 ## References: Elias's converted comps
 `references/<slug>.recipe.json` (+ `.gif`, and a row in `references/README.md` with the rebuild
-check) are his important finished comps as recipes. Read them for exact values and structure.
-They are references, not primitives: patterns that repeat across them become proposals.
+check) are his important finished comps as recipes. **He considers them perfect as a whole.**
+Take each one apart, don't boil them down to what they have in common:
+
+- `references/<slug>.breakdown.md`: what it is, the timeline (beats with times), each element
+  (its layers, look and moves with exact easing), its **knobs** (what changes per video, with
+  layer + property path), its **distinctive parts**, and rebuild notes.
+- `references/<slug>.proposals.json`: one `"kind": "template"` proposal (the whole comp as a
+  call with knobs) and one `"kind": "part"` proposal per distinctive move or element, **even if
+  it appears in only this comp**. The test is "would he reuse it on its own", not "does it repeat".
+  `catalog.py` merges these files with `proposals.json` (same id = one proposal, sources merged)
+  and shows templates and parts separately. Decisions go in `proposals.json` (status, note).
 
 ## EffectCraft gotchas
 - `shape.newShape` adds the shape *into* the selected shape layer. Use `newShape()`, which
