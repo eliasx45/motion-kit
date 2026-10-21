@@ -24,7 +24,17 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--reelCard.gif",
+      "preview": {
+        "layers": [
+          "Card 1"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG"
+        ],
+        "start": 0.5,
+        "end": 2.0
+      }
     },
     {
       "id": "blurCut",
@@ -37,7 +47,23 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--blurCut.gif",
+      "preview": {
+        "layers": [
+          "DJ5 Card Variants - FX",
+          "DJ5 Card Variants - Flash",
+          "Card 1",
+          "Card L",
+          "Card R",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG"
+        ],
+        "start": 4.4,
+        "end": 5.6,
+        "fullFrame": true
+      }
     },
     {
       "id": "scanFill",
@@ -50,7 +76,20 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--scanFill.gif",
+      "preview": {
+        "layers": [
+          "Card L",
+          "Card R",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG",
+          "DJ5 Card Variants - FX"
+        ],
+        "start": 5.2,
+        "end": 8.4
+      }
     },
     {
       "id": "stampSlam",
@@ -63,7 +102,21 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--stampSlam.gif",
+      "preview": {
+        "layers": [
+          "Stamp",
+          "Stamp Text",
+          "Card R",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG",
+          "DJ5 Card Variants - FX"
+        ],
+        "start": 7.4,
+        "end": 8.6
+      }
     },
     {
       "id": "impactShake",
@@ -76,7 +129,20 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--impactShake.gif",
+      "preview": {
+        "layers": [
+          "Card R",
+          "Stamp",
+          "Stamp Text",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG"
+        ],
+        "start": 7.7,
+        "end": 8.4
+      }
     },
     {
       "id": "outlineVerdict",
@@ -89,7 +155,19 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--outlineVerdict.gif",
+      "preview": {
+        "layers": [
+          "Card R",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG",
+          "DJ5 Card Variants - FX"
+        ],
+        "start": 13.3,
+        "end": 14.3
+      }
     },
     {
       "id": "dimAway",
@@ -102,7 +180,19 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--dimAway.gif",
+      "preview": {
+        "layers": [
+          "Card L",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG",
+          "Card R"
+        ],
+        "start": 7.4,
+        "end": 10.8
+      }
     },
     {
       "id": "featureLabel",
@@ -115,7 +205,21 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--featureLabel.gif",
+      "preview": {
+        "layers": [
+          "Label Flipped",
+          "Icon Flipped",
+          "Label Speed",
+          "Icon Speed",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG"
+        ],
+        "start": 9.9,
+        "end": 12.7
+      }
     },
     {
       "id": "nudgeUp",
@@ -128,7 +232,19 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--nudgeUp.gif",
+      "preview": {
+        "layers": [
+          "Tag Speed",
+          "Tag Icon"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG",
+          "Card 1"
+        ],
+        "start": 2.3,
+        "end": 3.9
+      }
     },
     {
       "id": "glyphIcon",
@@ -141,7 +257,17 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--glyphIcon.gif",
+      "preview": {
+        "layers": [
+          "Icon Flipped",
+          "Icon Speed",
+          "CTRL"
+        ],
+        "keep": [],
+        "start": 11.3,
+        "end": 12.6
+      }
     },
     {
       "id": "nullPullBack",
@@ -154,7 +280,20 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--nullPullBack.gif",
+      "preview": {
+        "layers": [
+          "Card L",
+          "Card R",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG"
+        ],
+        "start": 4.8,
+        "end": 8.8,
+        "fullFrame": true
+      }
     },
     {
       "id": "accentGlow",
@@ -167,7 +306,22 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--accentGlow.gif",
+      "preview": {
+        "layers": [
+          "DJ5 Card Variants - FX",
+          "Card L",
+          "Card R",
+          "Stamp",
+          "Stamp Text",
+          "CTRL"
+        ],
+        "keep": [
+          "DJ5 Card Variants - BG"
+        ],
+        "start": 7.3,
+        "end": 8.3
+      }
     },
     {
       "id": "darkStage",
@@ -180,7 +334,16 @@
       "from": [
         "references/dj5-card-variants.recipe.json"
       ],
-      "gif": "references/dj5-card-variants.gif"
+      "gif": "references/parts/dj5-card-variants--darkStage.gif",
+      "preview": {
+        "layers": [
+          "DJ5 Card Variants - BG"
+        ],
+        "keep": [],
+        "start": 0,
+        "end": 1,
+        "fullFrame": true
+      }
     }
   ]
 }

@@ -24,7 +24,8 @@
       "from": [
         "references/drag-drop.recipe.json"
       ],
-      "gif": "references/drag-drop.gif"
+      "gif": "references/drag-drop.gif",
+      "previewNote": "No isolated preview: the drag doesn't play in EffectCraft yet (the Trace null's expressions use layer(\"ADBE Root Vectors Group\")(1)…, unsupported), and the hand and icon images are files only on Elias's Mac, so they render empty here. The GIF is the whole comp."
     },
     {
       "id": "handRelease",
@@ -37,7 +38,8 @@
       "from": [
         "references/drag-drop.recipe.json"
       ],
-      "gif": "references/drag-drop.gif"
+      "gif": "references/drag-drop.gif",
+      "previewNote": "No isolated preview: Grab.png / Grabbed.png are files only on Elias's Mac, so the hand renders empty here. The GIF is the whole comp."
     },
     {
       "id": "dropIntoSlot",
@@ -50,7 +52,8 @@
       "from": [
         "references/drag-drop.recipe.json"
       ],
-      "gif": "references/drag-drop.gif"
+      "gif": "references/drag-drop.gif",
+      "previewNote": "No isolated preview: the icons (transcript.png, screenshot-comp7.png) are files only on Elias's Mac, so they render empty here. The GIF is the whole comp."
     },
     {
       "id": "attachmentCaption",
@@ -63,7 +66,21 @@
       "from": [
         "references/drag-drop.recipe.json"
       ],
-      "gif": "references/drag-drop.gif"
+      "gif": "references/parts/drag-drop--attachmentCaption.gif",
+      "preview": {
+        "layers": [
+          "script.docx - attachment label"
+        ],
+        "keep": [
+          "Dark Royal Blue Solid 6",
+          "transcript.png",
+          "Trace Shape Layer 1: Path 1 [1.1]"
+        ],
+        "start": 1.8,
+        "end": 3.0,
+        "comp": "Comp 7 - Script drop (copy of Pre-comp 10)"
+      },
+      "previewNote": "Only the caption shows: the icon it follows (transcript.png) is a file only on Elias's Mac and renders empty here, and the drag doesn't play, so the caption appears in place without the icon."
     },
     {
       "id": "screenshotCutout",
@@ -76,7 +93,8 @@
       "from": [
         "references/drag-drop.recipe.json"
       ],
-      "gif": "references/drag-drop.gif"
+      "gif": "references/drag-drop.gif",
+      "previewNote": "No isolated preview: claude.png (the prompt-box screenshot) is a file only on Elias's Mac, so it renders empty here. The GIF is the whole comp."
     },
     {
       "id": "darkStage",
@@ -89,7 +107,16 @@
       "from": [
         "references/drag-drop.recipe.json"
       ],
-      "gif": "references/drag-drop.gif"
+      "gif": "references/parts/drag-drop--darkStage.gif",
+      "preview": {
+        "layers": [
+          "01 Script - original timing"
+        ],
+        "keep": [],
+        "start": 0,
+        "end": 1,
+        "fullFrame": true
+      }
     }
   ]
 }
