@@ -24,6 +24,18 @@ AI. **Build from this kit; don't design from scratch.**
    changed and why in plain words, point out reusable patterns, and say when there's a
    higher-leverage way to do something.
 
+## Which EffectCraft
+Always run EffectCraft through the fork's `scripts/fork/cli.sh` (in the EffectCraft checkout),
+never a copied `effectcraft-cli`: it rebuilds the CLI first when the code changed, so you always
+run the current version (`comp.recipe` and the script fixes need EffectCraft from 21 Oct 2026 on).
+
+```sh
+export EFFECTCRAFT_CLI=/path/to/effectcraft/scripts/fork/cli.sh   # build.sh and the commands below use it
+```
+
+The first run after a merge builds for a minute or two (shared with the Dock app's build); after
+that it's instant. In the examples below, `effectcraft-cli` means `$EFFECTCRAFT_CLI`.
+
 ## Using the kit in a live edit
 Scenes build with `target()`: with a comp open in EffectCraft, they go **into that comp at the
 playhead** (no background, existing layers untouched); with nothing open, they make a new comp.
