@@ -100,10 +100,12 @@ Never build a new primitive on your own. Propose it in `proposals.json` and let 
 {"id": "cardRow", "title": "2:3 post cards rising in a row", "status": "proposed",
  "why": "what it captures, in one line", "call": "cardRow(comp, {count, at})",
  "overlaps": "slideUp + stagger (would add the card look only)",
- "from": "inbox/2026-10-21-card-row.recipe.json", "gif": "inbox/2026-10-21-card-row.gif"}
+ "from": ["inbox/2026-10-21-card-row.recipe.json"], "gif": "inbox/2026-10-21-card-row.gif"}
 ```
 
-Run `catalog.py --no-render` so it shows under **Proposed**. Elias answers yes / no / merge with
+`from` lists every inbox item or reference it comes from. Preview GIFs: quarter resolution at 12 fps
+(`render … --format gif --resolution quarter --fps 12`), a few seconds at most. Run
+`catalog.py --no-render` so it shows under **Proposed**. Elias answers yes / no / merge with
 `<primitive>`; set `status` to `approved`, `rejected` or `merged` (with a `note`). Prefer extending
 an existing primitive (a new option or STYLE knob) over adding a near-duplicate.
 

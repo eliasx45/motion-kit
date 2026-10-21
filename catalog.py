@@ -39,7 +39,7 @@ def render_scene(sid):
     proj = os.path.join(out, f"{sid}.ecproj")
     cli("script", os.path.join(KIT, f"{sid}.jsx"), "--empty", "--save-as", proj)
     cli("render-frame", proj, "--comp", "Main", "--time", "1", "--max-side", "640", "--out", os.path.join(out, f"{sid}.png"))
-    cli("render", proj, "--comp", "Main", "--out", os.path.join(out, f"{sid}.gif"), "--format", "gif", "--resolution", "quarter")
+    cli("render", proj, "--comp", "Main", "--out", os.path.join(out, f"{sid}.gif"), "--format", "gif", "--resolution", "quarter", "--fps", "12")
     cli("render", proj, "--comp", "Main", "--out", os.path.join(out, f"{sid}.mp4"), "--format", "h264", "--resolution", "half")
 
 
@@ -55,6 +55,21 @@ def duration(sid):
             d = kind.get("duration")
             return d / TICKS if isinstance(d, (int, float)) else None  # stored in ticks
     return None
+
+
+def cell(text):
+    """Table-safe: a "|" inside a cell would end it, even in a code span."""
+    return str(text or "").replace("|", "\\|").replace("\n", " ")
+
+
+def sources(value):
+    """A proposal's "from": a list, or one string with comma-separated paths."""
+    items = value if isinstance(value, list) else str(value or "").split(",")
+    return [i.strip() for i in items if i and i.strip()]
+
+
+def links(value):
+    return ", ".join(f"[{os.path.basename(i).replace('.recipe.json', '')}]({i})" for i in sources(value))
 
 
 def gif(path, width=320):
@@ -84,10 +99,10 @@ def main():
         "|---|---|---|---|",
     ]
     for p in cat["primitives"]:
-        md.append(f"| {gif('catalog/' + p['demo'] + '.gif')} | **`{p['id']}`**<br>[{p['file']}]({p['file']}) | {p['what']} | `{p['call']}` |")
+        md.append(f"| {gif('catalog/' + p['demo'] + '.gif')} | **`{p['id']}`**<br>[{p['file']}]({p['file']}) | {cell(p['what'])} | `{cell(p['call'])}` |")
     md += ["", "## Scenes", "", "| Preview | Scene | What it is | Build |", "|---|---|---|---|"]
     for s in cat["scenes"]:
-        md.append(f"| {gif('catalog/' + s['id'] + '.gif')} | **{s['id']}**<br>[{s['id']}.jsx]({s['id']}.jsx) | {s['what']} | `./build.sh {s['id']}` |")
+        md.append(f"| {gif('catalog/' + s['id'] + '.gif')} | **{s['id']}**<br>[{s['id']}.jsx]({s['id']}.jsx) | {cell(s['what'])} | `./build.sh {s['id']}` |")
 
     open_props = [p for p in props if p.get("status", "proposed") == "proposed"]
     md += ["", f"## Proposed ({len(open_props)} waiting for you)", ""]
@@ -95,7 +110,7 @@ def main():
         md += ["| Preview | Proposal | What it would capture | Call it would enable | Overlaps | From |", "|---|---|---|---|---|---|"]
         for p in open_props:
             prev = gif(p["gif"]) if p.get("gif") else "(no preview)"
-            md.append(f"| {prev} | **{p['id']}**<br>{p.get('title', '')} | {p.get('why', '')} | `{p.get('call', '')}` | {p.get('overlaps', '—')} | {p.get('from', '')} |")
+            md.append(f"| {prev} | **{p['id']}**<br>{cell(p.get('title'))} | {cell(p.get('why'))} | `{cell(p.get('call'))}` | {cell(p.get('overlaps', '—'))} | {links(p.get('from'))} |")
     else:
         md.append("Nothing proposed right now.")
     decided = [p for p in props if p.get("status", "proposed") != "proposed"]
@@ -105,7 +120,7 @@ def main():
         md += ["", "</details>"]
 
     inbox = sorted(f for f in os.listdir(os.path.join(KIT, "inbox")) if f.endswith(".recipe.json")) if os.path.isdir(os.path.join(KIT, "inbox")) else []
-    proposed_from = {p.get("from") for p in props}
+    proposed_from = {src for p in props for src in sources(p.get("from"))}
     raw = [f for f in inbox if f"inbox/{f}" not in proposed_from]
     md += ["", f"## Inbox ({len(raw)} not yet looked at)", ""]
     md += [f"- [inbox/{f}](inbox/{f})" for f in raw] or ["Empty. During an edit, say “inbox this”."]
