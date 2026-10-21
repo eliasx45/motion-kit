@@ -142,6 +142,8 @@ def main():
                "| Preview | Proposal | What it would capture | Call it would enable | Overlaps | From |", "|---|---|---|---|---|---|"]
         for p in rows:
             prev = gif(p["gif"]) if p.get("gif") else "(no preview)"
+            if p.get("previewNote"):
+                prev += f"<br><sub>{cell(p['previewNote'])}</sub>"
             md.append(f"| {prev} | **{p['id']}**<br>{cell(p.get('title'))} | {cell(p.get('why'))} | `{cell(p.get('call'))}` | {cell(p.get('overlaps', '—'))} | {links(p.get('from'))} |")
         md.append("")
     if not open_props:
