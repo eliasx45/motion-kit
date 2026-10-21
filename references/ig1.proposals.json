@@ -1,0 +1,147 @@
+{
+ "proposals": [
+  {
+   "id": "igProfileEarnings",
+   "kind": "template",
+   "title": "Instagram profile on a phone, earnings card rises over it: “$100–$500 just from that video”",
+   "status": "proposed",
+   "why": "The whole ig1 comp: phone flies in from the right while the profile scrolls to the reel grid (sticky tabs), a light card rises 32 px as the phone blurs to 6, a green ↗ springs in, the amount builds in two hard cuts and the tail words drop in.",
+   "call": "igProfileEarnings(comp, {at, low: \"$100\", high: \"–$500\", tail: \"just from that video\", lowAt: 2.9333, highAt: 3.6667, tailAt: 4.5333, arrowColor: \"#73c98f\", cardColor: \"#f6f7f9\", username: \"yournamehere\", name: \"Your Name Here\", posts: \"883\", followers: \"14.1K\", following: \"1 000\", bio, highlights: [\"About\", \"Catalog\", \"Price\", \"Reviews\", \"Location\"], time: \"9:41\", scroll: [197.5, 790], stickAfter: 650, blur: 6})",
+   "overlaps": "slideUp (card rise), pop (arrow), phoneMock (proposals.json)",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "springPop",
+   "kind": "part",
+   "title": "Spring pop driven by an expression (65 → 113 → 95 → 100 %)",
+   "status": "proposed",
+   "why": "Green trend arrow: scale = 1 − 35·cos(2.6·2π·t)/e^(5t) % from frame 25, opacity hard-cut on, position compensated so it grows around its own centre; no keyframes, so the cue is one number.",
+   "call": "springPop(layer, {at, amplitude: 35, frequency: 2.6, decay: 5})",
+   "overlaps": "pop (keyed 115/95 spring with a fade): could be pop(layer, {curve: \"spring\"})",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "wordDropIn",
+   "kind": "part",
+   "title": "Words drop in from above, fading, left to right",
+   "status": "proposed",
+   "why": "just from that video: animator Position [0, −35] + Opacity 0, range selector by words, Ramp Up, ease high −50 / low 100, offset −100 → 100 linear over 1.03 s.",
+   "call": "wordDropIn(textLayer, {at, duration: 1.0333, height: 35})",
+   "overlaps": "none (text entrance; stagger works on layers, this on words inside one layer)",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "trailingLabel",
+   "kind": "part",
+   "title": "Text chained to the right edge of the text before it",
+   "status": "proposed",
+   "why": "“$100” sits 8 px right of the spacer text and “–$500” right after “$100” (sourceRectAtTime), so the amount builds left to right whatever the widths.",
+   "call": "trailingLabel(label, anchorText, {gap: 8})",
+   "overlaps": "same id as dj3-views-counter trailingLabel",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "softRiseFade",
+   "kind": "part",
+   "title": "Small soft rise into place with a quick fade",
+   "status": "proposed",
+   "why": "The card rises 32 px in 0.43 s on 33 % out / 70 % in while fading in over 0.18 s: a calm arrival, not a slide.",
+   "call": "softRiseFade(layer, {at, distance: 32, duration: 0.43, fade: 0.18})",
+   "overlaps": "slideUp: better as slideUp options {distance, duration, outInfluence: 33.33, inInfluence: 70, fadeIn: 0.18}",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "focusShiftToCard",
+   "kind": "part",
+   "title": "Background blurs as a card lands on it",
+   "status": "proposed",
+   "why": "The phone precomp's Gaussian blur goes 0 → 6 over 0.83–1.10 s exactly as the card arrives, pushing focus to the card.",
+   "call": "focusShiftToCard(backLayer, {at, amount: 6, duration: 0.27})",
+   "overlaps": "defocusIn (dj3) is the reverse move (blur → sharp)",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "scrollRig",
+   "kind": "part",
+   "title": "Scroll a long page inside a matte, with a sticky bar",
+   "status": "proposed",
+   "why": "CTRL - Reel scroll's “Scroll (px)” slider (197.5 → 790 in 1.17 s) moves every child up; CTRL - Sticky tabs follows until “Tabs stick after” (650 px) and then stays, like a real app's sticky tab bar.",
+   "call": "scrollRig(comp, {layers, sticky, matte, from: 197.5, to: 790, at, duration: 1.1667, stickAfter: 650})",
+   "overlaps": "none",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "phoneFlyInScroll",
+   "kind": "part",
+   "title": "Phone flies in from the right while its screen scrolls, then lifts",
+   "status": "proposed",
+   "why": "Phone precomp x 2340 → 1452 in 0.85 s (33 % out / 70 % in) while the profile scrolls inside, then lifts 85 px over 1.0–1.55 s (33/65) to make room for the card.",
+   "call": "phoneFlyInScroll(phone, {at, from: \"right\", distance: 888, lift: 85})",
+   "overlaps": "slideUp (other direction and easing); scrollRig does the inside motion",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "instaProfileScreen",
+   "kind": "part",
+   "title": "Editable Instagram profile screen",
+   "status": "proposed",
+   "why": "Fixed header (status bar, username, verified dot), stats, bio, buttons, highlight circles, sticky tab bar and a reel grid built from rows repeated every 326 px: a ready app screen to put in a phone.",
+   "call": "instaProfileScreen(comp, {username, name, posts, followers, following, bio, link, highlights, rows: 5})",
+   "overlaps": "phoneMock holds it; scrollRig scrolls it",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "phoneMock",
+   "kind": "part",
+   "title": "Phone frame with a UI screen inside",
+   "status": "proposed",
+   "why": "ig1's phone: PNG bezel with a camera pill, rounded 731×1565 matte screen holding an editable app screen.",
+   "call": "phoneMock(comp, {screen: comp|footage, x, y, scale})",
+   "overlaps": "same id as proposals.json phoneMock",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  },
+  {
+   "id": "earningsCard",
+   "kind": "part",
+   "title": "Light earnings card with a green ↗ and an amount",
+   "status": "proposed",
+   "why": "792×124 rounded card #f6f7f9 with a soft 10 px shadow and CC Vignette edges, a 2.8 px #73c98f ↗ at the left and grey Roboto 26 amount text.",
+   "call": "earningsCard(comp, {amount, tail, x, y, at})",
+   "overlaps": "none (dj3 statCard is the dark version); pairs with springPop, trailingLabel, wordDropIn",
+   "from": [
+    "references/ig1.recipe.json"
+   ],
+   "gif": "references/ig1.gif"
+  }
+ ]
+}

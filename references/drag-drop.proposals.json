@@ -1,0 +1,95 @@
+{
+  "proposals": [
+    {
+      "id": "dragDropAttach",
+      "kind": "template",
+      "title": "Files dragged by a hand into a prompt box, landing as captioned attachment chips",
+      "status": "proposed",
+      "why": "8.6 s at 2142×1080. Per file: a closed hand carries the icon along a curve from off-screen bottom right (1.97 s), the icon shrinks into a chip, the hand opens and fades, and the filename appears 65 px below. Files stagger 2.4667 s apart, landing 175 px apart. Note: the path expressions currently fail in EffectCraft, so the reference GIF shows no travel (see breakdown).",
+      "call": "dragDropAttach(comp, {at, box: footage, files: [{icon, name}], step: 2.4667, spacing: 175, from: [x, y], travel: 1.9667})",
+      "overlaps": "uses darkStage and the parts below; cursorClick (proposals.json) covers the cursor idea",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    },
+    {
+      "id": "pathCarry",
+      "kind": "part",
+      "title": "Carry layers along a curved path, turning to follow it",
+      "status": "proposed",
+      "why": "A null follows a bezier path by a progress slider (100→0 over 1.97 s, out infl 34.7, in 96.7: fast launch, long glide) and turns to the path's direction (about 55° at the start, −3.77° at landing). Children are counter-rotated (+3.77°) so they land upright.",
+      "call": "pathCarry(layers, {from: [x, y], to: [x, y], bend, at, duration: 1.9667, orient: true})",
+      "overlaps": "cursorClick (travels to a target; this adds a real curve and auto-orient). Could be its `drag` option",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    },
+    {
+      "id": "handRelease",
+      "kind": "part",
+      "title": "Closed hand opens and lets go",
+      "status": "proposed",
+      "why": "On the drop frame the closed-hand art swaps to the open hand, which grows 24→38.3 % (0.17 s, in infl 100), tilts +3.77°→−3.73° (0.27 s) and fades 100→0 (2.13–2.4 s, even ease). It reads as letting go.",
+      "call": "handRelease(comp, {at, parent, scale: 38.3})",
+      "overlaps": "cursorClick (press dip); this is the drag-and-release version",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    },
+    {
+      "id": "dropIntoSlot",
+      "kind": "part",
+      "title": "Dragged item shrinks into a slot and settles",
+      "status": "proposed",
+      "why": "Icon scale 16→6.8 % over 0.27 s (ease in: out infl 100, in 33.3), then a swapped copy settles 6.8→8.3 % in 0.1 s. A file becoming a small attachment chip.",
+      "call": "dropIntoSlot(layer, {at, from: 16, to: 6.8, settle: 8.3, duration: 0.267})",
+      "overlaps": "pop (rebound on entry); this is a shrink with a rebound up",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    },
+    {
+      "id": "attachmentCaption",
+      "kind": "part",
+      "title": "Filename caption pinned under an icon",
+      "status": "proposed",
+      "why": "Arial 18, #d9dee3, centred text whose position expression is the icon's centre + [0, 65], so it follows the icon. Appears on the drop frame.",
+      "call": "attachmentCaption(iconLayer, {text, gap: 65, at})",
+      "overlaps": "trailingLabel (DJ3, follows sideways)",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    },
+    {
+      "id": "screenshotCutout",
+      "kind": "part",
+      "title": "UI screenshot keyed and masked onto the stage",
+      "status": "proposed",
+      "why": "The prompt-box screenshot's own background is colour-keyed out (key #111519, tolerance 10.7) and a 15-point mask with 19 px feather trims it, so a real app UI sits cleanly on the slate stage.",
+      "call": "screenshotCutout(comp, {footage, keyColor: \"#111519\", tolerance: 10.7, feather: 19})",
+      "overlaps": "none",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    },
+    {
+      "id": "darkStage",
+      "kind": "part",
+      "title": "Near-black radial stage behind a scene",
+      "status": "proposed",
+      "why": "drag-drop: slate Radial Ramp #171919 at [960, 381] (centre raised behind the box) → #0e1214 at [960, 1080], on a 1920×1080 solid scaled 284 %.",
+      "call": "background(comp, {look: \"stage\", center: \"#171919\", edge: \"#0e1214\", centerY: 381 / 1080})",
+      "overlaps": "same id as proposals.json darkStage",
+      "from": [
+        "references/drag-drop.recipe.json"
+      ],
+      "gif": "references/drag-drop.gif"
+    }
+  ]
+}

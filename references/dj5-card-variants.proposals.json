@@ -1,0 +1,186 @@
+{
+  "proposals": [
+    {
+      "id": "cardVariantsVerdict",
+      "kind": "template",
+      "title": "Reel card variants: tag, blur-cut to two copies, scan, DUPLICATE stamp on one, labels and a green pass",
+      "status": "proposed",
+      "why": "14.57 s at 1920×1080. A single card gets a tag (2.47 s), a blur-cut at 4.8 s splits it into two copies, a yellow scan rises over both (5.33–8.2 s), the right one turns red and gets stamped and shaken (7.67 s), then the rig pans left, two icon labels name what changed (9.97 / 11.27 s) and the outline goes green (13.63 s).",
+      "call": "cardVariantsVerdict(comp, {at, tag: \"+5% Speed\", stamp: \"DUPLICATE\", labels: [{text: \"Flipped\", icon: \"flip\"}, {text: \"+5% Speed\", icon: \"speed\"}], failColor: \"#ed0f14\", passColor: \"#3ded45\", scanColor: \"#fcdb00\", card: footage?, times: {cut: 4.8, stamp: 7.667, pan: 9.4, pass: 13.633}})",
+      "overlaps": "uses darkStage, accentGlow, nullPullBack, and the parts below; nothing in the kit yet",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "reelCard",
+      "kind": "part",
+      "title": "Dark rounded reel card with a hairline border and a faint play button",
+      "status": "proposed",
+      "why": "360×588.5 at roundness 26, fill #1a1a21, white 2.5 px border, play circle 84 px (white stroke 3 px at 35 %) and a triangle (radius 20, white at 45 %). The base for the scan, stamp and verdict moves.",
+      "call": "reelCard(comp, {x, y, width, fill, play: true, footage?})",
+      "overlaps": "orb (another shape look); a new look",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "blurCut",
+      "kind": "part",
+      "title": "Cut hidden by a blur spike and an Add flash",
+      "status": "proposed",
+      "why": "An adjustment layer's Gaussian blur goes 0→12→24→14→11→0 between 4.73 and 5.17 s (the last segments eased: in speed −22.5, infl 33; then in 60) while a #191919 Add solid fades 100→0 over 0.43 s. The layers swap on the frame of peak blur.",
+      "call": "blurCut(comp, {at, peak: 24, flash: \"#191919\", duration: 0.43})",
+      "overlaps": "defocusIn (DJ3) is only the blur-in half",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "scanFill",
+      "kind": "part",
+      "title": "Coloured band that scans up a card with a soft tail",
+      "status": "proposed",
+      "why": "The card's gradient fill (#fcdb00; opacity stops 0/100/100/0 at 0/0.01/0.35/1) has its start point at ScanTop × card height and its end point a Tail further down. CTRL sliders: ScanTop 0.978→0 (5.33–8.2 s, out 57.9 / in 73.8), Tail 0.01→0.5 (6.0–6.7 s), then it shrinks to a line (L) or turns yellow→orange→red and cuts out (R = fail).",
+      "call": "scanFill(cardLayer, {at, duration: 2.87, color: \"#fcdb00\", tail: 0.5, failTo?: \"#ff3531\"})",
+      "overlaps": "lightSweep is a CC Light Sweep pass, not a fill that stays",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "stampSlam",
+      "kind": "part",
+      "title": "Rubber stamp that slams down onto a card",
+      "status": "proposed",
+      "why": "Double-border rect (404×108 stroke 8 + 384×88 stroke 3, fill #660508 at 45 %) with \"DUPLICATE\" in Impact 82 (tracking 10), all #ed0f14, rotated −14.7°. Scale 240.4→100 % in 0.2 s (out infl 21.4; arrives still moving at −156 %/s), opacity 0→30→50→100 over 4 frames, and a flicker out (held 20 %) after 2 s.",
+      "call": "stampSlam(layer, {text: \"DUPLICATE\", color: \"#ed0f14\", at, hold: 2.07, angle: -14.7})",
+      "overlaps": "pop (a scale entrance, but pop overshoots up; this slams down from big)",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "impactShake",
+      "kind": "part",
+      "title": "Decaying sideways shake on impact",
+      "status": "proposed",
+      "why": "Position expression: from frame 235, for 0.3 s, add 6·sin(2π·6·u)·(1−u/0.3) px to x. A 6 px, 6 Hz wobble that dies out in a straight line. Sells the stamp hit.",
+      "call": "impactShake(layer, {at, amplitude: 6, freq: 6, duration: 0.3, axis: \"x\"})",
+      "overlaps": "none",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "outlineVerdict",
+      "kind": "part",
+      "title": "Card outline flips to a status colour (fail red / pass green)",
+      "status": "proposed",
+      "why": "Card R border: white→#ed0f14 over 0.1 s (7.7–7.8 s, then held). At 13.633 s it holds #3ded45 with a one-frame #b84c2e flicker at 13.7 s, then green again.",
+      "call": "outlineVerdict(layer, {at, color: \"#3ded45\", flicker: \"#b84c2e\"})",
+      "overlaps": "none",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "dimAway",
+      "kind": "part",
+      "title": "Losing option fades back in two steps",
+      "status": "proposed",
+      "why": "Card L opacity 100→52 % in 0.13 s (arriving fast: in −360 %/s, infl 33), held, then 52→25 % over 0.93 s (in infl 85) once the story moves on.",
+      "call": "dimAway(layer, {at, to: [52, 25], then: 9.733})",
+      "overlaps": "focusBranch (DJ1) lights the winner; this dims the loser (could be its option)",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "featureLabel",
+      "kind": "part",
+      "title": "Blue icon + white label line beside a card",
+      "status": "proposed",
+      "why": "SF Pro Display Medium 42 white text with a code-drawn #0b93f9 glyph about 42 px to its left (icon parented to the text), parented to the CTRL rig at about x +486 from centre. It appears with nudgeUp. A 36 px version sits inside the card as a tag.",
+      "call": "featureLabel(comp, {text, icon: \"speed\"|\"flip\", at, x, y, size: 42, parent})",
+      "overlaps": "none (uses nudgeUp and glyphIcon)",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "nudgeUp",
+      "kind": "part",
+      "title": "Appear and drift up a few pixels, no fade",
+      "status": "proposed",
+      "why": "On its in-point the layer is already fully visible and rises 8–10 px over 1.17–1.33 s, starting at speed (out 40 px/s, infl 12; the tag uses 60 px/s, infl 10) and gliding in (infl 80). A quiet way to land text.",
+      "call": "nudgeUp(layer, {at, distance: 10, duration: 1.333, speed: 40})",
+      "overlaps": "slideUp (same expo-out idea, but tiny, no fade, starts with speed): could be a slideUp option",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "glyphIcon",
+      "kind": "part",
+      "title": "Code-drawn fast-forward and flip glyphs",
+      "status": "proposed",
+      "why": "Fast-forward = two 3-point polygons (radius 16.7, roundness 20, rotation 90, at ±12, group scale 80 %×100 %). Flip = two polygons pointing apart (radius 13.3, roundness 15, at ±17, scale 88 %) plus a dashed centre line (Repeater: 5 copies of a 4×6.5 rect at roundness 2, 10 px apart). All #0b93f9.",
+      "call": "glyphIcon(comp, {kind: \"fastForward\"|\"flip\", color: \"#0b93f9\", size})",
+      "overlaps": "none",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "nullPullBack",
+      "kind": "part",
+      "title": "Fast pull-back on a parent null that glides into a slow creep",
+      "status": "proposed",
+      "why": "DJ5 CTRL scale 136.38→99.74 % over 4.833–9.2 s (out infl 0.1, in infl 95.6), then a linear creep to 104.51 % by 14.567 s. It adds a pan, 262.07 px left over 9.4–11.367 s (out infl 37.7), that arrives at 2.57 px/s and keeps drifting at that speed, so it never stops.",
+      "call": "nullPullBack(comp, {at, from: 136.38, settle: 99.74, end: 104.51, duration: 4.37, pan: -262.07, drift: 2.57})",
+      "overlaps": "same id as DJ3 nullPullBack; cameraDrift is the slow push (Card 1's linear 111.85→120.4 % over 4.8 s)",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "accentGlow",
+      "kind": "part",
+      "title": "Deep Glow on accent shapes and numbers",
+      "status": "proposed",
+      "why": "In DJ5 one Deep Glow (Radius 150, Exposure 0.02, Spread 33, Screen) sits on an adjustment layer over the whole comp, so the scan, stamp and green outline bloom.",
+      "call": "glow(layer, {radius: 150, exposure: 0.02})",
+      "overlaps": "same id as proposals.json accentGlow",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    },
+    {
+      "id": "darkStage",
+      "kind": "part",
+      "title": "Near-black radial stage behind a scene",
+      "status": "proposed",
+      "why": "DJ5 BG: Radial Ramp from [960, 540] #090909 to [2110, 540] #020202, Scatter 50.",
+      "call": "background(comp, {look: \"stage\", center: \"#090909\", edge: \"#020202\", scatter: 50})",
+      "overlaps": "same id as proposals.json darkStage",
+      "from": [
+        "references/dj5-card-variants.recipe.json"
+      ],
+      "gif": "references/dj5-card-variants.gif"
+    }
+  ]
+}
