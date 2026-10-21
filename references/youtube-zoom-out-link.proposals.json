@@ -1,0 +1,108 @@
+{
+ "proposals": [
+  {
+   "id": "youtubeZoomOutLink",
+   "kind": "template",
+   "title": "Zoom out from your video to the YouTube page; cursor lands on the description link",
+   "status": "proposed",
+   "why": "The whole comp: the full-frame video leaves through the top as the watch page rises and scales 86 → 100 % (2.17 s, long glide), a cursor settles on the first link, then a hard cut back to the video with a 0.2 s blur-to-sharp.",
+   "call": "youtubeZoomOutLink(comp, {at, video, title: \"Claude + Instagram = $32,561\", channel: \"Tapa\", subscribers: \"17.7K subscribers\", avatar, likes: \"39\", views: \"4,334 views  Sep 28, 2026\", lines: [cta, link, cta2, link2], target: \"link\", colors: {description: \"#373737\", text: \"#f2f2f2\", link: \"#3dadd1\"}, moveDuration: 2.17, cutBack: 2.6, returnBlur: 28})",
+   "overlaps": "cursorClick (proposals.json), defocusIn (dj3)",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "zoomOutToPage",
+   "kind": "part",
+   "title": "Full-frame clip hands off to a page rising and zooming out",
+   "status": "proposed",
+   "why": "A rig of two nulls moves the page up 1067 px and scales it 86.11 → 100 % (out 17.76 % / in 98.94 %) while the clip, parented to it, leaves through the top: the 'zoom out to where this video lives' move.",
+   "call": "zoomOutToPage(comp, {video, page, at, duration: 2.17, fromScale: 86.11, rise: 1067})",
+   "overlaps": "none",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "markerRetime",
+   "kind": "part",
+   "title": "Retime a keyed move by dragging two comp markers",
+   "status": "proposed",
+   "why": "Expression on the page nulls: play key 1 → key 2 between comp markers “PAGE MOVE START” and “PAGE MOVE END”, keeping the easing, so an editor retimes without touching keys.",
+   "call": "markerRetime(layer, path, {start: \"PAGE MOVE START\", end: \"PAGE MOVE END\"})",
+   "overlaps": "none",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "cursorClick",
+   "kind": "part",
+   "title": "Cursor glides onto a target",
+   "status": "proposed",
+   "why": "CURSOR - Figma PDF travels from below the page (1170, 3112.5) to the link (534, 2108) over 2.07 s, out 20 % / in 88.08 %, rotation −10°, scale 425 %, soft drop shadow; no press.",
+   "call": "cursorClick(comp, {to: [534, 2108], from: [1170, 3112.5], at: 0.2667, travel: 2.07, press: false})",
+   "overlaps": "same id as proposals.json cursorClick",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "defocusIn",
+   "kind": "part",
+   "title": "Rack into focus on a cut",
+   "status": "proposed",
+   "why": "RETURN VIDEO comes back with Gaussian blur 28 → 0 in 0.2 s (out 20 % / in 70 %, Repeat Edge Pixels), so the cut back to the video lands soft-to-sharp.",
+   "call": "defocusIn(layer, {at, amount: 28, duration: 0.2})",
+   "overlaps": "same id as dj3-views-counter defocusIn (there an adjustment layer, 40 → 0 in 0.3 s)",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "youtubeWatchPage",
+   "kind": "part",
+   "title": "Editable YouTube watch-page details",
+   "status": "proposed",
+   "why": "Title, round-cropped avatar, channel + subscribers, like/dislike and share pills, grey description box with views/date, two CTA lines and two links: a fake YouTube page built from text and shapes.",
+   "call": "youtubeWatchPage(comp, {title, channel, subscribers, avatar, likes, views, lines: [...], links: [...]})",
+   "overlaps": "none",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "colorControlRig",
+   "kind": "part",
+   "title": "One null with colour controls that re-themes a template",
+   "status": "proposed",
+   "why": "CTRL - Global holds Description / Text / Link colour controls; fills and text animators inside the page precomp read them by expression, so the look changes from one place.",
+   "call": "colorControlRig(comp, {controls: {Description: \"#373737\", Text: \"#f2f2f2\", Link: \"#3dadd1\"}, targets})",
+   "overlaps": "none (style.jsx does this at build time; this does it live inside a comp)",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  },
+  {
+   "id": "videoPlaceholder",
+   "kind": "part",
+   "title": "Replaceable 16:9 video slot",
+   "status": "proposed",
+   "why": "A precomp with a #171717 plate, a play icon and “YOUR VIDEO · 16:9”, used twice (leave and return) so swapping one source updates both.",
+   "call": "videoPlaceholder(comp, {label: \"YOUR VIDEO · 16:9\"})",
+   "overlaps": "none",
+   "from": [
+    "references/youtube-zoom-out-link.recipe.json"
+   ],
+   "gif": "references/youtube-zoom-out-link.gif"
+  }
+ ]
+}
