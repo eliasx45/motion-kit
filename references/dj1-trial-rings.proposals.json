@@ -1,0 +1,173 @@
+{
+  "proposals": [
+    {
+      "id": "trialRingsFlow",
+      "kind": "template",
+      "title": "Scrolling flow: title tag + icon, dashed path to a lit progress ring, path on to a post card the cursor clicks",
+      "status": "proposed",
+      "why": "The whole DJ1 comp as a reusable explainer beat: a WORLD null scrolls down a two-branch diagram, one branch lights up and fills to a percentage, the route continues to a post card. Every text, colour, value and stop time is a knob.",
+      "call": "trialRingsFlow(comp, {at, title: \"Trial Reels\", tagColor: \"#2a8efd\", icon, activeLabel: \"Non-Followers\", inactiveLabel: \"Followers\", value: 100, suffix: \"%\", views: \"693K\", button: \"Post\", side: \"left\", fillAt: 2.2333, fillDuration: 1.6667, scrollStops: [124.38, -972, -2135]})",
+      "overlaps": "builds on parts dashedConnector, ringStat, countUp, focusBranch, scrollStops, titleTag, postCard, cursorClick, accentGlow, darkStage; no kit primitive covers it",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "dashedConnector",
+      "kind": "part",
+      "title": "Glowing dashed S-curve that draws itself between two nodes, over a dark ghost of the route",
+      "status": "proposed",
+      "why": "Path A / Path C: 2-vertex path with vertical tangents (±290/320), white stroke 20, dash 42 / gap 40.5, Deep Glow, Trim end 0→100 with a long soft landing (in 75–87 %); the ghost copies (#161616, same dashes) show the route before it lights.",
+      "call": "dashedConnector(comp, {from: [x, y], to: [x, y], at, duration: 1.3, width: 20, dash: 42, gap: 40.5, ghost: true})",
+      "overlaps": "none in the kit (no line/path primitive); pairs with accentGlow",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "ringStat",
+      "kind": "part",
+      "title": "Progress ring (base + fill) with a counter in the middle",
+      "status": "proposed",
+      "why": "Ring L Base (#646464, 22 px) + Ring L Fill (white→#dcdcdc gradient stroke, trim end = CTRL Progress×100, scale −100 % so it fills the other way, Deep Glow), counter and label inside/below, 344 px ring.",
+      "call": "ringStat(comp, {value, label, at, duration, size: 344, x, y, mirror: true})",
+      "overlaps": "same id as proposals.json ringStat; uses countUp",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "countUp",
+      "kind": "part",
+      "title": "Number that counts up from a CTRL slider",
+      "status": "proposed",
+      "why": "Counter L Source Text = Math.round(Progress*100) + \"%\", Progress 0→1 over 2.233–3.9 s (out 57.1 %, in 80.8 %); Chalkduster 94 squeezed to 68 % width.",
+      "call": "countUp(textLayer, {from: 0, to: 100, at, duration, suffix: \"%\"})",
+      "overlaps": "same id as proposals.json countUp",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "focusBranch",
+      "kind": "part",
+      "title": "Light up the chosen option while the alternative stays dark",
+      "status": "proposed",
+      "why": "One CTRL 'Active' slider (0→1 in 0.3 s) drives opacity 11/15 % → 100 % on the chosen ring, counter and label (expressions 11 + 89*Active, 15 + 85*Active); the other side is drawn in near-black greys (#131313/#161616/#2c2c2c). Says 'this one, not that one'.",
+      "call": "focusBranch(activeLayers, {at, duration: 0.3, dimOpacity: 15})",
+      "overlaps": "DJ5 dimAway is the inverse (the losing option fades back); this lights the winner from a pre-dimmed state. Could share one 'emphasis' rig.",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "scrollStops",
+      "kind": "part",
+      "title": "WORLD null that scrolls the scene vertically and stops on each stage",
+      "status": "proposed",
+      "why": "All layers parented to WORLD; its y goes 124.38 → (−30.87 at 1.1 s, no stop) → −972 (soft land, in 74.7 %), holds 2.6–3.43 s, then glides via −1577.77 to −2135 (in 45 %): a stop-and-go tour down a tall layout.",
+      "call": "scrollStops(comp, {world, stops: [{y: -972, at: 2.6, hold: 0.8333}, {y: -2135, at: 6.2333}]})",
+      "overlaps": "proposals.json cameraDrift is a slow push/drift, not a stop-and-go scroll",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "titleTag",
+      "kind": "part",
+      "title": "Bold title on a flat colour highlight block",
+      "status": "proposed",
+      "why": "Label BG 521×101, roundness 4, #2a8efd with Deep Glow, under SF Pro Display Bold 107 white: a highlighter-style title tag.",
+      "call": "titleTag(comp, {text, color: \"#2a8efd\", x, y, size: 107})",
+      "overlaps": "none",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "liftSettle",
+      "kind": "part",
+      "title": "Element lifts a little and shrinks to make room for what comes next",
+      "status": "proposed",
+      "why": "ICON null: y −19.7 px over 0.867–1.733 s (out 77.6 %, in 30.6 %) and scale 100 → 92.54 % over 1.0–2.2 s (out 62.3 %, in 53.2 %), while the icon fades in.",
+      "call": "liftSettle(layer, {at, lift: 19.7, scale: 92.54, duration: 1.2})",
+      "overlaps": "follows pop / slideUp entrances; a separate 'make room' beat",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "reelsGlyph",
+      "kind": "part",
+      "title": "Reels app glyph built from shape boolean ops, white with glow",
+      "status": "proposed",
+      "why": "Reels Icon: rounded square 369×368 (roundness 100) minus a 400×34 bar, two slanted stripes and a rounded 3-point polygon (radius 80) via Merge Paths Subtract; fades in 0→100 over 0.933 s (in 92.8 %).",
+      "call": "reelsGlyph(comp, {size: 369, x, y, at})",
+      "overlaps": "orb is the other hero shape, different look",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "postCard",
+      "kind": "part",
+      "title": "Dark social post card with view count and Post / Trash buttons",
+      "status": "proposed",
+      "why": "Card 383×675 r14 #1c1c20 stroke #7a7a7a 2.5; eye icon + '693K' (SF Pro Bold 77); Post button 205×67 #077ae6 with #dce9f7 label; Trash button 113×67 #be171b with a white trash glyph.",
+      "call": "postCard(comp, {views: \"693K\", button: \"Post\", x, y})",
+      "overlaps": "none",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "cursorClick",
+      "kind": "part",
+      "title": "Cursor that travels to a target and clicks",
+      "status": "proposed",
+      "why": "Cursor (Library) at 75 % glides from [+144.6, +288.4] to its target over 4.233–5.833 s on a curved path (out 40 %, in 80 %) while the hidden target null nudges 16 px onto the Post button (5.1–5.633 s, in 85 %).",
+      "call": "cursorClick(comp, {to: layer, from: [144.6, 288.4], at, travel: 1.6})",
+      "overlaps": "same id as proposals.json cursorClick",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "accentGlow",
+      "kind": "part",
+      "title": "Deep Glow on accent shapes and numbers",
+      "status": "proposed",
+      "why": "Deep Glow Radius 150, Spread 33, Exposure 0.02 on the dashed paths, ring fill, title tag and icon.",
+      "call": "glow(layer, {radius: 150, exposure: 0.02})",
+      "overlaps": "same id as proposals.json accentGlow",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    },
+    {
+      "id": "darkStage",
+      "kind": "part",
+      "title": "Near-black radial stage behind a scene",
+      "status": "proposed",
+      "why": "BG solid #050505 + Haze solid in Add mode with a Radial Ramp #050505 (centre [960, 540]) → #000 (at [1960, 540]), Scatter 50.",
+      "call": "background(comp, {look: \"stage\", center: \"#050505\", edge: \"#000000\", scatter: 50})",
+      "overlaps": "same id as proposals.json darkStage; background",
+      "from": [
+        "references/dj1-trial-rings.recipe.json"
+      ],
+      "gif": "references/dj1-trial-rings.gif"
+    }
+  ]
+}

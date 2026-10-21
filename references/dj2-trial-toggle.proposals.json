@@ -1,0 +1,103 @@
+{
+  "proposals": [
+    {
+      "id": "trialToggleReelWall",
+      "kind": "template",
+      "title": "Camera drops onto a setting toggle + tapped button, a ray fan opens, rows of reels stack up as the camera pulls back",
+      "status": "proposed",
+      "why": "The whole DJ2 comp as a reusable 'one tap → reaches lots of people' beat: CAM CTRL drop-in, rigged toggle row and button, expression ray fan, repeater reel wall revealed row by row on the zoom-out steps. Labels, colours, counts and beats are knobs.",
+      "call": "trialToggleReelWall(comp, {at, label: \"Trial\", on: true, button: \"Post\", buttonColor: \"#566afa\", rays: 7, rayColor: \"#ededf2\", cols: 7, rowsAt: [1.933, 2.733, 3.367], floodAt: 3.833, zoomTo: 43.37, exit: true})",
+      "overlaps": "built from parts rayFan, settingRow, toggleSwitch, touchDot, cardGridStack, cameraDropIn, stepZoomOut, darkStage; no kit primitive covers it",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "rayFan",
+      "kind": "part",
+      "title": "Fan of thin curved light rays from one point, opening from a crossed lens to an open fan",
+      "status": "proposed",
+      "why": "Rays: 7 paths made by createPath expressions (k = −3…3, L = 1600) and three sliders: S2 bend 2201.1→1927.2, S3 end spread −617.5→1122.4 (0.5–1.0 s), Asym −0.1→−0.05; #ededf2 strokes 2.5 px; an inverted mask hides the tips.",
+      "call": "rayFan(comp, {from: [x, y], count: 7, length: 1600, at: 0.5, duration: 0.5, bend: [2201.1, 1927.2], spread: [-617.5, 1122.4], asym: [-0.1, -0.05], color: \"#ededf2\", width: 2.5})",
+      "overlaps": "none",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "toggleSwitch",
+      "kind": "part",
+      "title": "iOS-style switch driven by one 0–1 slider",
+      "status": "proposed",
+      "why": "Toggle: track 126×64 r32, white knob 50; UI CTRL Toggle slider drives track colour linear(#4c4c54 → #1385ff) and knob x linear(−31 → 32.5). Static on here; key the slider to animate it.",
+      "call": "toggleSwitch(comp, {on: true, at, duration, x, y, onColor: \"#1385ff\", offColor: \"#4c4c54\"})",
+      "overlaps": "none",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "settingRow",
+      "kind": "part",
+      "title": "Settings row: dashed-square icon, label and toggle",
+      "status": "proposed",
+      "why": "Trial Icon (dashed rounded square 68 r18, stroke 4.5, dash 19.5 / gap 10.6, rounded play triangle) + 'Trial' SF Pro Medium 52 + toggle at the right, all white on dark.",
+      "call": "settingRow(comp, {label: \"Trial\", icon: \"trial\", on: true, x, y, width: 580})",
+      "overlaps": "uses toggleSwitch",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "touchDot",
+      "kind": "part",
+      "title": "Gradient touch indicator that settles onto a button",
+      "status": "proposed",
+      "why": "Tap: 74 px circle, radial gradient #6270fb → #6a8dff (0.55) → #7ed8ff (0.88) → #8ce8ff; drifts (1228, 555) → (1207, 551) and scales 90 → 100 % over 0.5–1.5 s (out 20 %, in 90 %).",
+      "call": "touchDot(comp, {to: [x, y], from: [21, 4], at, duration: 1})",
+      "overlaps": "proposals.json cursorClick (same job, showing a press) with a touch look instead of a cursor: could be its look: \"touch\" option",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "cardGridStack",
+      "kind": "part",
+      "title": "Wall of 9:16 cards that stacks up one row per beat, then floods the frame",
+      "status": "proposed",
+      "why": "Reel Grid: one card 293×474 r12 (#1a1a21, #d1d1d6 35 % stroke) × Columns repeater (7, step 313, centred) × Rows repeater (step −498, upward) whose copies jump on hold keys 0→1→2→3→24 at 1.933 / 2.733 / 3.367 / 3.833 s.",
+      "call": "cardGridStack(comp, {cols: 7, card: [293, 474], gap: [20, 24], rowsAt: [1.933, 2.733, 3.367], floodAt: 3.833, floodRows: 24, direction: \"up\"})",
+      "overlaps": "DJ5 reelCard is a single card with a play button (could be the cell); stagger gives rhythm but as entrances, these are instant cuts",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "cameraDropIn",
+      "kind": "part",
+      "title": "Whole scene drops in from above on a camera null",
+      "status": "proposed",
+      "why": "CAM CTRL y −650 → 613.5 over 0–1.267 s, out [1500 px/s, 20 %], in [0, 80 %], then holds 0.37 s: a fast fall with a long soft landing.",
+      "call": "cameraDropIn(comp, {cam, from: -650, to: 613.5, at: 0, duration: 1.2667})",
+      "overlaps": "slideUp is the same curve idea on one layer (and upward); this moves a parent null downward",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "stepZoomOut",
+      "kind": "part",
+      "title": "Camera pulls back in steps synced to content beats, then whips out",
+      "status": "proposed",
+      "why": "CAM CTRL scale 100 → 99.35 → 93.89 → 93.51 → 78.65 → 74.61 → 54.44 → 43.37 (1.667–4.467 s), each step right after a grid row appears, while position drifts down and exits at 2620 px/s (2960 at 5.067 s).",
+      "call": "stepZoomOut(comp, {cam, beats: [1.667, 2.0, 2.567, 2.9, 3.3, 3.667, 4.467], scales: [99.35, 93.89, 93.51, 78.65, 74.61, 54.44, 43.37], exit: true})",
+      "overlaps": "proposals.json cameraDrift (slow push) and DJ3/DJ5 nullPullBack (one fast pull-back): this is a stepped, beat-synced pull-back",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    },
+    {
+      "id": "darkStage",
+      "kind": "part",
+      "title": "Near-black radial stage behind a scene",
+      "status": "proposed",
+      "why": "BG solid #030303 with a Radial Ramp #0a0a0a (centre [960, 560]) → #050505 (at [1960, 560]), Scatter 50.",
+      "call": "background(comp, {look: \"stage\", center: \"#0a0a0a\", edge: \"#050505\", scatter: 50})",
+      "overlaps": "same id as proposals.json darkStage; background",
+      "from": ["references/dj2-trial-toggle.recipe.json"],
+      "gif": "references/dj2-trial-toggle.gif"
+    }
+  ]
+}
