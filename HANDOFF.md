@@ -100,8 +100,10 @@ Templates (whole comps) are already usable as recipes; parts are what's missing.
    - `comp.cropToRegionOfInterest` moves layers but not effect points like CC Light Sweep's
      `center`, so `part_preview.py`'s crop loses the sweep. Six previews (marked in their
      `previewNote`) were rendered full frame and cropped afterwards instead; re-rendering them
-     with `part_preview.py` loses the sweep until this is fixed (fix in EffectCraft:
-     `crates/engine/src/commands/comp_more.rs`, shift point-type effect params with the layers).
+     with `part_preview.py` loses the sweep until this is fixed. **Fixed on EffectCraft `main` in
+     de99f15b (not compiled or tested when pushed; Elias builds and tests at night):** crop and
+     comp resize now keep effect point params in place. Once it builds, re-render those 6 with
+     `part_preview.py` and drop their notes.
 3. Building approved primitives, one at a time (CLAUDE.md, "Building an approved primitive"):
    each must rebuild the part of the original comp it came from.
 
