@@ -8,10 +8,10 @@ var STYLE = {
     reach:  1100 / 1920           // gradient radius, fraction of comp width
   },
   orb: {
-    inner: "#9fe8ff",        // gradient centre
+    inner: "#8bd2ff",        // gradient centre (22 Oct: 20 % toward `mid`, so it blends instead of popping)
     mid:   "#3a7bff",        // gradient middle (stop at `midAt`)
     outer: "#1a1f6b",        // gradient edge
-    midAt: 0.45,
+    midAt: 0.55,             // where the centre has melted into `mid` (22 Oct: 0.45 → 0.55, a larger, softer centre)
     size:  600 / 1080,       // default diameter, fraction of the comp's shorter side
     roundness: 0.2           // rounded square corner radius, fraction of size
   },

@@ -1,6 +1,6 @@
 // shapes.jsx (scene) — the kit's basic shapes in one comp: circle and rounded square (orb) on
-// top with a card (rect), then three rectangles below: pill, chip and strip. They pop in left to
-// right, top row first. Landscape only.
+// top with a card (rect), then rectangles below: pill, chip, strip and a rounder strip. They pop
+// in left to right, top row first. Landscape only.
 #include "style.jsx"
 #include "lib/kit.jsx"
 #include "lib/background.jsx"
@@ -23,13 +23,15 @@ var row1 = [
   rect(comp, { w: cardW, h: d, x: x0 + 2 * (d + gap) + cardW / 2, y: top, name: "Card" })
 ];
 
-// Bottom row, 140 tall: pill (fully round ends), chip (soft corners), strip (nearly sharp).
-var low = comp.h / 2 + 250 * u, rh = 140 * u, w1 = 520 * u, w2 = 320 * u, w3 = 600 * u;
-var x1 = cx - (w1 + w2 + w3 + 2 * gap) / 2;
+// Bottom rows, 140 tall: pill (fully round ends), chip (soft corners), strip (nearly sharp),
+// and under the strip the same strip a little rounder.
+var low = comp.h / 2 + 160 * u, rh = 140 * u, w1 = 520 * u, w2 = 320 * u, w3 = 600 * u;
+var x1 = cx - (w1 + w2 + w3 + 2 * gap) / 2, x3 = x1 + w1 + w2 + 2 * gap + w3 / 2;
 var row2 = [
   rect(comp, { w: w1, h: rh, radius: 0.5, x: x1 + w1 / 2, y: low, name: "Pill" }),
   rect(comp, { w: w2, h: rh, radius: 0.3, x: x1 + w1 + gap + w2 / 2, y: low, name: "Chip" }),
-  rect(comp, { w: w3, h: rh, radius: 0.08, x: x1 + w1 + w2 + 2 * gap + w3 / 2, y: low, name: "Strip" })
+  rect(comp, { w: w3, h: rh, radius: 0.08, x: x3, y: low, name: "Strip" }),
+  rect(comp, { w: w3, h: rh, radius: 0.2, x: x3, y: low + rh + 50 * u, name: "Strip Rounded" })
 ];
 
 stagger(row1.concat(row2), { at: comp.t, order: "in-order" });
