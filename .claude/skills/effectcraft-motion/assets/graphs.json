@@ -1,0 +1,81 @@
+{
+ "source": "Elias's Motion Library, folder Devin Jatho/Graphs (library.json catalog_only), copied 22 Oct 2026",
+ "how_to_read": "AE temporal ease on 2 keys. Values are normalized: the move goes value 0->1 (or 0->100) over time 0->1, so speed is in units of the average speed |dv|/dt. Real speed for keys.velocity = speed * |dv| / dt (per dimension for multi-dim props). out_ease belongs to the first key, in_ease to the second.",
+ "graphs": [
+  {
+   "id": "2b85eb981d3543cd8298d1f066ab74fb",
+   "name": "Fast In",
+   "description": "for rellay fast slide in's generally.",
+   "first_key_out": {
+    "speed": 23.75273227440283,
+    "influence": 0.5926622109416769
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 92.921385819053
+   },
+   "normalized_value_end": 1
+  },
+  {
+   "id": "131137cbe3474b509a3760133d62e8d5",
+   "name": "Fast out",
+   "description": "for super fast slide out's generally.",
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 100
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 0.887044270833337
+   },
+   "normalized_value_end": 1
+  },
+  {
+   "id": "starter-curve-4",
+   "name": "Quick launch · soft landing",
+   "description": "Apply to two adjacent keyframes on a one-dimensional property; preserves values and timing.",
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 39.878273010253906
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 90.92376497056749
+   },
+   "normalized_value_end": 100
+  },
+  {
+   "id": "starter-curve-5",
+   "name": "Slow launch · quick finish",
+   "description": "Apply to two adjacent keyframes on a one-dimensional property; preserves values and timing.",
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 83.00112618340385
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 60.121726989746094
+   },
+   "normalized_value_end": 100
+  },
+  {
+   "id": "starter-curve-3",
+   "name": "Smooth emphasis",
+   "description": "Apply to two adjacent keyframes on a one-dimensional property; preserves values and timing.",
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 70.2064355214437
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 70.07315423753526
+   },
+   "normalized_value_end": 100
+  }
+ ],
+ "expo_in_out": {
+  "name": "Expo In-Out (Elias)",
+  "curve_preset": "e7e9542e30c34e4f862013ab4c2adcd5",
+  "rule": "on screen -> on screen; speed 0 both sides; out = clamp(65 + 30 (s - 1), 50, 90), in = min(out + 1.5, 90) for a move of s seconds (Elias 22 Oct, formula unconfirmed)"
+ }
+}
