@@ -9,6 +9,7 @@ what agents propose; what's waiting in the inbox. Answer proposals with one word
 | Preview | Primitive | What it does | Call |
 |---|---|---|---|
 | <img src="catalog/hero.gif" width="320"> | **`orb`**<br>[lib/orb.jsx](lib/orb.jsx) | The style's hero shape: radial gradient, inner shadow (bottom-right), 0.7 px white hairline. Circle or rounded square. | `orb(comp, {shape: "circle"\|"rounded", size, x, y})` |
+| <img src="catalog/shapes.gif" width="320"> | **`rect`**<br>[lib/rect.jsx](lib/rect.jsx) | A rectangle in the hero look (the orb's gradient, inner shadow and hairline) at any width and height. Corner radius from sharp (0) to pill (0.5), as a fraction of the shorter side. | `rect(comp, {w, h, radius, x, y})` |
 | <img src="catalog/hero.gif" width="320"> | **`background`**<br>[lib/background.jsx](lib/background.jsx) | Full-frame radial grey (#4d4f56 → #121317), sent to the back. Only added when a scene makes its own comp. | `background(comp)` |
 | <img src="catalog/hero.gif" width="320"> | **`pop`**<br>[lib/pop.jsx](lib/pop.jsx) | Scale in 0 → 115 → 95 → 100 % by 0.54 s, eased, with a 0.12 s fade. | `pop(layer, {at})` |
 | <img src="catalog/row-slide.gif" width="320"> | **`slideUp`**<br>[lib/slide.jsx](lib/slide.jsx) | Rise 120 px (at 1080p) into place on expo out (out influence 0 / in influence 100) over 1 s, with a 0.12 s fade. | `slideUp(layer, {at, duration, distance})` |
@@ -19,6 +20,7 @@ what agents propose; what's waiting in the inbox. Answer proposals with one word
 | Preview | Scene | What it is | Build |
 |---|---|---|---|
 | <img src="catalog/hero.gif" width="320"> | **hero**<br>[hero.jsx](hero.jsx) | Orb and rounded square, popping in (side by side; stacked in portrait). | `./build.sh hero` |
+| <img src="catalog/shapes.gif" width="320"> | **shapes**<br>[shapes.jsx](shapes.jsx) | The basic shapes in one comp: circle, rounded square and card on top; pill, chip and strip below; popping in left to right. | `./build.sh shapes` |
 | <img src="catalog/row.gif" width="320"> | **row**<br>[row.jsx](row.jsx) | Five orbs rippling in from the centre with pop. | `./build.sh row` |
 | <img src="catalog/row-slide.gif" width="320"> | **row-slide**<br>[row-slide.jsx](row-slide.jsx) | Five orbs rising in left to right with slideUp, all landed by 1.5 s. | `./build.sh row-slide` |
 

@@ -15,6 +15,12 @@ var STYLE = {
     size:  600 / 1080,       // default diameter, fraction of the comp's shorter side
     roundness: 0.2           // rounded square corner radius, fraction of size
   },
+  rect: {
+    w: 720 / 1080,           // default width, fraction of the comp's shorter side
+    h: 360 / 1080,           // default height
+    radius: 0.2,             // corner radius, fraction of the shorter side (0 sharp, 0.5 pill)
+    reach: 0.895             // gradient radius, fraction of the half-diagonal (the rounded square's 0.633 × size)
+  },
   stroke: { color: "#ffffff", width: 0.7 },          // px at 1080p, scaled with the comp
   innerShadow: {
     color: [0.03, 0.04, 0.2, 1],

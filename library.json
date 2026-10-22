@@ -22,6 +22,22 @@
       "duration": 2.002
     },
     {
+      "id": "kit-shapes",
+      "name": "Kit \u00b7 shapes",
+      "kind": "comp",
+      "file": "catalog/shapes.ecproj",
+      "comp": "Main",
+      "category": "Motion kit",
+      "tags": [
+        "motion-kit",
+        "rect"
+      ],
+      "description": "The basic shapes in one comp: circle, rounded square and card on top; pill, chip and strip below; popping in left to right.",
+      "thumbnail": "catalog/shapes.png",
+      "preview": "catalog/shapes.mp4",
+      "duration": 2.002
+    },
+    {
       "id": "kit-row",
       "name": "Kit \u00b7 row",
       "kind": "comp",

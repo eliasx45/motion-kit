@@ -2,7 +2,7 @@
 // radial gradient, inner shadow, hairline stroke. size is in px (default from STYLE).
 function orb(comp, o) {
   o = o || {};
-  var s = STYLE.orb, sh = STYLE.innerShadow;
+  var s = STYLE.orb;
   var size = o.size || s.size * unit(comp);
   var rounded = o.shape === "rounded";
   var p = { comp: comp.id, kind: rounded ? "rounded" : "ellipse", size: [size, size],
@@ -11,11 +11,18 @@ function orb(comp, o) {
     stroke: STYLE.stroke.color, strokeWidth: px(comp, STYLE.stroke.width) };
   if (rounded) p.roundness = s.roundness * size;
   var l = newShape(p);
+  heroLook(l, size, size * (rounded ? 0.633 : 0.5));   // rounded: reach into the corners
+  return l;
+}
 
+// heroLook(layer, size, reach) — the hero look on a new shape layer (orb, rect): the gradient
+// runs from the centre out to `reach` px, and the inner shadow scales with `size` px.
+function heroLook(l, size, reach) {
+  var s = STYLE.orb, sh = STYLE.innerShadow;
   var g = "contents/group/contents/gfill/";
   set(l, g + "colors", { colors: [[0, s.inner], [s.midAt, s.mid], [1, s.outer]], opacities: [[0, 1], [1, 1]] });
   set(l, g + "start", [0, 0]);
-  set(l, g + "end", [size * (rounded ? 0.633 : 0.5), 0]);   // rounded: reach into the corners
+  set(l, g + "end", [reach, 0]);
 
   app.run("layer.style.innerShadow", { layers: [l] });
   var st = "layerStyles/innerShadow/";
@@ -26,5 +33,4 @@ function orb(comp, o) {
   set(l, st + "choke", sh.choke);
   set(l, st + "opacity", sh.opacity);
   set(l, st + "color", sh.color);
-  return l;
 }

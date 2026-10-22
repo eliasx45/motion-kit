@@ -52,14 +52,16 @@ instead of building a primitive. Turn inbox items into primitives when asked, no
 ## Layout
 | File | What it is |
 |---|---|
-| `style.jsx` | `STYLE`: bg, orb, stroke, innerShadow, stagger, slide, pop. The only place for look values |
+| `style.jsx` | `STYLE`: bg, orb, rect, stroke, innerShadow, stagger, slide, pop. The only place for look values |
 | `lib/kit.jsx` | `unit`, `px`, `set(layer, path, value)`, `key(layer, path, time, value)`, `ease(layer, keys)`, `newComp(name, w, h, dur)` (also sets `COMP`), `target(name, w, h, dur)` (the open comp at the playhead, or a new comp: `{isNew, t}`), `newShape(params)`, `get(layer, path, time?)`, `velocity(layer, path, time, {inSpeed, inInfluence, outSpeed, outInfluence})` |
 | `lib/background.jsx` | `background(comp, {center?, edge?, name?})`: full-frame radial grey, sent to the back |
-| `lib/orb.jsx` | `orb(comp, {shape: "circle"\|"rounded", size?, x?, y?, name?})`: radial gradient, inner shadow, hairline stroke |
+| `lib/orb.jsx` | `orb(comp, {shape: "circle"\|"rounded", size?, x?, y?, name?})`: radial gradient, inner shadow, hairline stroke; `heroLook(layer, size, reach)` puts that look on any new shape layer |
+| `lib/rect.jsx` | `rect(comp, {w?, h?, radius?, x?, y?, name?})`: a rectangle in the same look; `radius` is a fraction of the shorter side (0 sharp, 0.5 pill). Needs `orb.jsx` |
 | `lib/pop.jsx` | `pop(layer, {at?})`: scale in with one overshoot and one rebound, fading in |
 | `lib/slide.jsx` | `slideUp(layer, {at?, duration?, distance?})`: rise into place on an expo-out curve (out influence 0, in influence 100), fading in; ends where the layer is |
 | `lib/stagger.jsx` | `stagger(layers, {at?, step?, order?: "in-order"\|"reverse"\|"center-out", enter?, total?, duration?})`: enter many layers one after another; `enter` is any entrance primitive (default `pop`); `total` + `duration` fit the whole stagger into `total` seconds |
 | `hero.jsx` | Scene: orb + rounded square, side by side (landscape) or stacked (portrait) |
+| `shapes.jsx` | Scene: circle, rounded square and card on top; pill, chip and strip below; staggered pops |
 | `row.jsx` | Scene: 5 orbs (alternating circle/rounded) in a row, staggered center-out |
 | `row-slide.jsx` | Scene: the row rising in left to right with `slideUp`, all landed by 1.5 s |
 | `hero-vertical.jsx` | `hero.jsx` at 1080×1920 (sets `SIZE` before including) |

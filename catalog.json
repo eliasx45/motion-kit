@@ -3,6 +3,9 @@
     {"id": "orb", "file": "lib/orb.jsx", "demo": "hero",
      "what": "The style's hero shape: radial gradient, inner shadow (bottom-right), 0.7 px white hairline. Circle or rounded square.",
      "call": "orb(comp, {shape: \"circle\"|\"rounded\", size, x, y})"},
+    {"id": "rect", "file": "lib/rect.jsx", "demo": "shapes",
+     "what": "A rectangle in the hero look (the orb's gradient, inner shadow and hairline) at any width and height. Corner radius from sharp (0) to pill (0.5), as a fraction of the shorter side.",
+     "call": "rect(comp, {w, h, radius, x, y})"},
     {"id": "background", "file": "lib/background.jsx", "demo": "hero",
      "what": "Full-frame radial grey (#4d4f56 → #121317), sent to the back. Only added when a scene makes its own comp.",
      "call": "background(comp)"},
@@ -18,6 +21,7 @@
   ],
   "scenes": [
     {"id": "hero", "what": "Orb and rounded square, popping in (side by side; stacked in portrait)."},
+    {"id": "shapes", "what": "The basic shapes in one comp: circle, rounded square and card on top; pill, chip and strip below; popping in left to right."},
     {"id": "row", "what": "Five orbs rippling in from the centre with pop."},
     {"id": "row-slide", "what": "Five orbs rising in left to right with slideUp, all landed by 1.5 s."}
   ]
