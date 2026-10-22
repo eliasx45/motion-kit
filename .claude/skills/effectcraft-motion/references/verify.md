@@ -43,6 +43,9 @@ Against a brief's check table (positions, scales per frame): **read the rig's va
 (`$EC get <comp> <layer> transform/position --time S --project F`, or `prop.get {time}` in the
 script) instead of detecting elements in pixels; pixel detectors latch onto the wrong row
 (R2 round 1). Remember parented values are in the parent's space: add the stacked nulls up.
+In a script: `app.run("prop.get", {layer: L, path: "transform/position", time: t}).value` per null;
+from the shell `$EC get … --json` (it prints JSON, not a bare number). When no frame is at rest
+(a zoom starts before the moves end), measure sizes and colours with the zoom keys switched off.
 
 ## 5. Design lint
 

@@ -108,7 +108,8 @@ The facts that cost rounds when missed (all of them in [effectcraft-api.md](refe
 - Zooms: parent an oversized background to the zoom null too.
 - `shape.newShape` adds into the selected shape layer: deselect first (`newShape()` does).
   Its stroke width defaults to the Tools bar's: pass `strokeWidth` (0 for none).
-- Scripts run by **absolute path** and `#include` only files in their own folder or below.
+- Scripts run by **absolute path** and `#include` only files in their own folder or below: keep
+  every script, probes and calibration scripts too, in one folder with `kit.jsx` and `graphs.jsx`.
 - Eases: `keys.velocity` takes speed in value units per second. A Graph card's speed is
   normalised; `graph()` in graphs.jsx converts it. Call `graphsFinish()` once at the end.
 - **Parent last**, at a frame where the parents are at rest (`time.set`), after keying in comp

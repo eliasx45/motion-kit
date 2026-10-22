@@ -98,7 +98,7 @@ speed included); the AE model works but needs real speeds by hand; recipes are b
 |---|---|---|
 | `comp.new` | `name, width, height, frameRate, duration` | `{comp}` |
 | `shape.newShape` | `kind: rect\|rounded\|ellipse\|polygon\|star, size, position (centre), roundness (px), name, fill, fillType: linear\|radial, stroke, strokeWidth` | `{layer, group}` |
-| `layer.addShapeItem` | `layer, kind (rect, ellipse, path, fill, stroke, gfill, gstroke, trim, repeater, round, …), group?` | `{uid, path}` |
+| `layer.addShapeItem` | `layer, kind (rect, ellipse, path, fill, stroke, gfill, gstroke, trim, repeater, round, …), group?` (pass `group: "contents/group"` to add inside a `newShape` shape; without it the item lands at the layer root) | `{uid, path}` |
 | `layer.newText` | `text, name, position, box (paragraph), font, style, size, fill, tracking, leading, justify, allCaps` | `{layer}` |
 
 `position` of point text is its baseline, **horizontally centred by default**: pass
@@ -225,6 +225,13 @@ Custom eases are for **rebuilding references** only; his own builds use his Grap
   Style values don't carry over 1 : 1 from what you see in After Effects: measure the result. In
   R2 an Outer Glow at 25 % / size 80 gave +20–30/255 next to the rim; ~8–10 % gave a faint +8.
   Measure an effect by rendering it on and off and diffing the two.
+  Outer Glow **`spread` > 0 jumps**: it grows the hard shape first, so a 45 %-opacity fill glows
+  as if opaque (R2 r3: spread 0 → +65/255, spread 1 → +148). Keep spread 0 on see-through shapes.
+- **Gaussian Blur:** σ (px) ≈ 0.29 × blurriness (three R2 builders measured 0.287–0.297), so a
+  brief's σ 16 → blurriness 55.
+- **Motion blur:** `comp.setSwitch {switch: "motionBlur", value: true}` + `layer.setSwitch
+  {switch: "motionBlur"}` on the moving layers; `comp.settings {shutterAngle: 180, shutterPhase:
+  -90, motionBlurSamples: 32}` (the default sample count shows ghost copies on fast moves).
 - Motion Library: `library.search {query}`, `library.insert {id, time}`, `library.apply`;
   Bounce: the `toolkit_bounce` MCP tool (acts on the user's selection: only in his edit, with care).
 
