@@ -35,6 +35,11 @@ here in one line with the date.
   and restore it after.
 - Tests and experiments never talk to 9877. Use a sandbox app on another port if you need a UI.
 
+**Rebuilding a reference? The reference wins** over every rule below: copy its halo if it has
+one, and fit each measured move to the nearest Graph (`scripts/fit_graph.py`) even when the table
+below would pick another. The rules are for his own new builds (R2 round 1, 22 Oct: both
+conflicts cost builders time).
+
 ## Look
 
 - **Copy only what the reference or his design shows.** No glow, flash, drop shadow, gradient
@@ -69,7 +74,8 @@ Pick by where the speed peak must fall; exact values in [taste.md](references/ta
 - **Peaks land on the stressed syllable**: about 2 frames after the consonant burst, i.e. the
   vowel − 1 frame ("CON-tent" = f1281). `keys.alignPeak` puts a move's peak on a word for you.
 - **Overlap:** chained moves never stop between them. The next starts at ~60 % of the previous,
-  past its peak. Keep the key that's locked to a word on its word; shift the other end.
+  past its peak. Keep the key that's locked to a word on its word; shift the other end. Moves
+  that overlap on one property go on **stacked nulls**, one move each ([effectcraft-api.md](references/effectcraft-api.md#overlapping-moves-r2-round-1-22-oct-every-builder-hit-this)).
 - **Exits fade** (opacity over ~8 f), never a hard cut, unless the cut also jumps to a clearly
   different shot.
 - **Hold after landing.** No drift key after a move (it overshoots on the motion path).
@@ -96,7 +102,10 @@ The facts that cost rounds when missed (all of them in [effectcraft-api.md](refe
 
 - Keyframe times are **layer time**; pass `timeBase: "comp"` or keep layers starting at 0.
   `run_script` `setValueAtTime` is comp time. Writes snap to frames.
-- `prop.set` with a time does **not** key. Use `prop.addKey` (`key()` in kit.jsx).
+- `prop.set` with a time does **not** key an unkeyed property (it sets the value). Use
+  `prop.addKey` (`key()` in kit.jsx).
+- Point text is horizontally centred on its position: `justify: "left"` for left-aligned rows.
+- Zooms: parent an oversized background to the zoom null too.
 - `shape.newShape` adds into the selected shape layer: deselect first (`newShape()` does).
   Its stroke width defaults to the Tools bar's: pass `strokeWidth` (0 for none).
 - Scripts run by **absolute path** and `#include` only files in their own folder or below.

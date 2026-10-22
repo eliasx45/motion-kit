@@ -1,4 +1,4 @@
-# Brief template (v0)
+# Brief template (v1, after R2 round 1)
 
 The brief is the whole hand-off: a builder who never sees the reference must be able to rebuild
 it from this alone. Write it before any code, also when you build yourself. The R2 loop tunes
@@ -12,6 +12,12 @@ Rules for writing it:
 - One row per move. A move = one property of one element going from A to B.
 - Say what is **not** there (no glow, no stroke, no background motion) when a builder might add it.
 - Mark what you're unsure of; don't guess silently.
+- **One source of truth per number** (R2 round 1, 22 Oct). Derive the moves table from the same
+  measurements as the check table (`scripts/fit_graph.py` on the tracked values), or builders find
+  they disagree and lose time choosing. When two targets can't both be met (a font size gives the
+  right cap height but the wrong width), say which one wins.
+- Say **how** a change is made when it could be several things: a dim row = opacity, not a colour
+  change or a glow; which frame a colour was sampled at, and away from what.
 
 ---
 
@@ -31,8 +37,10 @@ One block per element (or per repeated set):
 - **Look**: fill (solid hex, or gradient type + stops + direction; 4-Color Gradient points and
   colours for card bodies), stroke (none / hairline 1 px white 32 %), inner shadow (colour,
   opacity, size, distance, angle), other effects only if the reference has them.
-- **Text**: content, font + weight, size (px cap height or font size), colour, tracking,
-  alignment, which word is coloured.
+- **Text**: content, font + weight (the nearest installed one if the reference's isn't), size
+  (font size AND the measured width of each line, saying which wins), colour, tracking,
+  alignment (left-aligned text needs `justify: "left"`), which word is coloured.
+- **Edges:** an element cut off by the frame edge is just cut off; say so, or builders add a fade.
 - **Parent** and layer order (what's above what).
 
 ## 4. Moves
@@ -44,6 +52,10 @@ One block per element (or per repeated set):
   finish, Fast out, Expo In-Out (Elias). Off→on / on→off / on→on decides most.
 - Opacity fades with their own row (frames). Exits: fade ~8 f.
 - Chained moves: say which overlap and by how much (next starts at ~60 % of the previous).
+  Overlapping moves on one property = one row each, built on stacked nulls.
+- A move that's already running when the shot starts (after a cut): give its real start before
+  frame 0 (e.g. f −12), not a made-up start at 0.
+- Camera moves / zooms: say what moves with them (the background too?).
 
 ## 5. Pacing summary
 - Busiest moment (frame), longest hold, total number of distinct moves, how many things move at

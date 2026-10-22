@@ -39,6 +39,11 @@ segments and a one-line summary. Check against the brief: order, directions, hol
 chained moves don't stop dead between them (summed speed never hits ~0 in a hand-off), that no
 element exits during its own entrance, that `overlaps` are intended.
 
+Against a brief's check table (positions, scales per frame): **read the rig's values**
+(`$EC get <comp> <layer> transform/position --time S --project F`, or `prop.get {time}` in the
+script) instead of detecting elements in pixels; pixel detectors latch onto the wrong row
+(R2 round 1). Remember parented values are in the parent's space: add the stacked nulls up.
+
 ## 5. Design lint
 
 `lint_frame {start: 0, end: D}` → text too small, low contrast (< 3 : 1), outside title safe,
@@ -46,7 +51,7 @@ cut off, overlapping text, hidden but on. Fix every error; explain any warning y
 
 ## 6. Against a reference
 
-- Same size, fps and length as the reference; start at frame 1.
+- Same size, fps and length as the reference; frame 0 = the reference's first frame.
 - Single frames: `render_compare {a: {path: "ref/f036.png"}, b: {comp, time}, max_side: 960}` →
   SSIM, PSNR, mean_abs, the diff heatmap and `diffBounds`. `region` to check one element.
 - A whole clip: the R2 scorer, `~/Developer/lab/R2-blind-rebuild/score/score_video.py --ref

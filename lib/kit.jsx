@@ -15,8 +15,8 @@ function ease(layer, keys) {                                      // keys: [{pat
   app.run("keys.select", { keys: sel });
   app.run("keys.easyEase", {});
 }
-function newComp(name, w, h, duration) {
-  var r = app.run("comp.new", { name: name, width: w, height: h, duration: duration || 4, frameRate: 29.97 });
+function newComp(name, w, h, duration, fps) {                    // fps default 29.97 (his edits); 30 for a 30 fps reference
+  var r = app.run("comp.new", { name: name, width: w, height: h, duration: duration || 4, frameRate: fps || 29.97 });
   COMP = { id: r.comp, name: name, w: w, h: h };                  // the current comp, for primitives that need its size
   return COMP;
 }
