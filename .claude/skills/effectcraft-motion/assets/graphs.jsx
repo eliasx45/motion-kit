@@ -25,7 +25,7 @@ function expoInOut(d) {
 }
 function graphCard_(name, dt) { return name === "Expo In-Out (Elias)" ? expoInOut(dt) : GRAPHS[name]; }
 var GRAPH_LOG = [];                       // every graph() call, replayed by graphsFinish()
-var GRAPH_TOL = 0.6 * 1001 / 30000;       // 0.6 frame (keys snap to frames): how near t0 / t1 a key must sit
+var GRAPH_TOL = 0.02;                     // s: 0.6 frame at 29.97 or 30 fps (keys snap to frames), how near t0 / t1 a key must sit; use 0.6 / fps at other rates
 
 function graphKeys_(layer, path) { return app.run("prop.get", { layer: layer, path: path }).keys || []; }
 function graphNearest_(ks, t) {

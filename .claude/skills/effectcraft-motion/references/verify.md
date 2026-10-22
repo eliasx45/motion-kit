@@ -17,7 +17,7 @@ layer's box), `render_preview {time, region}` for a detail at full resolution. R
 ## 2. Eases are his Graphs
 
 ```sh
-python3 <skill>/scripts/check_graphs.py out/a.ecproj --comp Main
+python3 <skill>/scripts/check_graphs.py out/a.ecproj --comp Main --md out/graphs-check.md
 ```
 
 Lists every key pair that changes value and the Graph it matches (influence within 1 %,

@@ -110,6 +110,9 @@ speed included); the AE model works but needs real speeds by hand; recipes are b
 | `comp.addMarker` | `time, comment` | |
 | `layer.addMarker` | `layers, time, comment` | |
 
+Layer order: create the background first, or `layer.arrange {layers, to: front|forward|backward|back,
+index? (1-based), above?: layer}`.
+
 Fonts: `list_fonts` / `$EC commands --filter font` before using one; a missing font silently falls
 back. Check text width in a render.
 
@@ -119,6 +122,9 @@ Paths are what `$EC props <comp> <layer> --project F` or `get_layer {flat: true}
 `transform/position`, `transform/scale` ([x, y, z] in %), `transform/opacity`,
 `transform/rotation`, `contents/group/contents/gfill/colors`, `contents/group/contents/stroke/width`,
 `layerStyles/innerShadow/size`, `effects/#1/blurriness`, `@uid` (from a reply's `uid`).
+Transform: `transform/anchor` (not anchorPoint), `position`, `scale`, `rotation`, `opacity`.
+A radial gradient's `start` / `end` are in the shape layer's own space: `[0, 0]` = the layer's
+position (the shape's centre).
 
 - Gradients: `set(layer, ".../gfill/colors", {colors: [[0, "#0080ff"], [1, [1, 1, 0]]], opacities: [[0, 1], [1, 1]]})`;
   `.../gfill/type` `"Radial"`, `.../gfill/start` and `/end` in layer space (radial: end − start = radius).
@@ -158,9 +164,19 @@ Paths are what `$EC props <comp> <layer> --project F` or `get_layer {flat: true}
 
 One property holds one key chain, so two moves can't overlap on it (his overlap rule: the next
 move starts at ~60 % of the previous). Put each move on its **own stacked null** and let them add
-up: `List` → parent `Scroll 2` (keys `[0, 0]` → `[0, Δ2]`) → parent `Scroll 1` (`[0, 0]` →
-`[0, Δ1]`) → parent `CTRL`. Nulls at the comp origin with anchor 0, so their values are pure
-offsets. Each null gets its own Graph. Moves that don't overlap stay one key chain.
+up: `CTRL` → `List A` → `List B` → `List C` → the elements. Each null gets its own Graph. Moves
+that don't overlap stay one key chain.
+
+Recipe (R2 round 2, 22 Oct: 4 of 4 builders scored at the ceiling with it). This rig is the
+exception to "parent last": no frame has every null at rest, so
+1. make the nulls **neutral**: a new null's anchor is `[50, 50, 0]` (it's 100 × 100), so set
+   `transform/anchor` = `[0, 0, 0]` and `transform/position` = `[0, 0, 0]` on the offset nulls; the
+   zoom null (`CTRL`) keeps position = its pivot (e.g. `[960, 540, 0]`) with anchor = that same
+   point, so its children's coordinates stay comp coordinates;
+2. build the elements and parent **everything before adding any key** (nothing moves yet, so
+   parenting at any time is exact);
+3. key each null as an offset from its rest value (`[0, +Δ, 0]` → `[0, 0, 0]`: ends at rest, so the
+   layout you built is the final frame) and put its Graph on it.
 
 ### Matching a measured move to his Graphs
 
@@ -197,6 +213,9 @@ lists the next best fits too; RMS ≤ ~1 px means the Graph is right.
   (or `layer.style.innerShadow` etc.), then `layerStyles/<style>/<param>`, e.g.
   `layerStyles/innerShadow/{useGlobalLight, angle, distance, size, choke, opacity, color}`,
   `layerStyles/outerGlow/{opacity, color, size, spread}`; `$EC props` lists every one.
+  Style values don't carry over 1 : 1 from what you see in After Effects: measure the result. In
+  R2 an Outer Glow at 25 % / size 80 gave +20–30/255 next to the rim; ~8–10 % gave a faint +8.
+  Measure an effect by rendering it on and off and diffing the two.
 - Motion Library: `library.search {query}`, `library.insert {id, time}`, `library.apply`;
   Bounce: the `toolkit_bounce` MCP tool (acts on the user's selection: only in his edit, with care).
 
@@ -231,6 +250,8 @@ $EC run --empty file.newProject '{}' comp.fromRecipe '{"path":"/abs/x.recipe.jso
 - **Zooms and camera moves:** parent the background to the zoom null too, and make it bigger than
   the frame, or it stays still while everything else scales (R2: the reference's vignette zoomed
   with the list and made the last motion peak at the cut).
+- `$EC set … --project F` changes only that process's copy: add `--save` (or `--save-as F2`), or
+  do the change and the render in one `$EC run …` / script.
 - `render.contactSheet` params are snake_case (`max_side`), unknown keys are rejected.
 - `shape.newShape` with a shape layer selected adds into it: deselect first (`newShape()`).
 - `shape.newShape` strokeWidth defaults to the Tools bar's: always pass it (0 = no stroke).

@@ -114,6 +114,8 @@ The facts that cost rounds when missed (all of them in [effectcraft-api.md](refe
 - **Parent last**, at a frame where the parents are at rest (`time.set`), after keying in comp
   space. Keys added after parenting are in the parent's space (a card under a CTRL null jumps
   bottom-right). Opacity isn't inherited: fade children too.
+  Exception: a rig of stacked offset nulls (overlapping moves, zooms): make the nulls neutral,
+  parent everything **before** any key, then key the offsets ([recipe](references/effectcraft-api.md#overlapping-moves-r2-round-1-22-oct-every-builder-hit-this)).
 - Name every layer when you create it (`name`), so later steps address it by name.
 
 The three routes render pixel-identical when done right (tested 22 Oct); the ranking is about
