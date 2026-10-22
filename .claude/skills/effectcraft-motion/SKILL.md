@@ -84,7 +84,9 @@ Pick by where the speed peak must fall; exact values in [taste.md](references/ta
 - Pops and springs: "add bounce" = the Motion Library Bounce tool (`toolkit_bounce`), never
   hand-made spring keys or expressions.
 - A move no Graph fits: build the nearest one and **list it for Elias** to save a new graph.
-  Don't invent curves, Easy Ease or the kit's generic expo.
+  Don't invent curves, Easy Ease or the kit's generic expo. Exception: a **reference rebuild**
+  whose measured moves no Graph fits takes the brief's custom eases, `cease()` in graphs.jsx
+  (speed 0, given influences); check with `check_graphs.py --reference`.
 
 ## Writing it
 
@@ -155,6 +157,11 @@ Do all of it; [verify.md](references/verify.md) has the commands.
 - Never say done before you've looked at the frames yourself.
 
 ## Briefing a subagent
+
+**Expanding his short prompt into a brief:** [expander.md](references/expander.md) (voice →
+stressed syllables → `scripts/peak_keys.py` → moves table in the ≤ 40-line format). Builders
+reproduce a precise brief almost exactly (lab R2: three builders on one brief within 0.5 points),
+so the brief's numbers decide the result.
 
 Give it this skill's path, the brief ([brief-template.md](references/brief-template.md)), its own
 work folder and project file, the CLI to use, and the rules: no live app, no Elias comps,

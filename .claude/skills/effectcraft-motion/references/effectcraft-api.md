@@ -104,7 +104,8 @@ speed included); the AE model works but needs real speeds by hand; recipes are b
 `position` of point text is its baseline, **horizontally centred by default**: pass
 `justify: "left"` to put the left edge there (left-aligned rows, list items).
 | `layer.newSolid` | `color, name, size?` | `{layer}` |
-| `layer.newNull` | `name` | `{layer}` |
+| `layer.newNull` | `name` (100 × 100, anchor `[50, 50, 0]`) | `{layer}` |
+| `layer.newAdjustment` | `name` (or a solid + `layer.setSwitch {switch: "adjustment"}`) | `{layer}` |
 | `layer.setParent` | `layers, parent (layer or null), compensate?` | |
 | `layer.precompose` / `comp.fromRecipe` | | |
 | `comp.addMarker` | `time, comment` | |
@@ -126,7 +127,9 @@ Transform: `transform/anchor` (not anchorPoint), `position`, `scale`, `rotation`
 A radial gradient's `start` / `end` are in the shape layer's own space: `[0, 0]` = the layer's
 position (the shape's centre).
 
-- Gradients: `set(layer, ".../gfill/colors", {colors: [[0, "#0080ff"], [1, [1, 1, 0]]], opacities: [[0, 1], [1, 1]]})`;
+- Gradients: `set(layer, ".../gfill/colors", {colors: [[0, "#0080ff"], [1, [1, 1, 0]]], opacities: [[0, 1], [1, 1]]})`.
+  A shape's gradient runs **horizontally** by default: for top → bottom set `.../gfill/start`
+  `[0, -h/2]` and `/end` `[0, h/2]`;
   `.../gfill/type` `"Radial"`, `.../gfill/start` and `/end` in layer space (radial: end − start = radius).
 - Vectors: give 3-D values for transform (`[x, y, 0]`, `[100, 100, 100]`): `property("Scale").setValueAtTime(t, [x, y])` sets z to 0 on older builds.
 
@@ -216,9 +219,11 @@ the speed never settles between them (S11: 5 moves, 1.4 px; 4 moves, 4 px).
 
 - `effect.apply {layer, effect}` (name or id) → `{effects, paths: ["effects/#2"]}`;
   `add_effect {layer, effect, values}` over MCP; `list_effects {filter}` for param ids.
-- **4-Color Gradient** `ec.generate.fourcolor`: `positionsColors/point1..4` (vec2),
-  `positionsColors/color1..4`, `blend` (1–1000, default 100), `jitter`, `opacity`, `blendingMode`.
-  Check the point space with `get_layer` before setting (defaults read like fractions of the layer).
+- **4-Color Gradient** `ec.generate.fourcolor`: `positionsColors/point1..4` (vec2, **comp
+  pixels** on a full-frame solid), `positionsColors/color1..4`, `blend` (1–1000, default 100),
+  `jitter`, `opacity`, `blendingMode`.
+- **Gaussian Blur** on an adjustment layer: `effects/#1/blurriness`, `effects/#1/repeatEdge`
+  (turn on, or the frame edges darken).
 - **Deep Glow (Native)** `ec.stylize.deepglow`, Glow `ec.stylize.glow`: only when he asks or the
   reference has it.
 - Gradient Ramp, Drop Shadow, CC Light Sweep etc. exist under their After Effects names.
