@@ -19,6 +19,19 @@ Rules for writing it:
 - Say **how** a change is made when it could be several things: a dim row = opacity, not a colour
   change or a glow; which frame a colour was sampled at, and away from what.
 
+## Describing a reference (what worked in R2, 22 Oct)
+
+Blind builders matched a builder who saw the clip (86.8–87.1 vs 86.9) once the brief was:
+1. **Tracked, not eyeballed.** Per-frame positions/scales of the moving group (rims, edges,
+   a lattice fit for repeated cards), not a few hand-picked frames.
+2. **Fitted.** `scripts/fit_graph.py` turns the track into moves: each one a null, two keys
+   (frame: value), a Graph or a custom ease. Overlaps become stacked nulls.
+3. **Short.** ~30–40 lines: picture (sizes, colours, fonts by measured width), states, the rig,
+   one moves table, what's not there, one check line. Beats, pacing prose and long check tables
+   added nothing (the 30-line brief scored best and built fastest).
+4. **Mechanisms named:** opacity vs colour, what parents what, what zooms with the camera,
+   motion blur and shutter, glow strength as "+N/255 next to it, gone by M px".
+
 ---
 
 ## 1. Comp

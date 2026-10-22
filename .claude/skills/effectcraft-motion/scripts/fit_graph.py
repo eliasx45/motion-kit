@@ -6,7 +6,11 @@ Finds which Graph, start frame and end frame (and values) reproduce the samples 
 nulls, one move each; see effectcraft-api.md "Overlapping moves").
 
   fit_graph.py SAMPLES [--moves 1] [--graphs "Quick launch · soft landing,Fast In"]
-               [--fps 29.97] [--range 0:132] [--max-dur 90] [--top 3]
+               [--fps 29.97] [--range 0:132] [--max-dur 90] [--before 20] [--top 3]
+  fit_graph.py SAMPLES --speed                       per-frame speed: where moves start/peak/end
+  fit_graph.py SAMPLES --seed "G:a:b;G:a:b" [--free] start from your reading of the speed curve;
+                                                     --free also fits custom eases (references
+                                                     that don't use his Graphs)
 
 SAMPLES: JSON [[frame, value], …] or [{"f": frame, "v": value}, …], or CSV lines "frame,value".
 Frames may be any you measured (gaps are fine). Moves may start before the first sample or end
@@ -26,6 +30,9 @@ EXPO = "Expo In-Out (Elias)"
 
 
 def card(name, seconds):
+    if name.startswith("free:"):  # a measured custom ease: speed 0 both ends, influences out/in
+        _, o, i = name.split(":")
+        return (0.0, float(o), 0.0, float(i))
     if name == EXPO:  # Rule A, same as graphs.jsx expoInOut()
         o = max(50.0, min(90.0, 65 + 30 * (seconds - 1)))
         return (0.0, o / 100, 0.0, min(o + 1.5, 90.0) / 100)
@@ -109,6 +116,37 @@ def starts(F, V, n):
     return [("Quick launch · soft landing", int(f[i]) - 10, int(f[i]) + 25) for i in sorted(peaks)]
 
 
+def free_name(a, b):
+    return f"free:{a:.2f}:{b:.2f}"
+
+
+def refine_free(F, V, moves, fps, rounds=4):
+    """Turn each move into a custom ease (speed 0 both ends, any influences) and nudge its frames:
+    for references that don't use his Graphs."""
+    moves = list(moves)
+    grid = np.round(np.arange(0.10, 1.0001, 0.02), 2)
+    for _ in range(rounds):
+        for k, (n, a0, b0) in enumerate(moves):
+            so, io, si, ii = card(n, (b0 - a0) / fps)
+            cur = (solve(F, V, moves, fps)[2], io, ii, a0, b0)
+            for io_ in grid:
+                for ii_ in grid:
+                    t = moves[:k] + [(free_name(io_, ii_), a0, b0)] + moves[k + 1:]
+                    e = solve(F, V, t, fps)[2]
+                    if e < cur[0]:
+                        cur = (e, io_, ii_, a0, b0)
+            for a in range(a0 - 6, a0 + 7):
+                for b in range(b0 - 6, b0 + 7):
+                    if b <= a + 3:
+                        continue
+                    t = moves[:k] + [(free_name(cur[1], cur[2]), a, b)] + moves[k + 1:]
+                    e = solve(F, V, t, fps)[2]
+                    if e < cur[0]:
+                        cur = (e, cur[1], cur[2], a, b)
+            moves[k] = (free_name(cur[1], cur[2]), cur[3], cur[4])
+    return moves
+
+
 def solve(F, V, moves, fps):
     A = np.column_stack([np.ones_like(F)] + [progress(n, a, b, F, fps) for n, a, b in moves])
     c, *_ = np.linalg.lstsq(A, V, rcond=None)
@@ -125,6 +163,11 @@ def main():
     ap.add_argument("--range", help="only use samples with frame in A:B")
     ap.add_argument("--max-dur", type=int, default=90, help="longest move in frames")
     ap.add_argument("--before", type=int, default=20, help="how many frames before the first sample a move may start")
+    ap.add_argument("--seed", help="starting guess, skips the slow search: 'Graph:start:end;Graph:start:end' "
+                    "(one per move; read them off the speed curve: --speed prints it)")
+    ap.add_argument("--free", action="store_true", help="after the Graph fit, also fit custom eases (any "
+                    "influences, speed 0 at both ends) and say how much better they are")
+    ap.add_argument("--speed", action="store_true", help="print the per-frame speed of the samples and exit")
     ap.add_argument("--top", type=int, default=3, help="alternatives to list for a single move")
     args = ap.parse_args()
 
@@ -133,6 +176,11 @@ def main():
         lo, hi = (float(x) for x in args.range.split(":"))
         m = (F >= lo) & (F <= hi)
         F, V = F[m], V[m]
+    if args.speed:
+        o = np.argsort(F)
+        v = np.gradient(V[o], F[o])
+        print(" ".join(f"{f:g}:{x:.1f}" for f, x in zip(F[o], v)))
+        return
     names = [n.strip() for n in args.graphs.split(",")] if args.graphs else list(GRAPHS) + [EXPO]
     for n in names:
         if n != EXPO and n not in GRAPHS:
@@ -165,18 +213,39 @@ def main():
             out.append((n, a, b))
         return out
 
-    tries = [descend(greedy(names))]
-    if args.moves > 1:
+    if args.seed:
+        seed = []
+        for part in args.seed.split(";"):
+            n, a, b = part.rsplit(":", 2)
+            seed.append((n.strip(), int(a), int(b)))
+        args.moves = len(seed)
+        # with --free the seed is refined in place (the global search can swap a seed for a
+        # degenerate pair of opposite moves); without, it starts the usual descent
+        tries = [(seed, None)] if args.free else [descend(seed)]
+    else:
+        tries = [descend(greedy(names))]
+    if args.moves > 1 and not args.seed:
         tries.append(descend(starts(F, V, args.moves)))
         tries += [descend(greedy([n])) for n in names]
     moves, alts = min(tries, key=lambda t: solve(F, V, t[0], args.fps)[2])
     moves.sort(key=lambda m: m[1])
 
+    if args.free:
+        g_rms = solve(F, V, moves, args.fps)[2]
+        moves = refine_free(F, V, moves, args.fps)
+        f_rms = solve(F, V, moves, args.fps)[2]
+        graphs_only = all(not n.startswith("free:") for n, _, _ in tries[0][0])
+        print(f"{'Graphs' if graphs_only else 'seed'} RMS {g_rms:.2f} → custom eases RMS {f_rms:.2f}"
+              + (("  (much better: the reference doesn't use his Graphs; give these eases in the brief)"
+                  if f_rms < 0.6 * g_rms else "  (his Graphs are close enough: use them)") if graphs_only else
+                 "  (compare with a Graph-only run: same --seed with Graph names, without --free)"))
     c, fit, rms, worst = solve(F, V, moves, args.fps)
     print(f"{len(F)} samples, frames {F.min():g}–{F.max():g}; fit RMS {rms:.2f}, worst {worst:.2f}")
     base = c[0]
     for i, ((n, a, b), d) in enumerate(zip(moves, c[1:]), 1):
-        print(f"move {i}: {n}  frames {a} → {b} ({b - a} f), value {'+' if d >= 0 else ''}{d:.2f}"
+        label = n if not n.startswith("free:") else "custom ease, out {:.0f} % / in {:.0f} % (speed 0)".format(
+            *(100 * float(x) for x in n.split(":")[1:]))
+        print(f"move {i}: {label}  frames {a} → {b} ({b - a} f), value {'+' if d >= 0 else ''}{d:.2f}"
               f"  (peak at f{peak_at(n, a, b, args.fps):.1f})")
     if any(a < F.min() for _, a, _ in moves):
         print("note: a move starting before the first sample is the tail of an earlier move; only its"

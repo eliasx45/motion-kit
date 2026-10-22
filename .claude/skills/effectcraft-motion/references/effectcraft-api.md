@@ -183,7 +183,16 @@ exception to "parent last": no frame has every null at rest, so
 Rebuilding a reference: measure the element per frame (position, scale, opacity…), then
 `python3 scripts/fit_graph.py samples.json [--moves N] [--fps 30]` names the Graph, start and end
 frame and values for each move (with N > 1 the moves add up: build them as stacked nulls). It
-lists the next best fits too; RMS ≤ ~1 px means the Graph is right.
+lists the next best fits too; RMS ≤ ~1–2 px means the Graph is right.
+
+When the automatic search lands badly (several overlapping moves, RMS ≫ 2 px):
+1. `--speed` prints the per-frame speed. Each move is one hump: it starts where the speed leaves
+   its low, peaks, and ends at the next low. Moves overlap when the speed never reaches 0.
+2. Seed one move per hump: `--seed "Fast In:-2:30;Smooth emphasis:10:54;…"`.
+3. Add `--free` to also fit **custom eases** (speed 0 at both keys, any influences). If they beat
+   the Graphs clearly, the reference doesn't use his Graphs: give the custom eases (out / in
+   influence) in the brief. Moon Edits S11 (22 Oct): Graphs ~8 px, custom eases 4 px.
+Custom eases are for **rebuilding references** only; his own builds use his Graphs.
 
 ## Peaks on words
 
