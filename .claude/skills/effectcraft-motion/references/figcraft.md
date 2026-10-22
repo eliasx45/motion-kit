@@ -39,6 +39,16 @@ owns how they move**: never keep the same value in both.
 - Files: a `.figcraft` is a zip with `document.json`. `figcraft-cli` is headless: `info`,
   `export`, `convert`, `render`, `run` (JSON command lists), `mcp`.
 
+## Lines and curves (Elias liked the Moon step wave, 22 Oct)
+
+- Trace the centreline from the reference pixels (brightest point per column/row), then fit the
+  **fewest cubic beziers** that stay within ~2–3 px RMS (the wave: 3 S-curves, ≤ 2.4 px). Few
+  smooth segments read like a designer's pen; many points or guessed handles wobble.
+- Copy the thickness along the line: stroke weight, round caps, and a width profile for tapers
+  (`widthProfile: [[0, 1], [0.86, 1], [1, 0.05]]` faded the wave's tail). In EffectCraft: a shape
+  path + stroke with Taper (start/end length) or a trim-path fade.
+- Same for chevrons and arrows: measured points, round caps and joins.
+
 ## Measuring a rebuild against a reference
 
 Export both at the same scale, crop per element, compare zones (centre, near the rim, top vs
