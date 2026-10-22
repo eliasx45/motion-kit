@@ -80,4 +80,23 @@ function graphChain(layer, path, times, names) {
 // graphsFinish() — run once at the end of a scene. Keys added later (an exit starting inside a
 // move) split segments and change their Δv/Δt, so every logged move is re-applied in order
 // (a later move wins a segment it shares).
-function graphsFinish() { for (var i = 0; i < GRAPH_LOG.length; i++) graphApply_(GRAPH_LOG[i]); }
+// cease(layer, path, t0, t1, outInf, inInf) — a measured CUSTOM ease (speed 0 at both keys, these
+// influences in %), for REFERENCE REBUILDS whose moves no Graph fits (fit_graph.py --free). Never in
+// his own builds. check_graphs.py --reference lists them apart. Logged like graph() for graphsFinish().
+function cease(layer, path, t0, t1, outInf, inInf) {
+  var e = { layer: layer, path: path, t0: t0, t1: t1, name: "custom", out: outInf, inn: inInf };
+  GRAPH_LOG.push(e);
+  ceaseApply_(e);
+}
+function ceaseApply_(e) {
+  var ks = graphKeys_(e.layer, e.path);
+  var i = graphNearest_(ks, e.t0), j = graphNearest_(ks, e.t1);
+  if (i < 0 || j < 0 || j <= i) throw new Error("cease: no keys at " + e.t0 + " / " + e.t1 + " on " + e.path);
+  var n = graphDelta_(e.path, ks[i].value, ks[j].value).length, z = [], io = [], ii = [];
+  for (var d = 0; d < n; d++) { z.push(0); io.push(e.out); ii.push(e.inn); }
+  app.run("keys.select", { keys: [{ layer: e.layer, path: e.path, time: ks[i].time }] });
+  app.run("keys.velocity", { outSpeed: z, outInfluence: io });
+  app.run("keys.select", { keys: [{ layer: e.layer, path: e.path, time: ks[j].time }] });
+  app.run("keys.velocity", { inSpeed: z, inInfluence: ii });
+}
+function graphsFinish() { for (var i = 0; i < GRAPH_LOG.length; i++) (GRAPH_LOG[i].name === "custom" ? ceaseApply_ : graphApply_)(GRAPH_LOG[i]); }

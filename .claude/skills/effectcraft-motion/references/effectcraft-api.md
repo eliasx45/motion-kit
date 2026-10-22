@@ -192,7 +192,11 @@ When the automatic search lands badly (several overlapping moves, RMS ≫ 2 px):
 3. Add `--free` to also fit **custom eases** (speed 0 at both keys, any influences). If they beat
    the Graphs clearly, the reference doesn't use his Graphs: give the custom eases (out / in
    influence) in the brief. Moon Edits S11 (22 Oct): Graphs ~8 px, custom eases 4 px.
-Custom eases are for **rebuilding references** only; his own builds use his Graphs.
+Custom eases are for **rebuilding references** only; his own builds use his Graphs. Apply them
+with `cease(layer, path, t0, t1, outInf, inInf)` from graphs.jsx and check with
+`check_graphs.py --reference` (lists them apart instead of as unmatched).
+With 4+ moves, seed one move per speed hump **plus a long slow "carrier"** under the steps when
+the speed never settles between them (S11: 5 moves, 1.4 px; 4 moves, 4 px).
 
 ## Peaks on words
 

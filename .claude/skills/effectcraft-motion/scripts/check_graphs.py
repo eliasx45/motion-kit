@@ -8,7 +8,8 @@ changes, both influences are within 1 % of the card's and the normalised speeds
 (speed x dt / dv) within 2 % of the card's (position: dv = straight-line length; shapes and
 mask paths: dv = 1). "Expo In-Out (Elias)" is matched with the influences its duration gives
 (out = clamp(65 + 30 (s - 1), 50, 90), in = min(out + 1.5, 90)). Exit status 1 when anything
-is unmatched. Card values: ../assets/graphs.json (the same as the engine's keys.peakGraphs).
+is unmatched (with --reference, a custom ease with speed 0 at both keys is listed apart).
+Card values: ../assets/graphs.json (the same as the engine's keys.peakGraphs).
 """
 import argparse, json, math, os, sys
 from collections import Counter
@@ -94,6 +95,9 @@ def check_pair(match, ka, kb):
     if fits(meas, co, ci):
         return True, "Expo In-Out (Elias)", ""
     so, io_, si, ii_ = meas[0]
+    if all(abs(m[0]) < 0.05 and abs(m[2]) < 0.05 for m in meas):
+        # speed 0 at both keys: a custom ease (cease() in graphs.jsx, fit_graph.py --free)
+        return True, f"custom {io_:.0f}/{ii_:.0f}", f"custom ease: out {io_:.1f} %, in {ii_:.1f} % (speed 0)"
     return True, None, f"out {so:.2f}x / {io_:.1f} %, in {si:.2f}x / {ii_:.1f} %"
 
 
@@ -102,6 +106,8 @@ def main():
     ap.add_argument("project")
     ap.add_argument("--comp", help="comp name (default: every comp)")
     ap.add_argument("--md", help="also write a Markdown report here")
+    ap.add_argument("--reference", action="store_true", help="a reference rebuild: custom eases "
+                    "(speed 0 both ends) are allowed and listed apart; without it they count as unmatched")
     args = ap.parse_args()
     doc = json.load(open(args.project))
     comps_ = [it for it in doc["items"].values() if it["kind"].get("type") == "Comp"
@@ -125,18 +131,21 @@ def main():
                     f0, f1 = ks[i]["time"] / TICK * fps, ks[i + 1]["time"] / TICK * fps
                     row = (c["name"], L.get("name", "?"), path, f0, f1, card or "UNMATCHED", det)
                     rows.append(row)
-                    if card:
+                    if card and (args.reference or not card.startswith("custom ")):
                         per[card] += 1
                     else:
                         bad.append(row)
-    print(f"{total - len(bad)}/{total} moving key pairs match a Graph, {len(bad)} unmatched")
+    n_custom = sum(n for k, n in per.items() if k.startswith("custom "))
+    print(f"{total - len(bad) - n_custom}/{total} moving key pairs match a Graph"
+          + (f", {n_custom} custom eases (reference rebuild)" if n_custom else "") + f", {len(bad)} unmatched")
     for name, n in per.most_common():
         print(f"  {n:4d}  {name}")
     for r in bad[:40]:
         print(f"  UNMATCHED {r[0]} / {r[1]} `{r[2]}` f{r[3]:.0f}->f{r[4]:.0f}: {r[6]}")
     if args.md:
         lines = [f"# Graphs check: {os.path.basename(args.project)}", "",
-                 f"**{total - len(bad)} / {total} matched, {len(bad)} unmatched.**", "",
+                 f"**{total - len(bad) - n_custom} / {total} match a Graph"
+                 + (f", {n_custom} custom eases (reference rebuild)" if n_custom else "") + f", {len(bad)} unmatched.**", "",
                  "| Comp | Layer | Property | Frames (layer time) | Graph | Detail |", "|---|---|---|---|---|---|"]
         lines += [f"| {r[0]} | {r[1]} | `{r[2]}` | {r[3]:.0f}→{r[4]:.0f} | {r[5]} | {r[6]} |" for r in rows]
         open(args.md, "w").write("\n".join(lines) + "\n")

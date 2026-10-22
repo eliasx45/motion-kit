@@ -31,6 +31,13 @@ Blind builders matched a builder who saw the clip (86.8–87.1 vs 86.9) once the
    added nothing (the 30-line brief scored best and built fastest).
 4. **Mechanisms named:** opacity vs colour, what parents what, what zooms with the camera,
    motion blur and shutter, glow strength as "+N/255 next to it, gone by M px".
+5. **The edges of the shot checked** (R2 r3, missed by the describer): the first and last frames
+   are often transitions: a blurred / darker cut-in frame, a zoom + blur out. Compare frame 0's
+   mean luma and sharpness with frame 2's.
+6. **Each measurement validated by re-synthesis**: blur σ and zoom by warping + blurring a sharp
+   frame until it matches (not a rim width a glow can contaminate); track with a method that
+   survives motion blur (profile correlation), then fit. A describer error costs every builder
+   the same points (r3: 56 for all three vs 76 for the control).
 
 ---
 
