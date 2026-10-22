@@ -146,7 +146,9 @@ Paths are what `$EC props <comp> <layer> --project F` or `get_layer {flat: true}
   interpolation (`keys.interpolation`) when you need a straight multi-key path.
 - `keys.copy` / `keys.paste`, `keys.quickOffset {delta}` (stagger selected layers' keys),
   `layer.quickOffset`.
-- Colour: fill / stroke `color` keys ease with graph() per channel.
+- Colour: a solid fill / stroke `color` keys and eases with graph() per channel. **Gradient**
+  colours (`gfill/colors`) interpolate between keys but graph() can't ease them: crossfade a lit
+  copy over a dim one with opacity instead.
 - **Lit ↔ dim states** (a list row taking focus): key one opacity per row on all its parts (body,
   rim, icon, text) together, 100 lit / ~34 dim, over a dark background. Moon Edits S13: dim over
   ~13 f with Smooth emphasis; a new row lights over ~26 f with Fast In. A Fill effect
