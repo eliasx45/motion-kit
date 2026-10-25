@@ -86,7 +86,7 @@ peak must fall; exact values in [taste.md](references/taste.md#graphs).
 | on → off | Fast out | at the end |
 | **on → on** (moves to another visible spot) | **Expo In-Out (Elias)**, sharper the longer | middle |
 | **off / invisible → visible, ANY direction** (slide up/down/left/right; always, ✅ Elias 25 Oct) | **Expo Out 1 (Elias)** on position + **Entrance fade (Elias)** on opacity (~8 f) | frame 1, long settle |
-| off → on, punchiest pop / scale in (cards, icons) | Snap in (Devin) | at the start |
+| **scale pop from 0** (cards, icons) ✅ 25 Oct | 2 f kick (out 0.1 %) + Motion Library Bounce: icon 20/3/5, card 12/3/6 ([taste.md](references/taste.md)) | the spring is the motion |
 | **row of cards / thumbnails slides up** from off-screen | his card-row ease: out ~1–11 / in ~100, 25 f, 1 f cascade ([taste.md](references/taste.md#graphs)) | at the start |
 | ~~soft entrance, text reveal~~ → now Expo Out 1 when it comes from invisible; Quick out, gentle land (Devin) only for a soft move that is already visible | Quick out, gentle land (Devin) | early |
 | on → off, leaves at full speed (match cuts) | Launch out (Devin) | at the end |

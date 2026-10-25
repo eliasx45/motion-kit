@@ -102,8 +102,13 @@ e7e9542e…, bezier [0.8092, 0, 0.1752, 1], hand-shaped on the Tyson 20-08 Legen
   clearly different zoom/shot, which hides it.
 - Rows: 1-frame cascade left → right. Devin's landings are long: when unsure, a longer tail beats
   a shorter one (he moved a landing key 14 → 20 → 33 f).
-- Pops: the Motion Library Bounce (`toolkit_bounce` {property, mode: overshoot, strength 20,
-  frequency 3, decay 5}) on his selection, via `script.run`, restoring his selection after.
+- **Scale pops (0 → full, from invisible)** ✅ Elias tuned 25 Oct (Graphs Lab – in use, 3 s icon + 21 s card):
+  the keys are only a **2-frame kick** (0 → 100 %, first key out 0.1 % / speed 0), the Motion Library Bounce
+  (`toolkit_bounce` mode overshoot) does the visible motion and sets the landing ease itself. Then:
+  - **icon / small UI element:** Bounce 20 %, 3 /s, Settle 5 → peaks ~146 %.
+  - **card / pill with text:** Bounce 12 %, 3 /s, Settle 6 → peaks ~135 %, calms faster. 20 % was "too much on a card".
+  The values live as sliders in Effect Controls ("Scale Bounce %", "Scale Bounces/s", "Scale Settle").
+  Run it on his selection via `script.run`, restoring his selection after.
 
 ## Cards and tiles
 
