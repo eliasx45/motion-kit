@@ -93,6 +93,8 @@ peak must fall; exact values in [taste.md](references/taste.md#graphs).
 | whip / slide transition | Whip (Devin) | middle |
 | reel/card pops out of a phone (scale + position) | Reel Pop-In (Elias) *(not approved)* | at the start |
 
+🎞️ Approved moves, 12 fps: [entrance](assets/gifs/entrance-expo-out-1.gif) · [icon pop](assets/gifs/pop-icon.gif) · [card pop](assets/gifs/pop-card.gif). Every move Elias approves gets a 12 fps GIF in `assets/gifs/` (render_frames sheet → crop → ffmpeg 12 fps, 640 px), linked next to its rule.
+
 **⏳ Waiting for Elias (24 Oct):** the 6 saved-curve rows above are NOT approved by him yet
 (`elias_ok: false` in graphs.json). Don't use them in builds until he approves them in the Graphs Lab
 comp; until then the 5 Graphs + Expo In-Out are the only eases.
