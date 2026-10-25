@@ -127,8 +127,9 @@ Motion Library, and the engine's `keys.alignPeak` / `keys.peakGraphs` (peak.rs) 
   hand-made spring keys or expressions.
 - **Text** (word pops, word swaps, words travelling together, typing):
   [text-animation.md](references/text-animation.md) (24 Oct).
-- A move no Graph fits: build the nearest one and **list it for Elias** to save a new graph.
-  Don't invent curves, Easy Ease or the kit's generic expo. Exception: a **reference rebuild**
+- A move no Graph fits: build the nearest one and **list it for Elias** to save a new graph
+  (`taste.propose {name, layer, path, key}` files it as ⏳; only he approves, never call
+  `taste.approve` yourself). Don't invent curves, Easy Ease or the kit's generic expo. Exception: a **reference rebuild**
   whose measured moves no Graph fits takes the brief's custom eases, `cease()` in graphs.jsx
   (speed 0, given influences); check with `check_graphs.py --reference`.
 
@@ -201,8 +202,15 @@ text and the precomp cut-offs).
    a zoomed strip (`render_frames` with `region`, ≥ 640 px) only for what lint can't measure
    (letter shapes, a level baseline), judged as typography, not "does it move" (24 Oct: a
    stacked QUICK/FAST swap passed two reviews; `text-overlap` per frame now catches it).
-4. **Eases:** `scripts/check_graphs.py out.ecproj --comp NAME` → every moving key pair matches a
-   Graph (0 unmatched, or each one listed with why).
+4. **Eases (taste check, required):** `taste_check {comp, start, end}` (MCP; engine
+   `taste.check`, also lint rule `off-taste`) judges every move against his profile: ✅ his
+   approved curve for that move type · 🟡 in his range but not approved (says how it differs) ·
+   ❌ linear, Easy Ease, speed jump, baked keys, or outside his ranges (peak position, sharpness
+   for the length, speed in % of the frame, entrance landing). Handover needs `clean: true` (no blocking ❌)
+   and every other ❌ / 🟡 fixed with its `fix` call (`taste.apply`) or named with why.
+   `ease_graph {layer, property}` shows the value + speed graph (send it to Elias when you ask
+   about a move). Saved files without the app: `scripts/check_graphs.py` (stricter, 1:1 match).
+   ✅ (25 Oct: eases were last week's #1 cost, ~200 min of his fixes)
 5. **Choreography:** `get_motion` summary reads like the brief; no dead stops between chained
    moves, nothing exits during its own entrance.
 6. **Against the reference** (when there is one): render at the same size and fps, stack them,

@@ -39,6 +39,16 @@ strip's path if they made one) in their report.
 
 ## 2. Eases are his Graphs
 
+In the app or the MCP (required): `taste_check {comp, start, end, problems_only: true}` →
+`summary.line` (✅ · 🟡 · ❌) and per move `moveType`, `verdict`, `criteria`, `message`, `fix`.
+Run each `fix` (`command_run taste.apply …`) or say why not; `clean` must be true. Thresholds
+(learned from his comps, 25 Oct): entrance peak ≤ 30 %, exit ≥ 75 %, on → on 30–70 %, fade-in
+≤ 50 %; fastest frame ÷ average ≤ 1.3 + 2.05 ln(frames); ≤ 18 % of the frame width per frame;
+entrances spend ≥ 30 % of their frames on the last 10 % of the travel. ❌ blocks only for move types with ≥ 2 approved
+curves (`taste.profile` → `moveTypes[].blocks`). `ease_graph` draws one property.
+
+Saved project, no app:
+
 ```sh
 python3 <skill>/scripts/check_graphs.py out/a.ecproj --comp Main --md out/graphs-check.md
 ```
