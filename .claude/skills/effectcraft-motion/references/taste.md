@@ -1,6 +1,6 @@
 # Elias's taste: every rule with its value, date and why
 
-Newest correction wins. Source files: `~/.claude/speech-edit/SYSTEM.md` (the agreed edit system),
+Newest correction wins. Source files: `~/.agents/skills/video-editing/rules/SYSTEM.md` (the agreed edit system),
 the Claude memory folder for EffectCraft, lab R1 (`~/Developer/lab/R1-rsi-intro-exam/REPORT.md`).
 
 ## Contents
@@ -19,7 +19,7 @@ the Claude memory folder for EffectCraft, lab R1 (`~/Developer/lab/R1-rsi-intro-
 
 Motion Library → Devin Jatho → Graphs, 5 cards. The values are normalised After Effects temporal
 ease on 2 keys: the move goes 0 → 1 over time 0 → 1, so speed is in units of the average speed
-(Δv / Δt). The engine lists the same values: `keys.peakGraphs`.
+(Δv / Δt). The engine lists the same 5 values: `keys.peakGraphs` (it doesn't know the saved curves below).
 
 | Graph | id (alignPeak) | first key out (speed, influence %) | second key in (speed, influence %) | peak at |
 |---|---|---|---|---|
@@ -29,13 +29,40 @@ ease on 2 keys: the move goes 0 → 1 over time 0 → 1, so speed is in units of
 | Slow launch · quick finish | `slow-launch` | 0, 83.0011 | 0, 60.1217 | 60 % |
 | Fast out | `fast-out` | 0, 100 | 0, 0.8870 | 99.7 % |
 
+### Saved curves (Motion Library `curve_presets`, copied 24 Oct 2026)
+
+Not Graphs-folder cards; same normalised units. ids, beziers and use-cases in `assets/graphs.json`.
+Compare and tune all 12 in the "Graphs Lab (Claude)" comp (`scripts/graphs-lab.jsx`, read back with
+`scripts/graphs-lab-read.jsx`).
+
+**New taste waits for his OK** ✅ (24 Oct, retro case curves-need-approval): any ease, curve, preset or
+style value added from Motion Library or elsewhere is marked ⏳ and builders don't use it until he has
+seen it and said OK. Values he already approved are used right away.
+
+⏳ Not approved by Elias yet unless marked ✅ (24 Oct): the Approved column is Motion Library's flag. Don't
+use them until he signs them off in the Graphs Lab.
+
+| Curve | first key out (speed, influence %) | second key in (speed, influence %) | Use | ML approved |
+|---|---|---|---|---|
+| **Expo Out 1 (Elias)** ✅ | 0, 0.1 | 0, 100 | **every off/invisible → visible move, any direction** (retuned by Elias 25 Oct) | yes |
+| **Entrance fade (Elias)** ✅ | −0.0073, 34.8183 | −0.0134, 95.5860 | opacity 0→100 of that entrance, ~8 f (the old "expo out graph 1") | – |
+| Launch out (Devin) | 0, 100 | 0, 3.35 | on → off at full speed, match cuts | yes |
+| Quick out, gentle land (Devin) | 0, 33.33 | 0, 83.6 | soft entrance, slide, text reveal | yes |
+| Snap in (Devin) | 0, 11.13 | 0, 100 | punchiest pop / scale in | yes |
+| Whip (Devin) | 0, 90 | 0, 90 | whip / slide transition | yes |
+| Reel Pop-In (Elias) | 0, 5.6 | 0, 100 | reel/card pops out of a phone | no |
+
 - **Why** (22 Oct): Take 1 had good timing and layout and still "feels off cuz its not using my
   graphs from motion lib". The curves are a core part of what makes it his.
-- Not the motion-library MCP's `curve_list` presets ("1", "fast slide in" ≠ his Fast In), not
-  Easy Ease, not the kit's expo-out (0 / 100).
-- One move's hand-tuned exception: the S2 05 card-row slide-up used out 11.5 % (speed 0) / in
-  97.8 % (speed 0), landing key 26 f after launch for a 120 px rise (19 Oct). Reuse it only for a
-  similar card-row slide-up; otherwise use the card.
+- Only the saved curves listed above from the motion-library MCP's `curve_list` ("fast slide in" ≠ his
+  Fast In); not Easy Ease, not the kit's expo-out (0 / 100).
+- **Card-row slide-up** (his fix twice: S2 05 card row 19 Oct, Tyson YouTube thumbnails 24 Oct):
+  near-instant launch, very long landing. Out 11.5 / in 97.8 (19 Oct) and out 1.1 / in 100 (24 Oct),
+  both speed 0; landing key **25–26 f** after launch; 1 f cascade. On 24 Oct he also made the cards
+  rise **from fully below the frame** (centre y 1241 → 840, ~400 px), not a 120 px nudge from
+  inside it, and added a **black bottom shade** under them: a comp-size black solid, inverted
+  mask over the top ~80 %, feather ~180 px, opacity faded in and out with the cards (same 6 f).
+  I had used Quick launch 39.9/90.9 over 20 f and 120 px: too soft, too short, too small.
 
 ## Expo In-Out
 
@@ -145,6 +172,10 @@ His own finish (19 Oct, S2 05 VIRAL tags), the one glow he chose:
 
 | Rejected | When | Instead |
 |---|---|---|
+| Keyed / cut-out UI screenshots | 24 Oct | real layers: live text, shapes, ML icons |
+| A whole text line appearing at once | 24 Oct | each word pops on its spoken word ([text-animation.md](text-animation.md)) |
+| Two words readable at once in a swap | 24 Oct | clipped word window, same ease, one line-height apart |
+| 1 f delay per travelling word | 24 Oct | ≈ 0.35 f per word |
 | Glows the reference doesn't have | 22 Oct | copy only the reference |
 | Kit hero gradients as "the look" | 22 Oct | his FigCraft design / the reference |
 | Generic eases (Easy Ease, kit expo, MCP curves) | 22 Oct | his Graphs |

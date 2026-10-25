@@ -1,5 +1,5 @@
 {
- "source": "Elias's Motion Library, folder Devin Jatho/Graphs (library.json catalog_only), copied 22 Oct 2026",
+ "source": "Elias's Motion Library: Devin Jatho/Graphs cards (copied 22 Oct 2026) + saved curve presets (added 24 Oct 2026). A snapshot, not synced: re-copy after changing a curve in Motion Library.",
  "how_to_read": "AE temporal ease on 2 keys. Values are normalized: the move goes value 0->1 (or 0->100) over time 0->1, so speed is in units of the average speed |dv|/dt. Real speed for keys.velocity = speed * |dv| / dt (per dimension for multi-dim props). out_ease belongs to the first key, in_ease to the second.",
  "graphs": [
   {
@@ -71,11 +71,173 @@
     "influence": 70.07315423753526
    },
    "normalized_value_end": 100
+  },
+  {
+   "id": "c8f79986605943de827b7bfdb91d0bfc",
+   "name": "Expo Out 1 (Elias)",
+   "kind": "curve",
+   "motion_library_name": "1",
+   "approved": true,
+   "description": "EVERY move of an element that was off screen / not visible and becomes visible, any direction (up/down/left/right); distance and duration vary, the curve doesn't. Full speed on frame 1, then one long settle (45 % done after 10 % of the time). Elias retuned it 25 Oct 2026 (was 34.8/95.6, now the Entrance fade).",
+   "bezier": [
+    0.001,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 0.1
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 100
+   },
+   "elias_ok": true
+  },
+  {
+   "id": "entrance-fade-elias",
+   "name": "Entrance fade (Elias)",
+   "kind": "curve",
+   "motion_library_name": null,
+   "approved": null,
+   "description": "Opacity 0 → 100 of an entrance (~8 f, starting with the Expo Out 1 move). The old 'expo out graph 1' values; Elias kept them for the fade, 25 Oct 2026.",
+   "bezier": [
+    0.3481832610236274,
+    -0.002547323190190218,
+    0.04414028591579861,
+    1.012778673171997
+   ],
+   "first_key_out": {
+    "speed": -0.00731604150843242,
+    "influence": 34.81832610236274
+   },
+   "second_key_in": {
+    "speed": -0.01336877471004215,
+    "influence": 95.58597140842014
+   },
+   "elias_ok": true
+  },
+  {
+   "id": "2697e9147b604d1097c0f25bcd40cfc7",
+   "name": "Launch out (Devin)",
+   "kind": "curve",
+   "motion_library_name": "Devin · Launch out",
+   "approved": true,
+   "description": "On screen → off screen: accelerates the whole way and leaves at full speed; match cuts.",
+   "bezier": [
+    1,
+    0,
+    0.9665,
+    1
+   ],
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 100
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 3.3499999999999974
+   },
+   "elias_ok": false
+  },
+  {
+   "id": "7e380be0e05c422bb0ae0f81b1ec8324",
+   "name": "Quick out, gentle land (Devin)",
+   "kind": "curve",
+   "motion_library_name": "Devin · Quick out, gentle land",
+   "approved": true,
+   "description": "Soft entrance / slide / text reveal: close to Easy Ease, lands softer.",
+   "bezier": [
+    0.3333,
+    0,
+    0.164,
+    1
+   ],
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 33.33
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 83.6
+   },
+   "elias_ok": false
+  },
+  {
+   "id": "96d1852f93f94e699ef5858718af54a5",
+   "name": "Snap in (Devin)",
+   "kind": "curve",
+   "motion_library_name": "Devin · Snap in",
+   "approved": true,
+   "description": "Punchiest entrance: pop / scale in, cards, icons.",
+   "bezier": [
+    0.1113,
+    0,
+    0,
+    1
+   ],
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 11.129999999999999
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 100
+   },
+   "elias_ok": false
+  },
+  {
+   "id": "81999c83c1c043ddbfdd0c7a281a350e",
+   "name": "Whip (Devin)",
+   "kind": "curve",
+   "motion_library_name": "Devin · Whip",
+   "approved": true,
+   "description": "Whip / slide transition (Expo In-Out (Elias) replaces it for on → on moves).",
+   "bezier": [
+    0.9,
+    0,
+    0.1,
+    1
+   ],
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 90.0
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 90.0
+   },
+   "elias_ok": false
+  },
+  {
+   "id": "7ab1a1ed6cde4a018df9df3f547c2eca",
+   "name": "Reel Pop-In (Elias)",
+   "kind": "curve",
+   "motion_library_name": "Reel Pop-In (Elias)",
+   "approved": false,
+   "description": "A reel/card pops out of a phone into place: scale + position together (10-10 S1 03, 22 Oct).",
+   "bezier": [
+    0.056,
+    0,
+    0,
+    1
+   ],
+   "first_key_out": {
+    "speed": 0.0,
+    "influence": 5.6000000000000005
+   },
+   "second_key_in": {
+    "speed": 0.0,
+    "influence": 100
+   },
+   "elias_ok": false
   }
  ],
  "expo_in_out": {
   "name": "Expo In-Out (Elias)",
   "curve_preset": "e7e9542e30c34e4f862013ab4c2adcd5",
   "rule": "on screen -> on screen; speed 0 both sides; out = clamp(65 + 30 (s - 1), 50, 90), in = min(out + 1.5, 90) for a move of s seconds (Elias 22 Oct, formula unconfirmed)"
- }
+ },
+ "elias_ok_note": "elias_ok=false: added 24 Oct 2026, waiting for Elias to approve in the Graphs Lab comp. Builders don't use them until true. ('approved' = Motion Library's own flag.)"
 }

@@ -1,6 +1,6 @@
 ---
 name: effectcraft-motion
-description: Build motion graphics for Elias in EffectCraft so they look and move like his style on the first try. Holds his taste rules (his Graphs eases, Expo In-Out, overlap, exits that fade, no glow he didn't ask for, 4-colour card bodies, hairlines instead of strokes), how to write the JSX/JSON (app.run engine commands, recipes, property paths, time bases, eases), how to structure layers (scene prefix, CTRL null, beat markers) and the check that is required before showing him anything (render, measure, compare with the reference). Use whenever you write or edit an EffectCraft script, recipe or command batch; build, rebuild or retime an animation, card, scene, title or motion-kit primitive for Elias; recreate a reference clip in EffectCraft; or brief a subagent that will. Use it even when he only says "animate this", "make it move", "rebuild this" or "add X to the comp".
+description: Build motion graphics for Elias in EffectCraft so they look and move like his style on the first try. Holds his taste rules (his Graphs eases, Expo In-Out, overlap, exits that fade, no glow he didn't ask for, 4-colour card bodies, hairlines instead of strokes), how to write the JSX/JSON (app.run engine commands, recipes, property paths, time bases, eases), how to structure layers (scene prefix, CTRL null, beat markers) and the check that is required before showing him anything (render, measure, compare with the reference). Use whenever you write or edit an EffectCraft script, recipe or command batch; build, rebuild or retime an animation, card, scene, title or motion-kit primitive for Elias; recreate a reference clip in EffectCraft; or brief a subagent that will. Use it even when he only says "animate this", "make it move", "rebuild this" or "add X to the comp", and when he asks you to read or learn from changes he made to a comp.
 ---
 
 # EffectCraft motion, Elias's way
@@ -33,6 +33,10 @@ here in one line with the date.
   he says so. Then work as the agent client (never `"client": ""`), in comps you made unless he
   names one of his, and never save his project. If a tool acts on his selection, read it first
   and restore it after.
+- **Check which project is open (`get_state`) right before creating a comp** in his live app, and
+  again if a turn runs for minutes: he switches projects while you work. Build in the open one
+  unless he named another. ✅ (24 Oct: the first Graphs Lab landed in 10-10 after he'd switched to
+  20-08; retro case build-in-open-project)
 - Tests and experiments never talk to 9877. Use a sandbox app on another port if you need a UI.
 
 **Rebuilding a reference? The reference wins** over every rule below: copy its halo if it has
@@ -42,13 +46,19 @@ conflicts cost builders time).
 
 ## Look
 
+- **Real posts, reels, profiles, stories on screen:** follow `~/.agents/skills/video-editing/rules/real-social.md` (nothing of ours on them, real IG phone layout, Deep Glow word highlights).
+- **10-10 house style (22 Oct retro, full list in `~/.hermes/profiles/editing-lead/workspace/ec/10-10 design rules.md`):**
+  cards = the S3 03 Bio card (top→bottom gradient #236197→#123266→#0c1423→#04070e, gradient ABOVE the solid fill, 1 px white 32 %,
+  SF Pro Display Medium 40, sentence case), ~54 px text on screen, glossy pale-blue Codex icons (no square badges),
+  presenter at 104 % centred (no 125 % punch-ins under graphics, don't slide him aside unasked), no BG dim/blur without a card,
+  entrances = 100 px slide, Expo Out 1 (0.1/100) + Entrance fade on opacity, 1 s. Cuts go into the part comp AND 10-10 MAIN.
 - **Copy only what the reference or his design shows.** No glow, flash, drop shadow, gradient
   sheen or "polish" he didn't ask for (22 Oct: "trying to make good design makes it bad design").
   His own pill finish is the one stack he chose himself ([taste.md](references/taste.md#pills-and-tags)).
 - **Card and tile bodies:** a 4-Color Gradient (a near-black point in one corner, blues elsewhere,
   placed diagonally), dark inner shadows measured against the reference, a 1 px hairline (white
   ~32 %) at most. Never a thick white outline (19 Oct: "very, very low quality").
-- **Colour:** the project's palette (10-10 = the P01 Clock blues). Scene backgrounds dark navy,
+- **Colour:** the project's palette (10-10 = the P01 Clock blues). Scene backgrounds: the mock's or his BG precomp; dark navy only in 10-10 (24 Oct Tyson: "who told u to use blue bg?"),
   **never purple**.
 - **Images:** real screenshots or photos. Missing ones become a flat grey box named
   `PLACEHOLDER <what>`, never code-drawn fake art.
@@ -56,11 +66,16 @@ conflicts cost builders time).
   than feels right. White text on a light gradient centre fails: darken the centre or the text.
 - **When a FigCraft design exists, it owns the look**: sizes, colours, radii and shadows come
   from it, not from you ([figcraft.md](references/figcraft.md)).
+- **UI recreations** (app screens: Claude, ChatGPT…): rebuild as real layers: live text in the
+  app's font, shape boxes, Motion Library icons (Devin Jatho/Icons), vector shapes for missing
+  icons. Never keyed / cut-out screenshots (24 Oct: cut-outs gave noise and a ghost line; he
+  asked for real layers).
 
 ## Motion
 
-His 5 Graphs (Motion Library → Devin Jatho → Graphs) plus one saved curve are the **only** eases.
-Pick by where the speed peak must fall; exact values in [taste.md](references/taste.md#graphs).
+His 5 Graphs (Motion Library → Devin Jatho → Graphs), Expo In-Out and his 6 saved Motion Library
+curves are the **only** eases (12, all in [graphs.jsx](assets/graphs.jsx)). Pick by where the speed
+peak must fall; exact values in [taste.md](references/taste.md#graphs).
 
 | Move | Graph | Peak |
 |---|---|---|
@@ -70,6 +85,31 @@ Pick by where the speed peak must fall; exact values in [taste.md](references/ta
 | push-in / punch centred on the word | Smooth emphasis | middle |
 | on → off | Fast out | at the end |
 | **on → on** (moves to another visible spot) | **Expo In-Out (Elias)**, sharper the longer | middle |
+| **off / invisible → visible, ANY direction** (slide up/down/left/right; always, ✅ Elias 25 Oct) | **Expo Out 1 (Elias)** on position + **Entrance fade (Elias)** on opacity (~8 f) | frame 1, long settle |
+| off → on, punchiest pop / scale in (cards, icons) | Snap in (Devin) | at the start |
+| **row of cards / thumbnails slides up** from off-screen | his card-row ease: out ~1–11 / in ~100, 25 f, 1 f cascade ([taste.md](references/taste.md#graphs)) | at the start |
+| ~~soft entrance, text reveal~~ → now Expo Out 1 when it comes from invisible; Quick out, gentle land (Devin) only for a soft move that is already visible | Quick out, gentle land (Devin) | early |
+| on → off, leaves at full speed (match cuts) | Launch out (Devin) | at the end |
+| whip / slide transition | Whip (Devin) | middle |
+| reel/card pops out of a phone (scale + position) | Reel Pop-In (Elias) *(not approved)* | at the start |
+
+**⏳ Waiting for Elias (24 Oct):** the 6 saved-curve rows above are NOT approved by him yet
+(`elias_ok: false` in graphs.json). Don't use them in builds until he approves them in the Graphs Lab
+comp; until then the 5 Graphs + Expo In-Out are the only eases.
+
+**See and tune them:** `scripts/graphs-lab.jsx` builds comp "Graphs Lab (Claude)", one pill per ease on
+the same 1 s move. After Elias edits a pill's keys, `scripts/graphs-lab-read.jsx` returns each ease in
+GRAPHS format: copy the changed ones into graphs.jsx **and** graphs.json.
+**Approvals use real elements, tuning uses pills.** Whenever you ask him to approve a move or ease,
+show it on real Motion Library elements at real duration and distance (~0.4–0.8 s, ~100 px); the
+same abstract pill move is only for tuning or comparing eases side by side. ✅ (24 Oct, retro case
+approve-on-real-elements: "a real pop-in… a reel frame from Motion Library")
+To **approve** a curve, look at it on its real job: `scripts/graphs-lab-in-use.jsx` builds "Graphs Lab – in use
+(Claude)", 7 × 3 s sections, each new ease on real Motion Library elements (Devin Jatho/Elements) at real
+durations (notification entrance, icon pop, reel out of a phone, text reveal, card exit, whip, browser
+on → on). Neither is synced with
+Motion Library, and the engine's `keys.alignPeak` / `keys.peakGraphs` (peak.rs) only know the 5 Graphs
+(pass the others as custom `{out, in}`).
 
 - **Peaks land on the stressed syllable**: about 2 frames after the consonant burst, i.e. the
   vowel − 1 frame ("CON-tent" = f1281). `keys.alignPeak` puts a move's peak on a word for you.
@@ -77,12 +117,14 @@ Pick by where the speed peak must fall; exact values in [taste.md](references/ta
   past its peak. Keep the key that's locked to a word on its word; shift the other end. Moves
   that overlap on one property go on **stacked nulls**, one move each ([effectcraft-api.md](references/effectcraft-api.md#overlapping-moves-r2-round-1-22-oct-every-builder-hit-this)).
 - **Exits fade** (opacity over ~8 f), never a hard cut, unless the cut also jumps to a clearly
-  different shot.
+  different shot. **Full-screen cutaways (own BG over the footage) never fade out**: they hard-cut back to the footage or into the next comp (24–25 Oct, Tyson 05, 07, 09, 10: "don't fade out, just let it cut"). Fades are for overlays on top of visible footage.
 - **Hold after landing.** No drift key after a move (it overshoots on the motion path).
 - Rows of cards cascade by **1 frame**, left → right.
 - **2–4 bezier keys per move**, eased with a Graph. Never one key per frame.
 - Pops and springs: "add bounce" = the Motion Library Bounce tool (`toolkit_bounce`), never
   hand-made spring keys or expressions.
+- **Text** (word pops, word swaps, words travelling together, typing):
+  [text-animation.md](references/text-animation.md) (24 Oct).
 - A move no Graph fits: build the nearest one and **list it for Elias** to save a new graph.
   Don't invent curves, Easy Ease or the kit's generic expo. Exception: a **reference rebuild**
   whose measured moves no Graph fits takes the brief's custom eases, `cease()` in graphs.jsx
@@ -108,7 +150,9 @@ The facts that cost rounds when missed (all of them in [effectcraft-api.md](refe
   `prop.addKey` (`key()` in kit.jsx).
 - Point text is horizontally centred on its position: `justify: "left"` for left-aligned rows.
 - Zooms: parent an oversized background to the zoom null too.
-- `shape.newShape` adds into the selected shape layer: deselect first (`newShape()` does).
+- `shape.newShape` makes a new shape layer (since `ee6e05a7`, 24 Oct); `into: <layer>` or
+  `addToSelected: true` draws into an existing one. Builds before that merged into the selected
+  shape layer: deselect first (`newShape()` does). New layers go on top: reorder.
   Its stroke width defaults to the Tools bar's: pass `strokeWidth` (0 for none).
 - Scripts run by **absolute path** and `#include` only files in their own folder or below: keep
   every script, probes and calibration scripts too, in one folder with `kit.jsx` and `graphs.jsx`.
@@ -139,6 +183,11 @@ Built so Elias can keep editing it by hand ([structure.md](references/structure.
 Do all of it; [verify.md](references/verify.md) has the commands.
 
 1. **Frames:** a contact sheet of the whole move, plus single frames at every beat. Look at them.
+   **Every transition** (swap, slide, send, pop): render EVERY frame of it zoomed on its region
+   (`render_frames` with `region`, ≥ 640 px), `lint_frame` overlap on them, and judge "is this
+   clean typography" (no stacked / overlapping words, no half word outside its window, level
+   baseline), not "does it move". A subagent's report gives that strip's path; the main session
+   looks at it before showing Elias (24 Oct: a stacked QUICK/FAST swap passed two reviews).
 2. **Eases:** `scripts/check_graphs.py out.ecproj --comp NAME` → every moving key pair matches a
    Graph (0 unmatched, or each one listed with why).
 3. **Timing:** `speech.accents` / `lint off-accent` when there's a voice; peaks within 1 frame.
@@ -148,6 +197,16 @@ Do all of it; [verify.md](references/verify.md) has the commands.
 6. **Against the reference** (when there is one): render at the same size and fps, stack them,
    score (`render_compare` per beat frame; the R2 scorer for a whole clip). Fix what the numbers
    show, then look again.
+
+## Learning from his hand edits
+
+**Every time you hand a comp over in his live app**, right after the check, snapshot it:
+`ec-comp-diff snap <comp id>` (dump + project path in `~/.cache/ec-comp-snapshots/`). The
+`editing-retro` skill diffs these against what he finished to learn his silent fixes. When he says "read my changes" / "learn from what I did":
+`ec-comp-diff diff <comp id>` prints exactly what he changed (keys, eases, masks, new layers).
+Built from a saved `.ecproj` instead: `ec-comp-diff dump NAME --project X.ecproj > old.txt`, then
+`ec-comp-diff diff <id> old.txt`. Write each change into taste.md as a rule (24 Oct: without a
+snapshot I nearly couldn't tell what he'd fixed on the YouTube cards).
 
 ## Showing Elias
 
@@ -165,5 +224,7 @@ so the brief's numbers decide the result.
 
 Give it this skill's path, the brief ([brief-template.md](references/brief-template.md)), its own
 work folder and project file, the CLI to use, and the rules: no live app, no Elias comps,
-`nice -n 10`, deliver `out/*.ecproj` + render + `NOTES.md`. Subagents run on Opus 5.5 at medium
+`nice -n 10`, deliver `out/*.ecproj` + render + `NOTES.md`. NOTES.md must paste the `lint_frame`
+output for every frame of each transition and give the path of the zoomed per-frame strip; a
+report without them is not done (24 Oct: a stacked QUICK/FAST swap reached Elias). Subagents run on Opus 5.5 at medium
 effort unless Elias says otherwise (22 Oct).

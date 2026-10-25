@@ -14,6 +14,7 @@ Full docs: `~/Developer/effectcraft/docs/agents.md` (MCP, CLI, recipes, pitfalls
 - [Peaks on words](#peaks-on-words)
 - [Effects and styles](#effects-and-styles)
 - [Recipes](#recipes)
+- [Common operations](#common-operations)
 - [Gotchas](#gotchas)
 
 ## Three ways in
@@ -264,6 +265,21 @@ $EC run --empty file.newProject '{}' comp.fromRecipe '{"path":"/abs/x.recipe.jso
 - Check `unsupported` in `comp.recipe`'s reply.
 - Elias's 8 reference comps live as recipes + GIFs + breakdowns in `motion-kit/references/`.
 
+## Common operations
+
+What works (24 Oct; the guessed ids don't exist):
+
+| Task | Use |
+|---|---|
+| delete a layer | AE `layer.remove()`; its source item: `project.delete {items}` |
+| reload changed footage | `footage.relink {item, path}` with the same path |
+| read a layer | MCP `get_layer {flat: true}` (no `layer.get`) |
+| set transform | `prop.set {layer, path: "transform/position", value}` (no `layer.setTransform`) |
+| trim | AE `layer.inPoint` / `layer.outPoint` |
+| rename | `layer.rename {layers, name}` |
+| browse the library by folder | `library.catalog {folder: "Devin Jatho/Icons"}` (`folder`, not `category`) |
+| apply a card | `library.apply {id, comp, time}` |
+
 ## Gotchas
 
 - **Parenting** (cost a round on 22 Oct): keys added *after* `layer.setParent` are in the parent's
@@ -278,11 +294,29 @@ $EC run --empty file.newProject '{}' comp.fromRecipe '{"path":"/abs/x.recipe.jso
 - `$EC set … --project F` changes only that process's copy: add `--save` (or `--save-as F2`), or
   do the change and the render in one `$EC run …` / script.
 - `render.contactSheet` params are snake_case (`max_side`), unknown keys are rejected.
-- `shape.newShape` with a shape layer selected adds into it: deselect first (`newShape()`).
+- `shape.newShape` with a shape layer selected adds into it (24 Oct: it still happens): deselect
+  first (`newShape()`), or use the AE model `comp.layers.addShape()` +
+  `.property("Contents").addProperty("ADBE Vector Group")`, which never merges.
+- **New layers go on top:** a shape made after a text layer covers it. Reorder
+  (`layer.moveToBeginning()`, `layer.arrange`) and check the stack (24 Oct).
+- **Comp markers:** two can't share a frame: adding one on an occupied frame silently replaces
+  the other. `thisComp.marker.key("NAME")` for a missing marker doesn't error, it falls back to
+  the raw keyframe value. List the markers after every marker edit (24 Oct).
+- **Motion Library imports can arrive broken** (24 Oct): expressions with AE matchNames
+  (`"ADBE Root Vectors Group"`, `"Pseudo/ADBE Trace Path"`) evaluate static: rewrite them with
+  display names (`thisComp.layer("Shape Layer 1").content("Shape 1").content("Path 1").path`,
+  `effect("Trace Path")("Progress")`); marker-driven cards can lose all their comp markers; a Drop
+  Shadow can render in the wrong colour (green ghost under a word). After `library.apply`,
+  compare with the card's `preview.mp4` frame by frame.
 - `shape.newShape` strokeWidth defaults to the Tools bar's: always pass it (0 = no stroke).
 - `#include` only reaches files in the script's own folder or below; run scripts by absolute path.
 - A reference to a layer name that doesn't exist is an error, never a no-op: read errors.
-- A script that throws keeps the edits it made: wrap in `app.beginUndoGroup` / `endUndoGroup`.
+- A script that throws keeps the edits it made, **even inside `app.beginUndoGroup`**: nothing
+  rolls back, so a failed build leaves a half-built comp. `get_comp`, then continue from it or
+  clean up (24 Oct).
+- MCP `run_script` takes the JSX as `code` (not `source`). From a shell: one JSON line to the app,
+  `{"id":1,"method":"engine.execute","params":{"command":"script.run","params":{"code":…},"client":"me"}}`
+  (see `scripts/ec_comp_diff.py`).
 - `run_script` stops after 300 s by default; long builds: split them or raise `timeout`.
 - Headless MCP without `--autosave` keeps the project in memory: `save_project` after milestones.
 - Precomp layers show nothing outside their nested comp's span.

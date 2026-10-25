@@ -9,7 +9,8 @@ changes, both influences are within 1 % of the card's and the normalised speeds
 mask paths: dv = 1). "Expo In-Out (Elias)" is matched with the influences its duration gives
 (out = clamp(65 + 30 (s - 1), 50, 90), in = min(out + 1.5, 90)). Exit status 1 when anything
 is unmatched (with --reference, a custom ease with speed 0 at both keys is listed apart).
-Card values: ../assets/graphs.json (the same as the engine's keys.peakGraphs).
+Card values: ../assets/graphs.json (the 5 Graphs, which the engine's keys.peakGraphs also lists,
+plus his saved Motion Library curves, which the engine doesn't know).
 """
 import argparse, json, math, os, sys
 from collections import Counter

@@ -55,3 +55,10 @@ Export both at the same scale, crop per element, compare zones (centre, near the
 bottom, left vs right) in mean RGB and mean abs diff, plus row widths for corner radii. Exclude
 areas the reference tints with an effect he didn't ask for (e.g. a text glow: measure the pill
 away from the text). Target ≤ ~4/255 per zone.
+
+
+## Scripting gotcha
+
+`run_command script.run {source}` has **no `figma` global** (it is not the Figma plugin API):
+"ReferenceError: figma is not defined" (24 Oct). Read the page with `inspect_document` / `get_node`
+and change it with `run_command` / `batch` / `set_properties` instead.

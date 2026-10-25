@@ -14,6 +14,13 @@ nice -n 10 $EC render out/a.ecproj --comp Main --format h264 --resolution half -
 Over MCP: `render_frames {count: 12}` (one labelled sheet; `overlays: ["bounds"]` tags every
 layer's box), `render_preview {time, region}` for a detail at full resolution. Read the images.
 
+**Transitions, strict (24 Oct: a stacked QUICK/FAST swap passed two reviews):** for every swap,
+slide, send and pop, render EVERY frame of it zoomed on its region (`render_frames {start, end,
+region, max_side: ≥ 640}`), run `lint_frame {rules: ["overlap"], start, end}` over the same range,
+and judge each frame as typography: no stacked or overlapping words, no half word outside its
+window, baseline level. "It moves" is not a pass. Subagents put the strip's path in their report;
+the main session opens it before Elias sees anything.
+
 ## 2. Eases are his Graphs
 
 ```sh

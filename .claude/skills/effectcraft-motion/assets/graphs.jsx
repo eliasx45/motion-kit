@@ -1,4 +1,5 @@
-// graphs.jsx — Elias's 5 Motion Library Graphs (Devin Jatho → Graphs) as the ONLY eases.
+// graphs.jsx — Elias's eases, the ONLY ones builders use: the 5 Motion Library Graphs (Devin Jatho → Graphs),
+// Expo In-Out (Elias) and his saved Motion Library curves.
 // Card values are AE temporal ease on 2 keys, normalized: the move goes 0→1 in value over 0→1 in
 // time, so a card's speed is in units of the average speed Δv/Δt. graph() scales it back:
 //   real speed = card speed × Δv / Δt, per dimension (signed, so a falling value eases the same way);
@@ -14,7 +15,17 @@ var GRAPHS = {
   // 6th: a SAVED CURVE (Motion Library curve_presets e7e9542e30c34e4f862013ab4c2adcd5), not a Graphs-folder
   // card, not approved yet. Elias's rule: on screen → somewhere still on screen. Its influences depend on the
   // move's duration (Rule A, expoInOut below); these are the 1.0 s values.
-  "Expo In-Out (Elias)":          { out: { speed: 0, influence: 65 },                                 "in": { speed: 0, influence: 66.5 } }
+  "Expo In-Out (Elias)":          { out: { speed: 0, influence: 65 },                                 "in": { speed: 0, influence: 66.5 } },
+  // Saved curves from Motion Library (curve_presets, added 24 Oct 2026; ids and use-cases in graphs.json).
+  // Not synced: after changing one in Motion Library, re-copy it here and in graphs.json.
+// ⏳ The curves below are NOT approved by Elias yet unless marked ✅ (graphs.json elias_ok: true).
+  "Expo Out 1 (Elias)":             { out: { speed: 0, influence: 0.1 }, "in": { speed: 0, influence: 100 } },   // ✅ Elias 25 Oct: every off/invisible → visible move
+  "Entrance fade (Elias)":          { out: { speed: -0.00731604150843242, influence: 34.81832610236274 }, "in": { speed: -0.01336877471004215, influence: 95.58597140842014 } },   // ✅ opacity 0→100 of an entrance, ~8 f
+  "Launch out (Devin)":             { out: { speed: 0.0, influence: 100 }, "in": { speed: 0.0, influence: 3.3499999999999974 } },
+  "Quick out, gentle land (Devin)": { out: { speed: 0.0, influence: 33.33 }, "in": { speed: 0.0, influence: 83.6 } },
+  "Snap in (Devin)":                { out: { speed: 0.0, influence: 11.129999999999999 }, "in": { speed: 0.0, influence: 100 } },
+  "Whip (Devin)":                   { out: { speed: 0.0, influence: 90.0 }, "in": { speed: 0.0, influence: 90.0 } },
+  "Reel Pop-In (Elias)":            { out: { speed: 0.0, influence: 5.6000000000000005 }, "in": { speed: 0.0, influence: 100 } }
 };
 // expoInOut(d) — Rule A (Elias, 22 Oct): "65 % on both sides for a 1 second thing, the longer the sharper".
 // out = clamp(65 + 30 (d − 1), 50, 90), in = min(out + 1.5, 90) (settles a touch longer than it leaves).
