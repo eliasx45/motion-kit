@@ -3,6 +3,22 @@
 Rule: measure, don't eyeball, then also look. Fix what the numbers show and re-check. Never
 hand him an unchecked attempt.
 
+## 0. Lint the animated range (always, first)
+
+```text
+lint_frame {comp, start: <first key>, end: <last key>}                 # whole animation
+lint_frame {comp, start: <transition start>, end: <its end>, step: 0.0333}  # every frame of a transition (1/fps)
+```
+
+Required before handover: `clean: true` (0 errors, 0 warnings), or each kept warning in your
+notes with why. Rules that replace looking at renders: `cut-off` and `nested-cut-off` (layers
+inside precomps measured in this comp's frame, and clipped at the precomp's edge),
+`text-off-centre` (text and its card/pill; several texts on one card count as one block),
+`exposed-edge` (an empty strip at a frame edge, or a gap between two shots in a transition),
+`text-overlap` (stacked words), `text-too-small`, `low-contrast`, `outside-title-safe`,
+`hidden-visible`, `off-accent` (below). Each problem says which layer, when, and how to fix it.
+Re-render only to look at taste, after lint is clean.
+
 ## 1. Frames (always)
 
 ```sh
@@ -15,11 +31,11 @@ Over MCP: `render_frames {count: 12}` (one labelled sheet; `overlays: ["bounds"]
 layer's box), `render_preview {time, region}` for a detail at full resolution. Read the images.
 
 **Transitions, strict (24 Oct: a stacked QUICK/FAST swap passed two reviews):** for every swap,
-slide, send and pop, render EVERY frame of it zoomed on its region (`render_frames {start, end,
-region, max_side: ≥ 640}`), run `lint_frame {rules: ["overlap"], start, end}` over the same range,
-and judge each frame as typography: no stacked or overlapping words, no half word outside its
-window, baseline level. "It moves" is not a pass. Subagents put the strip's path in their report;
-the main session opens it before Elias sees anything.
+slide, send and pop, lint EVERY frame of it (section 0, `step` 1 frame: `text-overlap` catches
+stacked words, `exposed-edge` the gaps). Render a zoomed strip (`render_frames {start, end,
+region, max_side: ≥ 640}`) only for what lint can't measure (letter shapes, a level baseline)
+and judge it as typography; "it moves" is not a pass. Subagents paste the lint output (and the
+strip's path if they made one) in their report.
 
 ## 2. Eases are his Graphs
 
@@ -34,8 +50,11 @@ save a new graph.
 
 ## 3. Timing
 
-- With a voice: `speech.accents {}` → every speed peak with its nearest stressed syllable and
-  `offsetFrames`; `hit` = within 1 frame. Or `lint_frame {rules: ["off-accent"], start, end}`.
+- With a voice (required): the comp has its speech map (`speech.import {path}` once, from
+  `speech-map`; `lint_frame` notes say "off-accent skipped" when it's missing: fix that first).
+  `speech.accents {}` → every speed peak with its nearest stressed syllable and `offsetFrames`;
+  `hit` = within 1 frame. `off-accent` in section 0's lint must be clean; move peaks with
+  `keys.alignPeak`, never by re-rendering to watch.
 - Without a voice (a reference clip): compare peak frames with the reference's motion peaks (the
   R2 scorer's `events`).
 
@@ -56,8 +75,8 @@ from the shell `$EC get … --json` (it prints JSON, not a bare number). When no
 
 ## 5. Design lint
 
-`lint_frame {start: 0, end: D}` → text too small, low contrast (< 3 : 1), outside title safe,
-cut off, overlapping text, hidden but on. Fix every error; explain any warning you keep.
+Done in section 0 (the same `lint_frame` over the range). Fix every error; explain any warning
+you keep.
 
 ## 6. Against a reference
 

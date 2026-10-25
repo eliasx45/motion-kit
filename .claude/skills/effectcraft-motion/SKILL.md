@@ -1,6 +1,6 @@
 ---
 name: effectcraft-motion
-description: Build motion graphics for Elias in EffectCraft so they look and move like his style on the first try. Holds his taste rules (his Graphs eases, Expo In-Out, overlap, exits that fade, no glow he didn't ask for, 4-colour card bodies, hairlines instead of strokes), how to write the JSX/JSON (app.run engine commands, recipes, property paths, time bases, eases), how to structure layers (scene prefix, CTRL null, beat markers) and the check that is required before showing him anything (render, measure, compare with the reference). Use whenever you write or edit an EffectCraft script, recipe or command batch; build, rebuild or retime an animation, card, scene, title or motion-kit primitive for Elias; recreate a reference clip in EffectCraft; or brief a subagent that will. Use it even when he only says "animate this", "make it move", "rebuild this" or "add X to the comp", and when he asks you to read or learn from changes he made to a comp.
+description: Build motion graphics for Elias in EffectCraft so they look and move like his style on the first try. Holds his taste rules (his Graphs eases, Expo In-Out, overlap, exits that fade, no glow he didn't ask for, 4-colour card bodies, hairlines instead of strokes), how to write the JSX/JSON (app.run engine commands, recipes, property paths, time bases, eases), how to structure layers (scene prefix, CTRL null, beat markers) and the check that is required before showing him anything (lint over the range, speech-map accents, then render, compare with the reference). Use whenever you write or edit an EffectCraft script, recipe or command batch; build, rebuild or retime an animation, card, scene, title or motion-kit primitive for Elias; recreate a reference clip in EffectCraft; or brief a subagent that will. Use it even when he only says "animate this", "make it move", "rebuild this" or "add X to the comp", and when he asks you to read or learn from changes he made to a comp.
 ---
 
 # EffectCraft motion, Elias's way
@@ -182,23 +182,39 @@ Built so Elias can keep editing it by hand ([structure.md](references/structure.
 
 ## Check (required before showing him)
 
-Do all of it; [verify.md](references/verify.md) has the commands.
+Do all of it; [verify.md](references/verify.md) has the commands. Measure first, look second:
+lint answers "is it cut off / centred / covered / on the word" without a render (25 Oct: last
+week 390 `render_frames` calls and 0 `lint_frame`; Elias still caught the gaps, the off-centre
+text and the precomp cut-offs).
 
-1. **Frames:** a contact sheet of the whole move, plus single frames at every beat. Look at them.
-   **Every transition** (swap, slide, send, pop): render EVERY frame of it zoomed on its region
-   (`render_frames` with `region`, ≥ 640 px), `lint_frame` overlap on them, and judge "is this
-   clean typography" (no stacked / overlapping words, no half word outside its window, level
-   baseline), not "does it move". A subagent's report gives that strip's path; the main session
-   looks at it before showing Elias (24 Oct: a stacked QUICK/FAST swap passed two reviews).
-2. **Eases:** `scripts/check_graphs.py out.ecproj --comp NAME` → every moving key pair matches a
+1. **Lint over the animated range** (required): `lint_frame {start, end}` from the first key to
+   the last, `step` = 1 frame across every transition. Handover needs 0 errors and 0 warnings, or
+   each kept warning named with why. It covers cut-off (inside precomps too, in this comp's
+   frame: `nested-cut-off`), text off its card's centre (`text-off-centre`), empty edges and
+   transition gaps (`exposed-edge`), small text, contrast, overlapping text, hidden layers.
+2. **Timing** (required with a voice): the comp's speech map is loaded (`speech.import` once;
+   `speech.accents` lists every peak with its stressed syllable) and `off-accent` is clean in
+   that same lint: every peak within 1 frame, moved with `keys.alignPeak`. No map: make one
+   (`speech-map`), never time by ear or by re-rendering.
+3. **Frames, to look** (after lint is clean): one contact sheet of the whole move and one frame
+   per beat. **Every transition** (swap, slide, send, pop) is linted on every frame (step 1);
+   a zoomed strip (`render_frames` with `region`, ≥ 640 px) only for what lint can't measure
+   (letter shapes, a level baseline), judged as typography, not "does it move" (24 Oct: a
+   stacked QUICK/FAST swap passed two reviews; `text-overlap` per frame now catches it).
+4. **Eases:** `scripts/check_graphs.py out.ecproj --comp NAME` → every moving key pair matches a
    Graph (0 unmatched, or each one listed with why).
-3. **Timing:** `speech.accents` / `lint off-accent` when there's a voice; peaks within 1 frame.
-4. **Choreography:** `get_motion` summary reads like the brief; no dead stops between chained
+5. **Choreography:** `get_motion` summary reads like the brief; no dead stops between chained
    moves, nothing exits during its own entrance.
-5. **Design lint:** `lint_frame` over the range: no small text, low contrast, cut-off or overlaps.
 6. **Against the reference** (when there is one): render at the same size and fps, stack them,
    score (`render_compare` per beat frame; the R2 scorer for a whole clip). Fix what the numbers
    show, then look again.
+
+**Use what exists before keying by hand:** text entrances = `text.apply {preset: "Slide In",
+layers | words, sync}` (his Motion Library text presets); a Devin scene =
+`library.scene {scene: "YT Zoom Out", word, swap: {"Title": "4.2M views", "thumb.png": "/path"}}`
+(no `scene` lists them); bounce = `text.unitBounce` / `toolkit_bounce`. Hand keys only when no
+preset or scene fits, and say so (25 Oct: ~110 min of his time last week redoing hand-built
+ones with the presets).
 
 ## Learning from his hand edits
 
@@ -227,6 +243,7 @@ so the brief's numbers decide the result.
 Give it this skill's path, the brief ([brief-template.md](references/brief-template.md)), its own
 work folder and project file, the CLI to use, and the rules: no live app, no Elias comps,
 `nice -n 10`, deliver `out/*.ecproj` + render + `NOTES.md`. NOTES.md must paste the `lint_frame`
-output for every frame of each transition and give the path of the zoomed per-frame strip; a
-report without them is not done (24 Oct: a stacked QUICK/FAST swap reached Elias). Subagents run on Opus 5.5 at medium
+output over the animated range (step 1 frame across each transition, `off-accent` included when
+there's a voice); a report without it is not done (24 Oct: a stacked QUICK/FAST swap reached
+Elias). Subagents run on Opus 5.5 at medium
 effort unless Elias says otherwise (22 Oct).
