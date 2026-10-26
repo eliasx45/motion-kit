@@ -10,13 +10,19 @@ lint_frame {comp, start: <first key>, end: <last key>}                 # whole a
 lint_frame {comp, start: <transition start>, end: <its end>, step: 0.0333}  # every frame of a transition (1/fps)
 ```
 
-Required before handover: `clean: true` (0 errors, 0 warnings), or each kept warning in your
-notes with why. Rules that replace looking at renders: `cut-off` and `nested-cut-off` (layers
-inside precomps measured in this comp's frame, and clipped at the precomp's edge),
-`text-off-centre` (text and its card/pill; several texts on one card count as one block),
-`exposed-edge` (an empty strip at a frame edge, or a gap between two shots in a transition),
+Required before handover: 0 errors, and every warning that stays listed in your handover, one
+line each (rule · layer · why it stays); nothing left unexplained. Rules that replace looking at
+renders: `cut-off` and `nested-cut-off` (layers inside precomps measured in this comp's frame,
+and clipped at the precomp's edge), `text-off-centre` (text and its card/pill, measured at the
+text's rest pose, not mid-pop; several texts on one card count as one block; run the problem's
+`fix`, a `prop.set` of Position in the text's own units), `exposed-edge` (an empty strip at a
+frame edge, or a gap between two shots in a transition), `exit-at-cut` (a full-screen cutaway,
+own BG over the footage, that fades or moves out into its last frames, or is gone before the
+comp ends: hold to the end and hard-cut; the notes say whether lint read the comp as
+full-screen or overlay; it checks the comp's end whatever `start`/`end` you pass),
 `text-overlap` (stacked words), `text-too-small`, `low-contrast`, `outside-title-safe`,
-`hidden-visible`, `off-accent` (below). Each problem says which layer, when, and how to fix it.
+`hidden-visible`, `off-accent` (below; an error on keys you made). Each problem says which
+layer, when, and how to fix it.
 Re-render only to look at taste, after lint is clean.
 
 ## 1. Frames (always)
@@ -104,6 +110,10 @@ you keep.
   (same width first).
 
 ## 7. What to report
+
+Run `handover_check {comp}` once when you're done, fix everything it lists in one pass, run it
+once more, and hand over only with `ready: true`. No key changes after that (a reply's `notice`
+says if you made one; then one more run). Paste its remaining warnings, one line each with why they stay.
 
 - A stacked video or contact sheet (SendUserFile, he's often on his phone).
 - One line of numbers (score, SSIM, motion r, peaks within 1 f, graphs matched x/y).

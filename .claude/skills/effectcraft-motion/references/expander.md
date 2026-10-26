@@ -30,8 +30,8 @@ Vague words get averaged into generic motion; numbers come back as written.
    with dark inner shadows, 1 px hairline ~32 % white, no glow he didn't ask for, his palette for
    the project (10-10 = P01 Clock blues). Real images or `PLACEHOLDER <what>`.
 4. **Moves:** one row per move: layer · property, keys (frame: value), Graph. Graph by move type
-   (SKILL.md table): off → on Fast In or Quick launch, on → on Expo In-Out (sharper the longer),
-   build-ups Slow launch, punches Smooth emphasis, exits Fast out + 8 f opacity fade. Typical
+   (SKILL.md table, it wins over this line): invisible → visible Expo Out 1 (Elias) + Entrance fade, on → on Expo In-Out (sharper the longer),
+   build-ups Slow launch, punches Smooth emphasis, exits Fast out + 8 f opacity fade (overlays only; full-screen cutaways hard-cut). Typical
    lengths: entrances 15–26 f, steps 35–45 f, exits 8–12 f.
 5. **Timing:** `python3 scripts/peak_keys.py map.json events.json --md` puts each move's speed
    peak on its stressed syllable (vowel − 1 f) and prints the moves table. Then apply overlap: the

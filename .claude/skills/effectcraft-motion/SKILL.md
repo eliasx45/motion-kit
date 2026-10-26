@@ -16,7 +16,15 @@ here in one line with the date.
 ## The 6 steps
 
 1. **Where**: your own project file, never his comps (below).
-2. **Brief**: write the beat table before any code ([brief-template.md](references/brief-template.md)).
+2. **Brief**: expand his line into a brief before any code, **every build, also when you build it
+   yourself** ([expander.md](references/expander.md): voice → stressed syllables → keys, ≤ 40
+   lines, format in [brief-template.md](references/brief-template.md)). Skip only for tweaks with
+   nothing to time ("move it 10 px", "make it blue") (26 Oct, Elias: expander first, always).
+   **On-screen word ↔ spoken word:** for every word that pops or shows (captions, list rows, pill
+   text) write which spoken word it lands on and find its time with `speech.find` / the speech
+   map. A caption word is not always its own spoken word: he often staggers caption words on
+   the beat instead. When the brief doesn't say which, ask him before building (A/B 25 Oct, T3:
+   both arms put each caption on its own word, he had them ±7 f off, on the beat).
 3. **Look**: copy the reference, add nothing (§ Look).
 4. **Move**: every key pair gets one of his Graphs (§ Motion).
 5. **Build**: JSX with `app.run` engine commands (§ Writing it).
@@ -119,7 +127,7 @@ Motion Library, and the engine's `keys.alignPeak` / `keys.peakGraphs` (peak.rs) 
   past its peak. Keep the key that's locked to a word on its word; shift the other end. Moves
   that overlap on one property go on **stacked nulls**, one move each ([effectcraft-api.md](references/effectcraft-api.md#overlapping-moves-r2-round-1-22-oct-every-builder-hit-this)).
 - **Exits fade** (opacity over ~8 f), never a hard cut, unless the cut also jumps to a clearly
-  different shot. **Full-screen cutaways (own BG over the footage) never fade out**: they hard-cut back to the footage or into the next comp (24–25 Oct, Tyson 05, 07, 09, 10: "don't fade out, just let it cut"). Fades are for overlays on top of visible footage.
+  different shot. **Full-screen cutaways (own BG over the footage) never fade out**: they hard-cut back to the footage or into the next comp (24–25 Oct, Tyson 05, 07, 09, 10: "don't fade out, just let it cut"). Fades are for overlays on top of visible footage. They also hold **to the comp's last frame**: "back to the footage" means the comp's end, not earlier (A/B 25 Oct: every run faded where he cuts, or left 36 f early). `lint_frame` rule `exit-at-cut` checks both.
 - **Hold after landing.** No drift key after a move (it overshoots on the motion path).
 - Rows of cards cascade by **1 frame**, left → right.
 - **2–4 bezier keys per move**, eased with a Graph. Never one key per frame.
@@ -189,14 +197,24 @@ week 390 `render_frames` calls and 0 `lint_frame`; Elias still caught the gaps, 
 text and the precomp cut-offs).
 
 1. **Lint over the animated range** (required): `lint_frame {start, end}` from the first key to
-   the last, `step` = 1 frame across every transition. Handover needs 0 errors and 0 warnings, or
-   each kept warning named with why. It covers cut-off (inside precomps too, in this comp's
-   frame: `nested-cut-off`), text off its card's centre (`text-off-centre`), empty edges and
-   transition gaps (`exposed-edge`), small text, contrast, overlapping text, hidden layers.
+   the last, `step` = 1 frame across every transition. Handover needs 0 errors, and **every
+   warning still there is listed in your handover with its reason** (one line each: rule, layer,
+   why it stays); none left unexplained (A/B 25 Oct: runs handed over with 3 off-accent, a
+   low-contrast and a title-safe warning unmentioned). It covers cut-off (inside precomps too,
+   in this comp's frame: `nested-cut-off`), text off its card's centre (`text-off-centre`,
+   measured at the text's rest pose; run its `fix`, the `prop.set` in the text's own Position
+   units, instead of nudging by eye), empty edges and transition gaps (`exposed-edge`), exits
+   into the cut or before the comp's end in a full-screen cutaway (`exit-at-cut`: hold to the
+   end and hard-cut), small text, contrast, overlapping text, hidden layers.
 2. **Timing** (required with a voice): the comp's speech map is loaded (`speech.import` once;
    `speech.accents` lists every peak with its stressed syllable) and `off-accent` is clean in
-   that same lint: every peak within 1 frame, moved with `keys.alignPeak`. No map: make one
-   (`speech-map`), never time by ear or by re-rendering.
+   that same lint: every peak within 1 frame, moved with `keys.alignPeak`. An `off-accent` on keys
+   you made is an **error** (it blocks the handover); one on his keys stays a warning.
+   **First frames:** keep his timing; don't move entrances onto words on your own. `appear_plan
+   {comp}` (engine `speech.appearPlan`) is there when he asks for a pop on a word ("pop on
+   *money*"); it isn't a default step (A/B 26 Oct: as a step it moved captions he staggers on the
+   beat and started pops before the layer's in-point; timing fixes rose 10 → 15). Check `speech.get` first; no map: make one
+   (`speech-map`, cached, so it never re-buys audio), never time by ear or by re-rendering.
 3. **Frames, to look** (after lint is clean): one contact sheet of the whole move and one frame
    per beat. **Every transition** (swap, slide, send, pop) is linted on every frame (step 1);
    a zoomed strip (`render_frames` with `region`, ≥ 640 px) only for what lint can't measure
@@ -216,6 +234,14 @@ text and the precomp cut-offs).
 6. **Against the reference** (when there is one): render at the same size and fps, stack them,
    score (`render_compare` per beat frame; the R2 scorer for a whole clip). Fix what the numbers
    show, then look again.
+
+7. **Handover check (last, required):** `handover_check {comp}` (engine `handover.check`) runs
+   the taste check and lint over the comp's animated range in one call. Run it **once, when you're
+   done**; fix everything it lists in one pass, then run it a second and last time. Hand over
+   only when it says `ready: true`, and list every warning it still returns with its reason.
+   Change no keys after that last run (a reply's `notice` tells you if you did; then run it once
+   more). Not after each fix: 4–7 runs per task cost +35 % tokens in the A/B (26 Oct); changing
+   keys after a clean check is what let ❌ through (T5, T8).
 
 **Use what exists before keying by hand:** text entrances = `text.apply {preset: "Slide In",
 layers | words, sync}` (his Motion Library text presets); a Devin scene =

@@ -70,7 +70,7 @@ One block per element (or per repeated set):
 
 - Graph = one of: Fast In, Quick launch · soft landing, Smooth emphasis, Slow launch · quick
   finish, Fast out, Expo In-Out (Elias). Off→on / on→off / on→on decides most.
-- Opacity fades with their own row (frames). Exits: fade ~8 f.
+- Opacity fades with their own row (frames). Exits: overlays fade ~8 f; full-screen cutaways (own BG) hard-cut, no fade.
 - Chained moves: say which overlap and by how much (next starts at ~60 % of the previous).
   Overlapping moves on one property = one row each, built on stacked nulls.
 - A move that's already running when the shot starts (after a cut): give its real start before

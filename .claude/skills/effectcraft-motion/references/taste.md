@@ -98,8 +98,8 @@ e7e9542e…, bezier [0.8092, 0, 0.1752, 1], hand-shaped on the Tyson 20-08 Legen
 - **Hold after landing**, no drift key (19 Oct: a drift key after a 120 px rise overshot on the
   auto-Bezier path, "moving up weirdly"). If a drift is ever wanted, make that key's spatial
   interpolation linear.
-- **Exits fade out** over ~8 frames, never a hard cut (19 Oct). Exception: the cut also jumps to a
-  clearly different zoom/shot, which hides it.
+- **Overlay exits fade out** over ~8 frames, never a hard cut (19 Oct). Exception: the cut also jumps to a
+  clearly different zoom/shot, which hides it. **Full-screen cutaways (own BG over the footage) never fade out**: they hard-cut back to the footage or into the next comp (24 Oct, Tyson 05, 07, 09, 10, 11, 12: "remove the fade-out here, it's unnecessary"). Fades are for overlays on top of visible footage.
 - Rows: 1-frame cascade left → right. Devin's landings are long: when unsure, a longer tail beats
   a shorter one (he moved a landing key 14 → 20 → 33 f).
 - **Entrances from invisible** ✅ Elias 25 Oct: Expo Out 1 (0.1/100) on position, any direction, + Entrance fade on opacity (~8 f).
@@ -190,6 +190,7 @@ His own finish (19 Oct, S2 05 VIRAL tags), the one glow he chose:
 | Thick white card outlines | 19 Oct | 1 px hairline at ~32 % |
 | Code-drawn placeholder images | 19 Oct | real images or a flat named placeholder |
 | Drift keys after landing | 19 Oct | hold |
-| Hard-cut exits | 19 Oct | 8 f fade |
+| Hard-cut exits (overlays) | 19 Oct | 8 f fade |
+| Fade-out on full-screen cutaways | 24 Oct | hard cut with the footage |
 | Purple | 18 Oct | dark navy |
 | Learning from his old projects | 18 Oct | only the 8 reference comps and his picks |

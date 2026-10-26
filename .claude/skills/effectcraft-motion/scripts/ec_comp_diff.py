@@ -11,6 +11,7 @@ saved .ecproj when the live app has another project open.
 
 COMP = comp id or exact name. The dump lists every layer (transform, parent, matte, switches, solid
 colour), every keyframe with its eases, expressions, and every mask/effect value. Read-only.
+Values never depend on the playhead (keyed/expression values print as their keys/expression).
 """
 import difflib, glob, json, os, socket, subprocess, sys, tempfile, time
 
@@ -24,19 +25,21 @@ for(var i=1;i<=app.project.numItems;i++){var it=app.project.item(i);if(it instan
 if(!c) throw new Error("no comp "+W);
 function f(v){if(v instanceof Array){var a=[];for(var i=0;i<v.length;i++)a.push(f(v[i]));return "["+a.join(",")+"]";}
  if(typeof v=="number")return String(Math.round(v*1000)/1000); if(v&&v.vertices)return "path"+f(v.vertices); return String(v);}
+// A keyed or expression-driven value depends on the playhead: its keys/expression are listed instead.
+function sv(q){try{if(q.numKeys>0)return "keyed";if(q.expressionEnabled)return "expr";}catch(e){}return f(q.value);}
 var out=["comp "+c.name+" "+c.width+"x"+c.height+" "+f(c.frameRate)+"fps dur "+f(c.duration)];
 function dump(p,pre,all){for(var j=1;j<=p.numProperties;j++){var q=p.property(j);if(!q)continue;
  if(q.propertyType!=PropertyType.PROPERTY){try{if(q.matchName=="ADBE Mask Atom")out.push("  "+pre+q.name+" mode "+q.maskMode+(q.inverted?" INVERTED":""));}catch(e){}dump(q,pre+q.name+"/",all||q.matchName=="ADBE Mask Parade"||q.matchName=="ADBE Effect Parade");continue;}
  try{ if(q.numKeys>0){var ks=[];for(var k=1;k<=q.numKeys;k++){var s=f(q.keyTime(k))+"s="+f(q.keyValue(k));
    try{var ie=q.keyInTemporalEase(k)[0],oe=q.keyOutTemporalEase(k)[0];s+=" in("+f(ie.speed)+","+f(ie.influence)+") out("+f(oe.speed)+","+f(oe.influence)+")";}catch(e){}ks.push(s);}
    out.push("  "+pre+q.name+": "+ks.join(" | "));}
-  else if(all) out.push("  "+pre+q.name+" = "+f(q.value));
+  else if(all&&!q.expressionEnabled) out.push("  "+pre+q.name+" = "+f(q.value));
   if(q.expressionEnabled) out.push("  "+pre+q.name+" EXPR: "+q.expression);}catch(e){}}}
 for(var i=1;i<=c.numLayers;i++){var L=c.layer(i),T=L.transform;
  var src="";try{if(L.source&&L.source.mainSource&&L.source.mainSource.color)src=" solid "+f(L.source.mainSource.color);else if(L.source)src=" src "+L.source.name;}catch(e){}
  out.push("## "+L.index+" "+L.name+src+" in "+f(L.inPoint)+" out "+f(L.outPoint)+(L.enabled?"":" HIDDEN")+(L.parent?" parent "+L.parent.name:"")+
   (L.hasTrackMatte?" matte "+L.trackMatteType:"")+" blend "+L.blendingMode);
- out.push("  pos "+f(T.position.value)+" scale "+f(T.scale.value)+" anchor "+f(T.anchorPoint.value)+" rot "+f(T.rotation.value)+" opac "+f(T.opacity.value));
+ out.push("  pos "+sv(T.position)+" scale "+sv(T.scale)+" anchor "+sv(T.anchorPoint)+" rot "+sv(T.rotation)+" opac "+sv(T.opacity));
  dump(L,"",false);}
 var m=c.markerProperty;for(var k=1;k<=m.numKeys;k++)out.push("marker "+f(m.keyTime(k))+" "+m.keyValue(k).comment);
 out.join("\n");
