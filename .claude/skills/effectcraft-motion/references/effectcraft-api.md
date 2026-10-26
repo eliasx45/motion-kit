@@ -239,7 +239,11 @@ the speed never settles between them (S11: 5 moves, 1.4 px; 4 moves, 4 px).
   as if opaque (R2 r3: spread 0 → +65/255, spread 1 → +148). Keep spread 0 on see-through shapes.
 - **Gaussian Blur:** σ (px) ≈ 0.29 × blurriness (three R2 builders measured 0.287–0.297), so a
   brief's σ 16 → blurriness 55.
-- **Motion blur:** `comp.setSwitch {switch: "motionBlur", value: true}` + `layer.setSwitch
+- **Comp Motion Blur and Frame Blending stay OFF** (Elias, 26 Oct 2026: on by default only slows
+  his previews). New and duplicated comps keep both off. Turn motion blur on only when he asks
+  for it or one of his rules for that move says "motion blur on". Frame Blending: only when he asks.
+  If a comp you build on already has them on and nothing asked for it, turn them off and say so.
+- **Motion blur (when asked):** `comp.setSwitch {switch: "motionBlur", value: true}` + `layer.setSwitch
   {switch: "motionBlur"}` on the moving layers; `comp.settings {shutterAngle: 180, shutterPhase:
   -90, motionBlurSamples: 32}` (the default sample count shows ghost copies on fast moves).
 - Motion Library: `library.search {query}`, `library.insert {id, time}`, `library.apply`;
