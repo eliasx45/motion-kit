@@ -42,8 +42,10 @@ strip's path if they made one) in their report.
 In the app or the MCP (required): `taste_check {comp, start, end, problems_only: true}` →
 `summary.line` (✅ · 🟡 · ❌) and per move `moveType`, `verdict`, `criteria`, `message`, `fix`.
 Run each `fix` (`command_run taste.apply …`) or say why not; `clean` must be true. Thresholds
-(learned from his comps, 25 Oct): entrance peak ≤ 30 %, exit ≥ 75 %, on → on 30–70 %, fade-in
-≤ 50 %; fastest frame ÷ average ≤ 1.3 + 2.05 ln(frames); ≤ 18 % of the frame width per frame;
+(learned from his comps, 25 Oct): entrance peak ≤ 30 %, exit ≥ 75 %, on → on and scrub 30–70 %,
+fade-in ≤ 50 %; fastest frame ÷ average ≤ 1.3 + 2.05 ln(frames); ≤ 18 % of the frame width per
+frame (exits ≤ 22 %); an entrance/exit is read from what the layer places (a rig's children)
+being off frame, a scrub is a one-axis scale from an edge anchor (progress bar, wipe);
 entrances spend ≥ 30 % of their frames on the last 10 % of the travel. ❌ blocks only for move types with ≥ 2 approved
 curves (`taste.profile` → `moveTypes[].blocks`). `ease_graph` draws one property.
 
