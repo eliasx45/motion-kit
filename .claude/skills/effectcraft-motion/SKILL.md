@@ -275,6 +275,9 @@ source and, in a Ghostex Editing chat, prints the extra **🔧 Fix the source** 
 - Send the result where he is (often his phone): a stacked video (reference on top, yours below)
   or the contact sheet, with `SendUserFile`.
 - Numbers in one line, what's uncertain in one line, at most one question.
+- 2+ questions (whys, sister cases, which variant, where to save) → one ```questions form with one
+  line of text above, never prose; never guessed reasons as choices. One question → the end-of-turn
+  buttons. Format + example: editing-retro § Asking.
 - Never say done before you've looked at the frames yourself.
 
 ## Briefing a subagent
