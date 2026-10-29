@@ -260,6 +260,16 @@ Built from a saved `.ecproj` instead: `ec-comp-diff dump NAME --project X.ecproj
 `ec-comp-diff diff <id> old.txt`. Write each change into taste.md as a rule (24 Oct: without a
 snapshot I nearly couldn't tell what he'd fixed on the YouTube cards).
 
+## When you correct your own tool: fix the source
+
+Moved keys after a preset, recipe, engine command, script or skill rule gave the wrong result? That's
+the recipe, not the plate (29 Oct: the lead moved Slide In 9 f earlier on "economics" and nothing
+learnt). Name the real source with proof (frames, values); a late preset is often its placement (In
+marker on the word start, not peak = stressed vowel − 1 f). Then
+`source-fix note --source … --what … --proof …` (`--unclear` when unsure): it files one inbox card per
+source and, in a Ghostex Editing chat, prints the extra **🔧 Fix the source** button for wrap_up
+(never first). The fix runs in a separate chat (`source-fix start <id>`), never in the edit.
+
 ## Showing Elias
 
 - Send the result where he is (often his phone): a stacked video (reference on top, yours below)
